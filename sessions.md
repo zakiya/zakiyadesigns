@@ -1,4 +1,9 @@
-# Sessions
+# Zakiya Khabir
+Drupal Developer, Chapter Three
+
+[Home](README.md) | [Sessions](sessions.md) | [Training](training.md) | [Work History](history.md)
+
+## Sessions
 
 #### DrupalCon
 ###### 2017 

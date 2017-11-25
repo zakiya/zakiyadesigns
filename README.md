@@ -1,8 +1,7 @@
-
 # Zakiya Khabir
 Drupal Developer, Chapter Three
 
-[Sessions](sessions.md) | [Training](training.md) | [Work History](history.md)
+[Home](README.md) | [Sessions](sessions.md) | [Training](training.md) | [Work History](history.md)
 
 ### Social Media
 [Twitter](https://twitter.com/zakiyadesigns)
