@@ -1,0 +1,26 @@
+<html>
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+
+  gtag('config', 'GA_TRACKING_ID', {
+     'custom_map': {
+       'dimension1': 'Cats',
+     }
+  });
+
+  gtag('event', 'foo', {'Cats': 'Siamese'});
+</script>
+</head>
+<body>
+<p> the second body</p>
+
+
+</body>
+</html>
