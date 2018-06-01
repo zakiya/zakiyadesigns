@@ -11,11 +11,18 @@
 
   gtag('config', 'UA-112629372-1', {
      'custom_map': {
-       'dimension1': 'Cats',
+       'dimension3': 'Test03',
      }
   });
 
-  gtag('event', 'foo', {'Cats': 'Siamese'});
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var c = url.searchParams.get("Test03");
+
+  gtag('event', 'bar', {'Test03': c });
+
+  console.log(c);
+
 </script>
 </head>
 <body>
