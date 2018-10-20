@@ -10,3 +10,13 @@ Drupal Developer, Chapter Three
 * Sage Tree Solutions 2012 - 2013
 * Free-lancer 2009 - 2012
 * Lewis Associates 2004 - 2009
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112629372-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112629372-1');
+</script>

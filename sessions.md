@@ -69,3 +69,14 @@ Drupal Developer, Chapter Three
 ###### 2012 
 * Getting the Most out of Omega
 [session description](http://2012.drupalcampla.com/sessions/getting-most-out-omega)
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112629372-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112629372-1');
+</script>
