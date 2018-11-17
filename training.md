@@ -13,6 +13,9 @@ Senior Drupal Developer, Chapter Three
 * Drupal 8 Theming for Drupal 7 Themers 
 
 #### BADCamp 
+###### 2018 
+* Drupal 8 Theming 
+
 ###### 2016
 * Drupal 8 Theming for Drupal 7 Themers
 

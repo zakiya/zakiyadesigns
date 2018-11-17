@@ -15,6 +15,9 @@ Senior Drupal Developer, Chapter Three
 [video](https://www.youtube.com/watch?v=vcq3TBfWf2w)
 
 #### BADCamp 
+###### 2018
+* Demystifying Pattern Libraries and Drupal 8
+
 ###### 2017
 * 15+ Ways to Debug Drupal 8
 
