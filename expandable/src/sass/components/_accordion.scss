@@ -1,6 +1,12 @@
+.accordion__wrapper {
+  margin: 0;
+  padding: 0;
+}
+
 .accordion {
   background: $c-white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  list-style: none;
   margin: 5px 0;
   padding: 20px;
 
@@ -42,5 +48,15 @@
     span {
       color: $c-white;
     }
+  }
+}
+
+.accordion__body {
+  &.hidden {
+    display: none;
+  }
+
+  &.active {
+    display: block;
   }
 }

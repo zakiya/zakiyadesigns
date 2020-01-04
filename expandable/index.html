@@ -6,7 +6,6 @@
   <meta charset="utf-8" />
   <title>Expandable Content by Zakiya Khabir</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <script src="dist/js/expandable.js" ;></script>
   <link rel="stylesheet" href="dist/css/style.css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap" rel="stylesheet">
 </head>
@@ -22,21 +21,22 @@
   <!-- main -->
   <main role="main">
 
+   <ul class="accordion__wrapper">
     <!-- Accordion 1 -->
-    <article role="article" class="accordion">
+    <li role="article" class="accordion">
 
       <!-- Accordion Header -->
       <div class="accordion__header">
-        <img src="src/images/portraits/ks.png" class="accordion__portrait">
+        <img src="src/images/portraits/ks.png" class="accordion__portrait" alt="Karen Stewart">
         <div class="accordion__header-text">
           <h2 class="accordion__name">Karen Stewart <span>(1978)</span></h2>
           <h3 class="accordion__city">New York, USA</h3>
         </div>
-        <img src="src/icons/dropdown.svg" class="accordion__toggle">
+        <img src="src/icons/dropdown.svg" class="accordion__toggle" aria-hidden="true">
       </div>
 
       <!-- Accordion Body -->
-      <div class="accordion__body" hidden>
+      <div class="accordion__body" class="hidden">
         <div class="accordion__detail">
           <label aria-label="phone">Phone</label>
           <div aria-labelledby="phone">5-(989)262-8570</div>
@@ -48,10 +48,13 @@
         </div>
       </div>
 
-    </article>
+    </li>
     <!-- End Accordion 1 -->
 
+</ul>
   </main>
+
+  <script src="dist/js/expandable.js" ;></script>
 </body>
 
 </html>

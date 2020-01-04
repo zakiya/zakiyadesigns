@@ -60,10 +60,16 @@ h6 {
   text-transform: uppercase;
 }
 
+.accordion__wrapper {
+  margin: 0;
+  padding: 0;
+}
+
 .accordion {
   background: #FFFFFF;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  list-style: none;
   margin: 5px 0;
   padding: 20px;
 }
@@ -104,4 +110,11 @@ h6 {
 }
 :hover .accordion__name span {
   color: #FFFFFF;
+}
+
+.accordion__body.hidden {
+  display: none;
+}
+.accordion__body.active {
+  display: block;
 }
