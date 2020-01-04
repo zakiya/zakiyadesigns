@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html lang="en-us" class="no-js">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta charset="utf-8" />
-    <title>Expandable Content by Zakiya Khabir</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <script src="dist/js/expandable.js";></script>
-    <link rel="stylesheet" href="dist/css/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <header role="banner">
-      <img src="src/icons/menu.svg">
-      <h1>Expandable Content</h1>
-    </header>
-    <img src="src/images/portraits/ks.png">
-    <h2>Karen Stewart</h2>
-  </body>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>Expandable Content by Zakiya Khabir</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <script src="dist/js/expandable.js";></script>
+  <link rel="stylesheet" href="dist/css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header role="banner" class="header">
+  <img src="src/icons/menu.svg" class="header__icon">
+  <h1 class="header__text">Expandable Content</h1>
+</header>
+
+<!-- main -->
+<main role="main">
+
+  <!-- Accordion 1 -->
+  <article role="article">
+    <div>
+     <img src="src/images/portraits/ks.png">
+     <h2>Karen Stewart <span>(1978)</span></h2>
+     <h3>New York, USA</h3>
+     <img src="src/icons/dropdown.svg">
+    </div>
+
+    <div>
+      <div>
+        <label aria-label="phone">Phone</label>
+        <div aria-labelledby="phone">5-(989)262-8570</div>
+      </div>
+
+      <div>
+        <label aria-label="email">Email</label>
+        <div aria-labelledby="email">studio@csform.com</div>
+      </div>
+    </div>
+
+  </article>
+  <!-- End Accordion 1 -->
+
+</main>
+</body>
 </html>
