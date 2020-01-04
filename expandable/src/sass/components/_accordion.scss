@@ -3,6 +3,16 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   margin: 5px 0;
   padding: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus {
+    background: $c-pink-primary;
+    color: $c-white;
+  }
 }
 
 .accordion__header {
@@ -24,5 +34,13 @@
 
   span {
     color: $c-grey-text;
+  }
+
+  :hover & {
+    color: $c-white;
+
+    span {
+      color: $c-white;
+    }
   }
 }
