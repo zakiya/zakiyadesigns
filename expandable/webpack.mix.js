@@ -25,7 +25,7 @@ mix.setPublicPath('dist').disableNotifications();
 // Note: To customize the proxy, see docs in README.md.
 mix.browserSync({
   proxy: 'http://expand.l',
-  files: ['dist/js/**/*.js', 'dist/css/**/*.css'],
+  files: ['dist/js/**/*.js', 'dist/css/**/*.css', 'index.html'],
   stream: true,
   watch: true
 });
