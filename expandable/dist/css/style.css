@@ -4,30 +4,41 @@
 }
 
 body {
+  background: #f9fafb;
+  color: #929292;
   font-family: "Roboto", sans-serif;
   font-size: 12px;
   font-weight: 300;
   margin: 0;
 }
 
+main {
+  margin: 5px 0;
+}
+
 h2 {
   font-weight: 300;
+  margin: 0;
 }
 
 h3 {
   font-weight: 300;
+  margin: 0;
 }
 
 h4 {
   font-weight: 300;
+  margin: 0;
 }
 
 h5 {
   font-weight: 300;
+  margin: 0;
 }
 
 h6 {
   font-weight: 300;
+  margin: 0;
 }
 
 .header {
@@ -45,7 +56,39 @@ h6 {
   font-weight: 500;
   letter-spacing: 1.5px;
   font-size: 12px;
-  margin: 0;
   padding: 0 14px;
   text-transform: uppercase;
+}
+
+.accordion {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  margin: 5px 0;
+  padding: 20px;
+}
+
+.accordion__header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 20px;
+  -ms-grid-columns: 60px 1fr 12px;
+  grid-template-columns: 60px 1fr 12px;
+}
+
+.accordion__portrait {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+.accordion__name {
+  color: #F77062;
+  font-size: 16px;
+}
+.accordion__name span {
+  color: #929292;
 }

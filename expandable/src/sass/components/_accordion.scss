@@ -1,0 +1,28 @@
+.accordion {
+  background: $c-white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  margin: 5px 0;
+  padding: 20px;
+}
+
+.accordion__header {
+  align-items: center;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 60px 1fr 12px;
+}
+
+.accordion__portrait {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+.accordion__name {
+  color: $c-pink-primary;
+  font-size: 16px;
+
+  span {
+    color: $c-grey-text;
+  }
+}

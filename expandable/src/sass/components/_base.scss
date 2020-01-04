@@ -3,14 +3,21 @@
 }
 
 body {
+  background: $c-grey-background;
+  color: $c-grey-text;
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
   font-weight: 300;
   margin: 0;
 }
 
+main {
+  margin: 5px 0;
+}
+
 @for $i from 2 through 6 {
   h#{$i} {
     font-weight: 300;
+    margin: 0;
   }
 }

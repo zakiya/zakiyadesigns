@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="en-us" class="no-js">
+
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
   <meta charset="utf-8" />
   <title>Expandable Content by Zakiya Khabir</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <script src="dist/js/expandable.js";></script>
+  <script src="dist/js/expandable.js" ;></script>
   <link rel="stylesheet" href="dist/css/style.css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- Header -->
-<header role="banner" class="header">
-  <img src="src/icons/menu.svg" class="header__icon">
-  <h1 class="header__text">Expandable Content</h1>
-</header>
+  <!-- Header -->
+  <header role="banner" class="header">
+    <img src="src/icons/menu.svg" class="header__icon">
+    <h1 class="header__text">Expandable Content</h1>
+  </header>
 
-<!-- main -->
-<main role="main">
+  <!-- main -->
+  <main role="main">
 
-  <!-- Accordion 1 -->
-  <article role="article">
-    <div>
-     <img src="src/images/portraits/ks.png">
-     <h2>Karen Stewart <span>(1978)</span></h2>
-     <h3>New York, USA</h3>
-     <img src="src/icons/dropdown.svg">
-    </div>
+    <!-- Accordion 1 -->
+    <article role="article" class="accordion">
 
-    <div>
-      <div>
-        <label aria-label="phone">Phone</label>
-        <div aria-labelledby="phone">5-(989)262-8570</div>
+      <!-- Accordion Header -->
+      <div class="accordion__header">
+        <img src="src/images/portraits/ks.png" class="accordion__portrait">
+        <div class="accordion__header-text">
+          <h2 class="accordion__name">Karen Stewart <span>(1978)</span></h2>
+          <h3 class="accordion__city">New York, USA</h3>
+        </div>
+        <img src="src/icons/dropdown.svg" class="accordion__toggle">
       </div>
 
-      <div>
-        <label aria-label="email">Email</label>
-        <div aria-labelledby="email">studio@csform.com</div>
+      <!-- Accordion Body -->
+      <div class="accordion__body" hidden>
+        <div class="accordion__detail">
+          <label aria-label="phone">Phone</label>
+          <div aria-labelledby="phone">5-(989)262-8570</div>
+        </div>
+
+        <div class="accordion__detail">
+          <label aria-label="email">Email</label>
+          <div aria-labelledby="email">studio@csform.com</div>
+        </div>
       </div>
-    </div>
 
-  </article>
-  <!-- End Accordion 1 -->
+    </article>
+    <!-- End Accordion 1 -->
 
-</main>
+  </main>
 </body>
+
 </html>
