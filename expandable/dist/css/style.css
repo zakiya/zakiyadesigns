@@ -71,13 +71,12 @@ h6 {
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   list-style: none;
   margin: 5px 0;
-  padding: 20px;
 }
 .accordion:hover {
   cursor: pointer;
 }
 .accordion:hover, .accordion:focus {
-  background: #F77062;
+  background: #929292;
   color: #FFFFFF;
 }
 
@@ -90,6 +89,11 @@ h6 {
   grid-gap: 20px;
   -ms-grid-columns: 60px 1fr 12px;
   grid-template-columns: 60px 1fr 12px;
+  padding: 20px;
+}
+.active .accordion__header {
+  -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
 .accordion__portrait {
@@ -112,9 +116,28 @@ h6 {
   color: #FFFFFF;
 }
 
+.accordion__body {
+  background-image: linear-gradient(77deg, #F77062, #FE5196);
+  color: white;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 20px;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 20px;
+  text-align: center;
+}
 .accordion__body.hidden {
   display: none;
 }
 .accordion__body.active {
   display: block;
+}
+.accordion__body > div {
+  padding: 20px;
+}
+.accordion__body label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
