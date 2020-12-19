@@ -1,6 +1,6 @@
-At Chapter Three:
+## At Chapter Three:
 
--- Site Build + Theme
+### -- Site Build + Theme
 California College of Arts
 Northern Arizona Healthcare
 Pathfinder Health (8)
@@ -9,17 +9,20 @@ OHM (8)
 SFO Connect
 Gateway Public Schools (8)
 Sysomos
+Judicial Council of California
 
 
--- Major Feature, Pattern Lab or Theme only
+### -- Major Feature, Pattern Lab or Theme only
 Gatan
 MariaDB (8)
 UCSF Alumni (8)
 SF.gov (8)
 UCSF.edu (8)
 alumni.ucsf.edu (8)
+Farm Credit Services of America (8)
+UCSF Together (8)
 
--- Tweaks, Page lifts and bug fixes
+### -- Tweaks, Page lifts and bug fixes
 Dartmouth
 Chapter Three (8)
 CSUB (8)
@@ -32,7 +35,7 @@ Tibco (8)
 Gatan
 
 
----Training
+### ---Training
 AAA national
 Dartmouth 
 Adaptive Insights
@@ -41,19 +44,19 @@ Xenio
 Bridgelux
 
 
-At Workhabit:
+## At Workhabit:
 
--- Site Build + Theme
+### -- Site Build + Theme
 
 
 
--- Major Feature or Theme only
+### -- Major Feature or Theme only
 Magic.com
-AAA Northern Arizona, Nevada, and Utah
+AAA Northern California, Nevada, and Utah
 Greenleaf
 Guitar.com
 
--- Tweaks and bug fixes
+### -- Tweaks and bug fixes
 Autodesk
 
 
