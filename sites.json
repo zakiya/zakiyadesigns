@@ -1,0 +1,14 @@
+{
+    "001": {
+        "language": "en",
+        "mode": "drive-thru",
+        "eligibility": "75+",
+        "site_title": "Moscone Center"
+    },
+    "002": {
+        "language": "en",
+        "mode": "drive-thru",
+        "eligibility": "75+",
+        "site_title": "Laguna Honda Hospital"
+    }
+}
