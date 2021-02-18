@@ -1,29 +1,231 @@
 {
-    "001": {
-        "site_name": "Moscone Center",
-        "appointments": {
-            "available": true
-        }
-    },
-    "002": {
+    "status": "success",
+    "data": {
+        "generated": "2021-02-18T19:04:53.134Z",
+        "sites": [
+            {
+                "id": "moscone",
+                "name": "Moscone Center South (translated)",
+                "active": false,
+                "status": "Paused until Feb 22, because of supply.",
+                "address": "747 Howard St, San Francisco, CA 94103",
+                "location": {
+                    "lng": -122.401253,
+                    "lat": 37.78392,
+                    "show": true
+                },
+                "links": {
+                    "book": {
+                        "href": "https://myturn.ca.gov",
+                        "text": "Book appointment"
+                    },
+                    "info": {
+                        "href": "https://sf.gov/location/moscone-center-south-covid-19-vaccine-site",
+                        "text": "More information"
+                    }
+                },
+                "allows": {
+                    "walkins": false
+                },
+                "access": {
+                    "wheelchair": true,
+                    "walk": true,
+                    "drive": false,
+                    "languages": {
+                        "en": true,
+                        "es": true,
+                        "zh": true,
+                        "fil": null
+                    }
+                },
+                "restrictions": {
+                    "zip": false,
+                    "current_patient": false
+                },
+                "operation": {
+                    "start": "2021-01-22",
+                    "end": null,
+                    "hours": {
+                        "mon": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "tue": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "wed": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "thu": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "fri": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "sat": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "sun": [
+                            "08:00",
+                            "18:00"
+                        ]
+                    }
+                }
+            },
+            {
+                "id": "moscone2",
+                "name": "Somewhere else",
+                "active": true,
+                "status": "Paused until Feb 22, because of supply.",
+                "address": "747 Howard St, San Francisco, CA 94103",
+                "location": {
+                    "lng": -122.401253,
+                    "lat": 37.78392,
+                    "show": true
+                },
+                "links": {
+                    "book": {
+                        "href": "https://myturn.ca.gov",
+                        "text": "Book appointment"
+                    },
+                    "info": {
+                        "href": "https://sf.gov/location/moscone-center-south-covid-19-vaccine-site",
+                        "text": "More information"
+                    }
+                },
+                "allows": {
+                    "walkins": false
+                },
+                "access": {
+                    "wheelchair": true,
+                    "walk": true,
+                    "drive": false,
+                    "languages": {
+                        "en": true,
+                        "es": true,
+                        "zh": true,
+                        "fil": null
+                    }
+                },
+                "restrictions": {
+                    "zip": true,
+                    "current_patient": false
+                },
+                "operation": {
+                    "start": "2021-01-22",
+                    "end": null,
+                    "hours": {
+                        "mon": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "tue": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "wed": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "thu": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "fri": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "sat": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "sun": [
+                            "08:00",
+                            "18:00"
+                        ]
+                    }
+                }
+            },
 
-        "site_name": "Laguna Honda Hospital",
-        "appointments": {
-            "available": true
-        }
-    },
-
-    "003": {
-        "site_name": "Walgreens",
-        "appointments": {
-            "available": false
-        }
-    },
-    "004": {
-
-        "site_name": "CVS",
-        "appointments": {
-            "available": false
-        }
+            {
+                "id": "moscone3",
+                "name": "Somewhere else3",
+                "active": true,
+                "status": "Paused until Feb 22, because of supply.",
+                "address": "747 Howard St, San Francisco, CA 94103",
+                "location": {
+                    "lng": -122.401253,
+                    "lat": 37.78392,
+                    "show": true
+                },
+                "links": {
+                    "book": {
+                        "href": "https://myturn.ca.gov",
+                        "text": "Book appointment"
+                    },
+                    "info": {
+                        "href": "https://sf.gov/location/moscone-center-south-covid-19-vaccine-site",
+                        "text": "More information"
+                    }
+                },
+                "allows": {
+                    "walkins": false
+                },
+                "access": {
+                    "wheelchair": true,
+                    "walk": true,
+                    "drive": false,
+                    "languages": {
+                        "en": true,
+                        "es": true,
+                        "zh": true,
+                        "fil": null
+                    }
+                },
+                "restrictions": {
+                    "zip": false,
+                    "current_patient": true
+                },
+                "operation": {
+                    "start": "2021-01-22",
+                    "end": null,
+                    "hours": {
+                        "mon": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "tue": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "wed": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "thu": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "fri": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "sat": [
+                            "08:00",
+                            "18:00"
+                        ],
+                        "sun": [
+                            "08:00",
+                            "18:00"
+                        ]
+                    }
+                }
+            }
+        ]
     }
 }
