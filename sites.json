@@ -1,14 +1,29 @@
 {
     "001": {
-        "language": "en",
-        "mode": "drive-thru",
-        "eligibility": "75+",
-        "site_title": "Moscone Center"
+        "site_name": "Moscone Center",
+        "appointments": {
+            "available": true
+        }
     },
     "002": {
-        "language": "en",
-        "mode": "drive-thru",
-        "eligibility": "75+",
-        "site_title": "Laguna Honda Hospital"
+
+        "site_name": "Laguna Honda Hospital",
+        "appointments": {
+            "available": true
+        }
+    },
+
+    "003": {
+        "site_name": "Walgreens",
+        "appointments": {
+            "available": false
+        }
+    },
+    "004": {
+
+        "site_name": "CVS",
+        "appointments": {
+            "available": false
+        }
     }
 }
