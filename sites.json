@@ -9,6 +9,7 @@
                 "active": false,
                 "status": "Paused until Feb 22, because of supply.",
                 "address": "747 Howard St, San Francisco, CA 94103",
+                "restrictions": true,
                 "location": {
                     "lng": -122.401253,
                     "lat": 37.78392,
@@ -37,10 +38,6 @@
                         "zh": true,
                         "fil": null
                     }
-                },
-                "restrictions": {
-                    "zip": false,
-                    "current_patient": false
                 },
                 "operation": {
                     "start": "2021-01-22",
@@ -112,10 +109,7 @@
                         "fil": null
                     }
                 },
-                "restrictions": {
-                    "zip": true,
-                    "current_patient": false
-                },
+                "restrictions": true,
                 "operation": {
                     "start": "2021-01-22",
                     "end": null,
@@ -187,10 +181,8 @@
                         "fil": null
                     }
                 },
-                "restrictions": {
-                    "zip": false,
-                    "current_patient": true
-                },
+                "restrictions": false,
+
                 "operation": {
                     "start": "2021-01-22",
                     "end": null,
