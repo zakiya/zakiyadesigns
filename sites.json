@@ -97,7 +97,7 @@
                 "booking": {
                     "url": "https://mychart.sfdph.org/MyChart/Authentication/Login",
                     "dropins": true,
-                    "info": "Eligible SFHN patients can book appointments or check availability. SFHN patients who are 65 and older or in Phase 1B can drop in between 9 am and 3 pm daily.",
+                    "info": "Eligible SFHN patients can book appointments or check availability.<br> SFHN patients who are 65 and older or in Phase 1B can drop in between <i>9 am and 3 pm daily</i>.",
                     "phone": "717-565-8696"
                 },
                 "access": {
