@@ -647,7 +647,7 @@
                 },
                 "open_to": {
                     "everyone": true,
-                    "text": "<bold>Open to</bold> the public"
+                    "text": "<ul><li>Open to</li></ul> the public"
                 },
                 "appointments": {
                     "available": null,
