@@ -110,7 +110,7 @@
                         "vi": false,
                         "ru": false,
                         "ko": false,
-                        "asl": false
+                        "asl": true
                     },
                     "remote_translation": {
                         "available": true,
