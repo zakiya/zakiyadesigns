@@ -123,7 +123,7 @@
                 },
                 "open_to": {
                     "everyone": false,
-                    "text": "Open to San Francisco Health Network patients only"
+                    "text": "Open to <br> San Francisco <bold>Health Network</bold> patients only"
                 },
                 "appointments": {
                     "available": "no",
