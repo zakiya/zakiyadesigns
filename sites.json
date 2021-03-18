@@ -97,7 +97,7 @@
                 "booking": {
                     "url": "https://mychart.sfdph.org/MyChart/Authentication/Login",
                     "dropins": true,
-                    "info": "Eligible SFHN patients can book appointments or check availability.<br> SFHN patients who are 65 and older or in Phase 1B can drop in between <em>9 am and 3 pm daily</em>.",
+                    "info": "Eligible SFHN patients can <a href=/mylink>book appointments</a>  or check availability.<br> <br><br>SFHN patients who are <strong>65 and older</strong> or in Phase 1B can drop in between <em>9 am and 3 pm daily</em>.<ul><li>Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Vivamus in erat ut urna cursus vestibulum. Aliquam lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean commodo ligula eget dolor.</li><li>Fusce vulputate eleifend sapien. </li><li>Etiam iaculis nunc ac metus. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Vivamus quis mi.</li></ul><ul><li>Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Vivamus in erat ut urna cursus vestibulum. Aliquam lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean commodo ligula eget dolor.</li><li>Fusce vulputate eleifend sapien. </li><li>Etiam iaculis nunc ac metus. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Vivamus quis mi.</li></ul>",
                     "phone": "717-565-8696"
                 },
                 "access": {
@@ -123,7 +123,7 @@
                 },
                 "open_to": {
                     "everyone": false,
-                    "text": "Open to <br> San Francisco <em>Health Network</em> patients only"
+                    "text": "Open to <br> San Francisco <em>Health Network</em> patients onlyEligible SFHN patients can <a href=/mylink>book appointments</a>  or check availability.<br> <br><br>SFHN patients who are <strong>65 and older</strong> or in Phase 1B can drop in between <em>9 am and 3 pm daily</em>.<ul><li>Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Vivamus in erat ut urna cursus vestibulum. Aliquam lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean commodo ligula eget dolor.</li><li>Fusce vulputate eleifend sapien. </li><li>Etiam iaculis nunc ac metus. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Vivamus quis mi.</li></ul><ul><li>Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Vivamus in erat ut urna cursus vestibulum. Aliquam lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean commodo ligula eget dolor.</li><li>Fusce vulputate eleifend sapien. </li><li>Etiam iaculis nunc ac metus. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Vivamus quis mi.</li></ul>"
                 },
                 "appointments": {
                     "available": "no",
@@ -163,7 +163,7 @@
                 "booking": {
                     "url": null,
                     "dropins": true,
-                    "info": "No appointment needed. Drop in between 9 am and 3 pm daily.",
+                    "info": "<script>No appointment needed. Drop <a>in between 9 am and 3 pm daily.",
                     "phone": null
                 },
                 "access": {
