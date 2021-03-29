@@ -6,7 +6,7 @@
             {
                 "id": "citycollegeofsanfrancisco",
                 "site_id": "CA131B10005",
-                "name": "City College of San Francisco",
+                "name": "No Public City College of San Francisco",
                 "active": true,
                 "location": {
                     "address": "55 Frida Kahlo Way, San Francisco",
@@ -61,7 +61,7 @@
                 },
                 "open_to": {
                     "everyone": true,
-                    "text": "Open to the public"
+                    "text": ""
                 },
                 "appointments": {
                     "available": true,
@@ -138,7 +138,7 @@
             {
                 "id": "sf_general_learning_center_drop_ins",
                 "site_id": 11,
-                "name": "Zuckerberg SF General - Learning Center (for anyone age 65 and over)",
+                "name": "Null Public Zuckerberg SF General - Learning Center (for anyone age 65 and over)",
                 "active": true,
                 "location": {
                     "address": "1001 Potrero Avenue, Building 30, San Francisco",
@@ -189,7 +189,7 @@
                 },
                 "open_to": {
                     "everyone": true,
-                    "text": "Open to the public"
+                    "text": null
                 },
                 "appointments": {
                     "available": null,
