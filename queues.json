@@ -1,0 +1,53 @@
+{
+    "status" : "success",
+    "data" : {
+        "timestamp" : "2021-05-04T00:03:18.089Z",
+        "queues" : [
+            {
+                "id" : 2879556,
+                "description" : "Some queue",
+                "state" : "ACTIVE",
+                "location_id" : 3294872,
+                "wait_time" : 60
+            },
+            {
+                "id" : 2897234,
+                "description" : "Some other queue",
+                "state" : "CLOSED",
+                "location_id" : 3294872,
+                "wait_time" : NULL
+            },
+            {
+                "id" : 2895557234,
+                "description" : "Some other third queue",
+                "state" : "ACTIVE",
+                "location_id" : 3294872,
+                "wait_time" : 85
+            },
+
+            {
+                "id" : 2895557234,
+                "description" : "Fourth queue",
+                "state" : "ACTIVE",
+                "location_id" : 3294872,
+                "wait_time" : 15
+            },
+
+            {
+                "id" : 2895557234,
+                "description" : "Inactive queue",
+                "state" : "INACTIVE",
+                "location_id" : 3294872,
+                "wait_time" : 15
+            },
+
+            {
+                "id" : 2895557234,
+                "description" : "Closing queue",
+                "state" : "CLOSING",
+                "location_id" : 3294872,
+                "wait_time" : 15
+            }
+        ]
+    }
+}
