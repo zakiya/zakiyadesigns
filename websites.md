@@ -1,26 +1,26 @@
 ## At Chapter Three:
 
 ### -- Site Build + Theme
+Judicial Council of California
+SFO Connect (San Francisco Airport)
 California College of Arts
 Northern Arizona Healthcare
 Pathfinder Health (8)
 Bridgelux
-OHM (8)
-SFO Connect
+OHM Advisors(8)
 Gateway Public Schools (8)
 Sysomos
-Judicial Council of California
 
 
-### -- Major Feature, Pattern Lab or Theme only
+### -- Major Feature, Pattern Lab or Theme
+SF.gov (8)
+Apigee Edge/Google (8)
+UCSF Alumni (8)
+UCSF.edu (8)
+UCSF Together (8)
+Farm Credit Services of America (8)
 Gatan
 MariaDB (8)
-UCSF Alumni (8)
-SF.gov (8)
-UCSF.edu (8)
-alumni.ucsf.edu (8)
-Farm Credit Services of America (8)
-UCSF Together (8)
 
 ### -- Tweaks, Page lifts and bug fixes
 Dartmouth
@@ -32,8 +32,6 @@ Message Systems
 Nexant Thinking
 Pinterest
 Tibco (8)
-Gatan
-
 
 ### ---Training
 AAA national
@@ -60,12 +58,12 @@ Guitar.com
 Autodesk
 
 
-At Sage:
-Comic-Con International, 
-UCSD Scripps Institute of Oceanography; 
-San Diego County Water Authority, 
+## At Sage Tree:
+Comic-Con International
+UCSD Scripps Institute of Oceanography
+San Diego County Water Authority
 Phoenix College
-Qualcomm?
+Qualcomm
 Tabata
 
 Freelancing:
