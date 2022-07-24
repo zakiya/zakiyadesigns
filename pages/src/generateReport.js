@@ -48,9 +48,9 @@ rawData.forEach((order) => {
 
 categories.forEach((category) => {
   for (const [key, product] of Object.entries(category.products)) {
-    output += `<h4>${product.label}: ${product.productCount}</h4>`;
+    output += `<h4><span>${product.label}:</span> <span>${product.productCount}</span></h4>`;
   }
-  output += `<h2>Total ${category.type}: ${category.categoryCount}</h4>`;
+  output += `<h2><span>Total ${category.type}:</span> <span>${category.categoryCount}</span></h4>`;
 });
 
 const timeStamp = new Date().toLocaleDateString("en-US", {
@@ -63,6 +63,20 @@ output += otherText;
 const template = `<html>
 <head>
 <style>
+* {
+font-family: sans-serif;
+}
+
+h2,
+h4 {
+display: grid;
+grid-template-columns: 1fr 100px;
+max-width: 600px;
+}
+span:nth-child(2) {
+  text-align: right;
+}
+
 h2 {
 background-color: #0A2141;
 color: #FFFFFF;
