@@ -1,3 +1,9 @@
+## At California Office of Data and Innovation
+covid19.ca.gov
+Design System
+Cannabis
+
+
 ## At Chapter Three:
 
 ### -- Site Build + Theme
@@ -35,7 +41,7 @@ Tibco (8)
 
 ### ---Training
 AAA national
-Dartmouth 
+Dartmouth
 Adaptive Insights
 Florida Department of Environmental Protection
 Xenio
