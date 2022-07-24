@@ -7,7 +7,8 @@
   "scripts": {
     "sass": "sass",
     "serve": "npx web-dev-server",
-    "report": "node src/generateReport.js"
+    "report": "node src/generateReport.js",
+    "json": "node src/generateJson.js"
   },
   "author": "",
   "license": "ISC",

@@ -1,12 +1,7 @@
 import { createRequire } from "module";
 import { readFileSync, writeFile } from "node:fs";
 const require = createRequire(import.meta.url);
-const csvToJson = require("convert-csv-to-json");
-
-const fileOutputName = "orders.json";
-
-// const fileInputName = 'orders.csv';
-// csvToJson.fieldDelimiter(',').generateJsonFileFromCsv(fileInputName,fileOutputName);
+import { fileOutputName } from "./shared.js";
 
 const file = readFileSync(fileOutputName, "utf8");
 const rawData = JSON.parse(file);
