@@ -1,0 +1,54 @@
+[
+  {
+    "type": "Memberships",
+    "categoryCount": 0,
+    "products": {
+      "0": {
+        "label": "2022 Epic Membership",
+        "productCount": 0
+      },
+      "1": {
+        "label": "2022 Mythic Membership",
+        "productCount": 0
+      },
+      "2": {
+        "label": "Manual Epic Membership",
+        "productCount": 0
+      }
+    }
+  },
+  {
+    "type": "Bandanas",
+    "categoryCount": 0,
+    "products": {
+      "0": {
+        "label": "Classic Sirens Bandana (Ready to Ship)",
+        "productCount": 0
+      }
+    }
+  },
+  {
+    "type": "Tshirts",
+    "categoryCount": 0,
+    "products": {
+      "0": {
+        "label": "Classic Sirens T-shirt (Pre-Order)",
+        "productCount": 0
+      },
+      "1": {
+        "label": "2022 Exclusive: OH WAVE T-shirt (Pre-Order)",
+        "productCount": 0
+      }
+    }
+  },
+  {
+    "type": "Stickers",
+    "categoryCount": 0,
+    "products": {
+      "0": {
+        "label": "Sirens Sticker Pack (Ready to Ship)",
+        "productCount": 0
+      }
+    }
+  }
+]
