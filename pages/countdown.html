@@ -1,0 +1,83 @@
+
+<html>
+<head>
+
+<!--start head embed-->
+<style>
+.countDownTimer{
+  border-radius: 10px;
+  color: #ffffff;
+  display: grid;
+  text-align: center;
+  font-size: 1.5rem;
+  width: 90%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.countDownTimer .text {
+  font-weight: bold;
+  font-size:4rem;
+}
+</style>
+<!--end-->
+
+
+</head>
+<body>
+
+<!--start -->
+
+<!--Code > HTML -->
+
+    <div id="timerWidget" class="countDownTimer">
+    </div>
+<!-- end page embed-->
+
+
+<script>
+// https://www.primitusconsultancy.co.uk/blog/how-to-create-a-countdown-timer-on-squarespace
+const countDownDate = new Date("September 17, 2022 19:00:0").getTime();
+const widget = document.getElementById("timerWidget");
+
+const buildWidget = () => {
+  // Update the count down every 1 second
+  let x = setInterval(function () {
+    // Get today's date and time
+    let now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    let countDifference = countDownDate - now;
+
+    const days = Math.floor(countDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (countDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+      (countDifference % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor((countDifference % (1000 * 60)) / 1000);
+    widget.innerHTML =
+      `<div><div class='text'>${days}</div><div class="label">Days</div></div>
+      <div><div class='text'> ${hours}</div><div class="label">Hours</div></div>
+      <div><div class='text'>${minutes}</div><div class="label">Minutes</div></div>
+      <div><div class='text'>${seconds}</div><div class="label">Seconds</div></div>`;
+
+    if (countDifference < 0) {
+      clearInterval(x);
+      widget.innerHTML = "<div><span class='text'>EXPIRED</span></div>";
+    }
+  }, 1000);
+};
+
+if (widget !== null) {
+  buildWidget();
+}
+</script>
+
+
+
+</body>
+</html>
