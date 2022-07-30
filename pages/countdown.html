@@ -1,7 +1,13 @@
-
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+background: blue;
+}
+</style>
 
+<!--https://hexaflexagon-chrysalis-w9f7.squarespace.com/config/settings/advanced/code-injection-->
 <!--start head embed-->
 <style>
 .countDownTimer{
@@ -17,6 +23,11 @@
   padding: 10px;
 }
 
+  @media screen and (max-width: 400px) {
+.countDownTimer {
+  grid-template-columns: repeat(2, 1fr);
+}
+}
 .countDownTimer .text {
   font-weight: bold;
   font-size:4rem;
@@ -37,6 +48,7 @@
 <!-- end page embed-->
 
 
+<!--start footer embed-->
 <script>
 // https://www.primitusconsultancy.co.uk/blog/how-to-create-a-countdown-timer-on-squarespace
 const countDownDate = new Date("September 17, 2022 19:00:0").getTime();
@@ -76,7 +88,7 @@ if (widget !== null) {
   buildWidget();
 }
 </script>
-
+<!--end-->
 
 
 </body>
