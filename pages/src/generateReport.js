@@ -28,7 +28,10 @@ rawData.forEach((order) => {
 
   categories.forEach((category) => {
     for (const [key, product] of Object.entries(category.products)) {
-      if (product.label === order.Lineitemname) {
+      if (
+        product.label === order.Lineitemname
+        //&& order.FinancialStatus != "refunded"
+      ) {
         category.categoryCount += parseInt(order.Lineitemquantity);
         category.products[key].productCount += parseInt(order.Lineitemquantity);
         orderType = "known";
