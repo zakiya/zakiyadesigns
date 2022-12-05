@@ -1,5 +1,4 @@
 import { readFileSync, writeFile } from "node:fs";
-import { isDeepStrictEqual } from "node:util";
 import { fileOutputName } from "./shared.js";
 
 const rawDataFile = readFileSync(fileOutputName, "utf8");
@@ -12,7 +11,6 @@ const productLablesFile = readFileSync("src/productLabels.json", "utf8");
 const labelList = JSON.parse(productLablesFile);
 
 let labelsOnly = [];
-let labelsObject = {};
 
 labelList.forEach((item) => {
   labelsOnly.push(item.label);
@@ -37,13 +35,11 @@ const others = [
 /// SORT AND COUNT!!
 const counter = {};
 const sortAndCount = (order) => {
-  let itemcount = 0;
   const index = order.Lineitemname;
 
   if (typeof index === "string" && index !== "1") {
     if (isNaN(counter[index])) {
-      console.log("typeof counter[index] 4");
-      counter[index] = 0;
+      counter[index] = parseInt(order.Lineitemquantity);
     } else {
       counter[index] += parseInt(order.Lineitemquantity);
     }
@@ -54,6 +50,7 @@ const printUnlistedItems = (order) => {
   otherText += "\n needs review:";
   otherText += "\n " + order.OrderID;
   otherText += "\n " + order.Email;
+  otherText += "\n " + order.FinancialStatus;
   otherText += "\n " + order.Lineitemname;
   console.log(otherText);
 };
@@ -65,13 +62,18 @@ let otherText = "";
 rawData.forEach((order) => {
   if (
     // Lineitemname is in our list of productLabels.json.
-    labelsOnly.includes(order.Lineitemname) ||
-    // OrderID is in our list of known Private Notes errors.
-    // @todo The "Private Notes" column in order.csv gets pushed to a new OrderID.
-    others.includes(order.OrderID)
+    labelsOnly.includes(order.Lineitemname)
+    // @todo - why doesn't removing refunds change the numbers?
+    // or removing my number
   ) {
     // We've got a match so start counting.
     sortAndCount(order);
+  } else if (
+    // OrderID is in our list of known Private Notes errors and other uncountables.
+    // @todo The "Private Notes" column in order.csv gets pushed to a new OrderID.
+    others.includes(order.OrderID)
+  ) {
+    /*do nothing*/
   } else {
     printUnlistedItems(order);
   }
@@ -124,6 +126,7 @@ ${output}
 </div>
 <div>
 ${timeStamp}
+Note when comparing to Squarespace, numbers include refunds and test memberships
 </div>
 
 </body>
