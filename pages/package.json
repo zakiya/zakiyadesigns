@@ -2,12 +2,12 @@
   "name": "sirens",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "src/generateReport.js",
   "type": "module",
   "scripts": {
     "sass": "sass",
     "serve": "npx web-dev-server",
-    "report": "node src/generateReport.js",
+    "report": "node src/generateReport1.js",
     "json": "node src/generateJson.js"
   },
   "author": "",

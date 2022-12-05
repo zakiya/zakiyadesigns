@@ -1,0 +1,25 @@
+[
+  { "label": "2022 Epic Membership", "category": "membership_epic" },
+  { "label": "2022 Mythic Membership", "category": "membership_mythic" },
+  { "label": "Manual Epic Membership", "category": "membership_epic" },
+  { "label": "2022 Epic Membership", "category": "membership_epic" },
+  { "label": "2022 Epic Membership", "category": "membership_epic" },
+  { "label": "Classic Sirens Bandana (Ready to Ship)", "category": "bandana" },
+  { "label": "Hand Printed 2022 Membership Poster", "category": "poster" },
+  {
+    "label": "Hand Printed Membership Poster (Pre-Order through Dec 4)",
+    "category": "poster"
+  },
+  { "label": "Sirens Koozies", "category": "koozy" },
+  {
+    "label": "Classic Sirens T-shirt (Pre-Order)",
+    "category": "tshirt_classic"
+  },
+  { "label": "Classic Sirens T-shirt", "category": "tshirt_classic" },
+  {
+    "label": "2022 Exclusive: OH WAVE T-shirt (Pre-Order)",
+    "category": "tshirt_2022"
+  },
+  { "label": "2022 Exclusive: OH WAVE T-shirt", "category": "tshirt_2022" },
+  { "label": "Sirens Sticker Pack (Ready to Ship)", "category": "sticker" }
+]
