@@ -55,12 +55,21 @@ const printUnlistedItems = (order) => {
   console.log(otherText);
 };
 
+const printRefunds = (order) => {
+  otherText += "\n Refund: ";
+  otherText += order.Lineitemquantity;
+  otherText += " " + order.Lineitemname;
+  console.log(otherText);
+};
+
 let output = "";
 let otherText = "";
 
 // Loop through orders.json.
 rawData.forEach((order) => {
-  if (
+  if (order.FinancialStatus === "refunded") {
+    printRefunds(order);
+  } else if (
     // Lineitemname is in our list of productLabels.json.
     labelsOnly.includes(order.Lineitemname)
     // @todo - why doesn't removing refunds change the numbers?
@@ -126,7 +135,7 @@ ${output}
 </div>
 <div>
 ${timeStamp}
-Note when comparing to Squarespace, numbers include refunds and test memberships
+Note when comparing to Squarespace, numbers include refunds and test memberships.
 </div>
 
 </body>
