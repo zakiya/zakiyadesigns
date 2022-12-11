@@ -134,8 +134,9 @@ padding: 10px;
 ${output}
 </div>
 <div>
-${timeStamp}
-Note when comparing to Squarespace, numbers include refunds and test memberships.
+Updated: ${timeStamp}
+Note: Chart numbers  do not include refunds and test memberships. Square space
+analytics do.
 </div>
 
 </body>
