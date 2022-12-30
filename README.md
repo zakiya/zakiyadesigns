@@ -1,3 +1,13 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1DJ8S4V2NC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1DJ8S4V2NC');
+</script>
+
 # Zakiya Khabir
 Engineering Manager, [California Office of Data and Innovation](innovation.ca.gov)
 
