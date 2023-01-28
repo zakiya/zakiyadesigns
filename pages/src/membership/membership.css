@@ -1,0 +1,16 @@
+/* // <link rel="stylesheet" href="membership.css"> */
+/* For local use only.*/
+.sqs-system-error {
+  display: none;
+}
+
+/* Hide the quantity input on memberships.*/
+.sirens-membership-wrapper .product-block .quantity-label {
+  display: none;
+}
+.sirens-membership-wrapper .cart-row-qty {
+  display: none !important;
+}
+.sirens-membership-wrapper [aria-label="Quantity"] {
+  display: none;
+}
