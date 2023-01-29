@@ -26,3 +26,12 @@
   margin-bottom: 1em;
   text-align: center;
 }
+
+.sqs-add-to-cart-button {
+  display: inline-block;
+}
+
+.sirens-helptext {
+  font-style: italic;
+  font-size: smaller;
+}

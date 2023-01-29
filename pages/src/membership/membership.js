@@ -32,6 +32,19 @@ const hideBlockQuantityInput = () => {
     blockEl.parentElement.parentElement.parentElement.classList.add(
       sirensQuantityHideClass
     );
+
+    const cartWrapperClass = "sqs-add-to-cart-button-wrapper";
+    const addButtonClasses = ["sirens-helptext"];
+    const helpText = "Each membership must be added separately.";
+
+    const textNode = document.createTextNode(helpText);
+
+    const helpTextEl = document.createElement("div");
+    helpTextEl.classList.add(addButtonClasses[0]);
+    helpTextEl.appendChild(textNode);
+
+    const cart = document.getElementsByClassName(cartWrapperClass);
+    cart[0].appendChild(helpTextEl);
   }
 };
 
