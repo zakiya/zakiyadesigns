@@ -3,14 +3,26 @@
 .sqs-system-error {
   display: none;
 }
-
-/* Hide the quantity input on memberships.*/
-.sirens-membership-wrapper .product-block .quantity-label {
-  display: none;
-}
-.sirens-membership-wrapper .cart-row-qty {
+.YScuigfOyfexHJxrqCYk {
   display: none !important;
 }
-.sirens-membership-wrapper [aria-label="Quantity"] {
+
+/* Hide the quantity input on memberships.*/
+.sirens-quantity-wrapper-hide .product-block .quantity-label {
   display: none;
+}
+.sirens-quantity-wrapper-hide .cart-row-qty {
+  display: none !important;
+}
+.sirens-quantity-wrapper-hide [aria-label="Quantity"] {
+  display: none;
+}
+
+.sirens-quantity-wrapper-hide.cart-row-qty {
+  display: none;
+}
+
+.sirens-add-membership {
+  margin-bottom: 1em;
+  text-align: center;
 }
