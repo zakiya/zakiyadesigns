@@ -26,25 +26,29 @@ const waitForElm = (selector) => {
 // Hide input at /memberships.
 const hideBlockQuantityInput = () => {
   const sirensID = "sirens-membership";
+  const cartSelector = ".sqs-add-to-cart-button-wrapper";
+  const addButtonClasses = ["sirens-helptext"];
+  const helpText = "Each membership must be added separately.";
 
-  if (document.getElementById(sirensID)) {
-    const blockEl = document.getElementById(sirensID);
-    blockEl.parentElement.parentElement.parentElement.classList.add(
-      sirensQuantityHideClass
-    );
+  if (document.getElementsByClassName(sirensID).length > 0) {
+    const blockEls = document.getElementsByClassName(sirensID);
 
-    const cartWrapperClass = "sqs-add-to-cart-button-wrapper";
-    const addButtonClasses = ["sirens-helptext"];
-    const helpText = "Each membership must be added separately.";
+    Array.from(blockEls).forEach((blockEl) => {
+      blockEl.parentElement.parentElement.parentElement.classList.add(
+        sirensQuantityHideClass
+      );
+    });
 
-    const textNode = document.createTextNode(helpText);
+    const cart = document.querySelectorAll(cartSelector);
+    Array.from(cart).forEach((item) => {
+      let helpTextEl = document.createElement("div");
 
-    const helpTextEl = document.createElement("div");
-    helpTextEl.classList.add(addButtonClasses[0]);
-    helpTextEl.appendChild(textNode);
+      helpTextEl.appendChild(document.createTextNode(helpText));
 
-    const cart = document.getElementsByClassName(cartWrapperClass);
-    cart[0].appendChild(helpTextEl);
+      helpTextEl.classList.add(addButtonClasses[0]);
+
+      item.appendChild(helpTextEl);
+    });
   }
 };
 

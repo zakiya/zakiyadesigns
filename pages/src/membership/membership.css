@@ -27,11 +27,17 @@
   text-align: center;
 }
 
-.sqs-add-to-cart-button {
-  display: inline-block;
+.sirens-quantity-wrapper-hide .sqs-add-to-cart-button-wrapper {
+  display: flex !important;
+  align-items: center;
+}
+
+.sirens-quantity-wrapper-hide .sqs-add-to-cart-button {
+  white-space: nowrap;
 }
 
 .sirens-helptext {
   font-style: italic;
   font-size: smaller;
+  padding-left: 14px;
 }
