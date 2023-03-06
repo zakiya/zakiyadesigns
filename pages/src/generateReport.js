@@ -4,8 +4,15 @@ import { fileOutputName } from "./shared.js";
 const rawDataFile = readFileSync(fileOutputName, "utf8");
 const rawData = JSON.parse(rawDataFile);
 
-const categoriesFile = readFileSync("src/categories.json", "utf8");
-const categories = JSON.parse(categoriesFile);
+const productFile = readFileSync("src/products.json", "utf8");
+const products = JSON.parse(productFile);
+
+let skusOnly = [];
+Object.values(products).forEach((entry) => {
+  Object.keys(entry).forEach((sku) => {
+    skusOnly.push(sku);
+  });
+});
 
 const others = [
   'Free; Fulfilled @ Jeralyn"',
@@ -18,43 +25,77 @@ const others = [
   'venmo @ Jeralyn"',
   'Zelle @ Jeralyn"',
   "86", // zoochia+free
+  'owe stickers; Last name should be Sorhman"',
+  'I owe them a beer at the next watch party because I forgot to give them the free shipping code..."',
+  "Jeralyn - leadership; collected in person; pay back from Googie's list\"",
 ];
+
+/// SORT AND COUNT!!
+const counter = {};
+const sortAndCount = (order) => {
+  const index = order.Lineitemsku;
+
+  if (typeof index === "string" && index !== "1") {
+    if (isNaN(counter[index])) {
+      counter[index] = parseInt(order.Lineitemquantity);
+    } else {
+      counter[index] += parseInt(order.Lineitemquantity);
+    }
+  }
+};
+
+const printUnlistedItems = (order) => {
+  otherText += "\n needs review:";
+  otherText += "\n " + order.OrderID;
+  otherText += "\n " + order.Email;
+  otherText += "\n " + order.FinancialStatus;
+  otherText += "\n " + order.Lineitemname;
+  otherText += "\n " + order.Lineitemsku;
+  console.log(otherText);
+};
+
+const printRefunds = (order) => {
+  otherText += "\n Refund: ";
+  otherText += order.Lineitemquantity;
+  otherText += " " + order.Lineitemname;
+  console.log(otherText);
+};
 
 let output = "";
 let otherText = "";
 
+// Loop through orders.json.
 rawData.forEach((order) => {
-  let orderType = null;
+  if (order.FinancialStatus === "refunded") {
+    printRefunds(order);
+  } else if (
+    // Lineitemname is in our list of productLabels.json.
+    skusOnly.includes(order.Lineitemsku)
+    // @todo - why doesn't removing refunds change the numbers?
+    // or removing my number
+  ) {
+    // We've got a match so start counting.
+    sortAndCount(order);
+  } else if (
+    // OrderID is in our list of known Private Notes errors and other uncountables.
+    // @todo The "Private Notes" column in order.csv gets pushed to a new OrderID.
+    others.includes(order.OrderID)
+  ) {
+    /*do nothing*/
+  } else {
+    printUnlistedItems(order);
+  }
+});
 
-  categories.forEach((category) => {
-    for (const [key, product] of Object.entries(category.products)) {
-      if (
-        product.label === order.Lineitemname
-        //&& order.FinancialStatus != "refunded"
-      ) {
-        category.categoryCount += parseInt(order.Lineitemquantity);
-        category.products[key].productCount += parseInt(order.Lineitemquantity);
-        orderType = "known";
-      } else {
-        orderType = "unknown";
+for (const [sku, count] of Object.entries(counter)) {
+  Object.values(products).forEach((entry) => {
+    Object.keys(entry).forEach((catsku) => {
+      if (catsku === sku) {
+        output += `<h4><span>${sku}</span> <span>${entry[catsku].label}</span> <span>${count}</span></h4>\n`;
       }
-    }
+    });
   });
-
-  if (!others.includes(order.OrderID) && orderType === null) {
-    otherText += "\n needs review:";
-    otherText += "\n " + order.OrderID;
-    otherText += "\n " + order.Email;
-    otherText += "\n " + order.Lineitemname;
-  }
-});
-
-categories.forEach((category) => {
-  for (const [key, product] of Object.entries(category.products)) {
-    output += `<h4><span>${product.label}</span> <span>${product.productCount}</span></h4>\n`;
-  }
-  output += `<h2><span>Total ${category.type}</span> <span>${category.categoryCount}</span></h4>\n`;
-});
+}
 
 const timeStamp = new Date().toLocaleDateString("en-US", {
   dateStyle: "medium",
@@ -63,6 +104,7 @@ const timeStamp = new Date().toLocaleDateString("en-US", {
 
 output += otherText;
 
+// Start template.
 const template = `<html>
 <head>
 <style>
@@ -73,10 +115,10 @@ font-family: sans-serif;
 h2,
 h4 {
 display: grid;
-grid-template-columns: 1fr 100px;
-max-width: 600px;
+grid-template-columns: 100px 1fr 30px;
+max-width: 350px;
 }
-span:nth-child(2) {
+span:nth-child(3) {
   text-align: right;
 }
 
@@ -93,7 +135,9 @@ padding: 10px;
 ${output}
 </div>
 <div>
-${timeStamp}
+Updated: ${timeStamp}
+Note: Chart numbers  do not include refunds and test memberships. Square space
+analytics do.
 </div>
 
 </body>

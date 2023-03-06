@@ -8,7 +8,7 @@
     "sass": "sass",
     "serve": "npx web-dev-server",
     "membership": "npx web-dev-server --root-dir=src/membership",
-    "report": "node src/generateReport1.js",
+    "report": "node src/generateReport.js",
     "json": "node src/generateJson.js"
   },
   "author": "",

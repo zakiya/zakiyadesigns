@@ -1,0 +1,156 @@
+[
+  {
+    "SQ4815585": {
+      "sku": "SQ4815585",
+      "label": "2023 Epic Membership",
+      "parent": "membership_2023"
+    }
+  },
+  {
+    "SQ8530136": {
+      "sku": "SQ8530136",
+      "label": "2023 Mythic Membership",
+      "parent": "membership_2023"
+    }
+  },
+  {
+    "SQ3503908": {
+      "sku": "SQ3503908",
+      "label": "2022 Epic Membership",
+      "parent": "membership_2022"
+    }
+  },
+  {
+    "SQ3197664": {
+      "sku": "SQ3197664",
+      "label": "2022 Mythic Membership",
+      "parent": "membership_2022"
+    }
+  },
+  {
+    "SQ5243989": {
+      "sku": "SQ5243989",
+      "label": "2022 Epic Membership",
+      "parent": "membership_2022"
+    }
+  },
+  {
+    "SQ2104802": {
+      "sku": "SQ2104802",
+      "label": "2022 Epic Membership",
+      "parent": "membership_2022"
+    }
+  },
+  {
+    "SQ7108072": {
+      "sku": "SQ7108072",
+      "label": "Classic Sirens Bandana",
+      "parent": "bandana"
+    }
+  },
+  {
+    "SQ2293502": {
+      "sku": "SQ2293502",
+      "label": " Sirens Koozies",
+      "parent": "koozies"
+    }
+  },
+  {
+    "SQ5537140": {
+      "sku": "SQ5537140",
+      "label": "Sirens Sticker Pack",
+      "parent": "stickers"
+    }
+  },
+  {
+    "SQ0627205": {
+      "sku": "SQ0627205",
+      "label": "OH Wave T- Shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
+    "SQ2163164": {
+      "sku": "SQ0627205",
+      "label": "OH Wave T- Shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
+    "SQ6545642": {
+      "sku": "SQ6545642",
+      "label": "OH Wave T- Shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
+    "SQ5564346": {
+      "sku": "SQ5564346",
+      "label": "OH Wave T- Shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
+    "SQ6468741": {
+      "sku": "SQ6468741",
+      "label": "OH Wave T- Shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
+    "SQ8276168": {
+      "sku": "SQ8276168",
+      "label": "OH Wave T- Shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
+    "SQ2715443": {
+      "sku": "SQ2715443",
+      "label": "Classic Sirens T-shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
+    "SQ2801575": {
+      "sku": "SQ2801575",
+      "label": "Classic Sirens T-shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
+    "SQ5158657": {
+      "sku": "SQ5158657",
+      "label": "Classic Sirens T-shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
+    "SQ4845550": {
+      "sku": "SQ4845550",
+      "label": "Classic Sirens T-shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
+    "SQ5037935": {
+      "sku": "SQ5037935",
+      "label": "Classic Sirens T-shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
+    "SQ2100507": {
+      "sku": "SQ2100507",
+      "label": "Classic Sirens T-shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
+    "SQ3119908": {
+      "sku": "SQ3119908",
+      "label": "Posters",
+      "parent": "poster"
+    }
+  }
+]
