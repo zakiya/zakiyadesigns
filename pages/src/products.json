@@ -44,63 +44,63 @@
   {
     "SQ7108072": {
       "sku": "SQ7108072",
-      "label": "Classic Sirens Bandana",
+      "label": "Bandanas",
       "parent": "bandana"
     }
   },
   {
     "SQ2293502": {
       "sku": "SQ2293502",
-      "label": " Sirens Koozies",
+      "label": "Koozies",
       "parent": "koozies"
     }
   },
   {
     "SQ5537140": {
       "sku": "SQ5537140",
-      "label": "Sirens Sticker Pack",
+      "label": "Stickers",
       "parent": "stickers"
     }
   },
   {
     "SQ0627205": {
       "sku": "SQ0627205",
-      "label": "OH Wave T- Shirt",
+      "label": "OH Wave T-Shirt",
       "parent": "tshirt"
     }
   },
   {
     "SQ2163164": {
       "sku": "SQ0627205",
-      "label": "OH Wave T- Shirt",
+      "label": "OH Wave T-Shirt",
       "parent": "tshirt"
     }
   },
   {
     "SQ6545642": {
       "sku": "SQ6545642",
-      "label": "OH Wave T- Shirt",
+      "label": "OH Wave T-Shirt",
       "parent": "tshirt"
     }
   },
   {
     "SQ5564346": {
       "sku": "SQ5564346",
-      "label": "OH Wave T- Shirt",
+      "label": "OH Wave T-Shirt",
       "parent": "tshirt"
     }
   },
   {
     "SQ6468741": {
       "sku": "SQ6468741",
-      "label": "OH Wave T- Shirt",
+      "label": "OH Wave T-Shirt",
       "parent": "tshirt"
     }
   },
   {
     "SQ8276168": {
       "sku": "SQ8276168",
-      "label": "OH Wave T- Shirt",
+      "label": "OH Wave T-Shirt",
       "parent": "tshirt"
     }
   },

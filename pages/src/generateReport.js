@@ -33,15 +33,21 @@ const others = [
 /// SORT AND COUNT!!
 const counter = {};
 const sortAndCount = (order) => {
-  const index = order.Lineitemsku;
+  const thissku = order.Lineitemsku;
 
-  if (typeof index === "string" && index !== "1") {
-    if (isNaN(counter[index])) {
-      counter[index] = parseInt(order.Lineitemquantity);
-    } else {
-      counter[index] += parseInt(order.Lineitemquantity);
-    }
-  }
+  Object.values(products).forEach((entry) => {
+    Object.keys(entry).forEach((catsku) => {
+      if (catsku === thissku) {
+        const thislabel = entry[catsku].label;
+
+        if (isNaN(counter[thislabel])) {
+          counter[thislabel] = parseInt(order.Lineitemquantity);
+        } else {
+          counter[thislabel] += parseInt(order.Lineitemquantity);
+        }
+      }
+    });
+  });
 };
 
 const printUnlistedItems = (order) => {
@@ -87,14 +93,8 @@ rawData.forEach((order) => {
   }
 });
 
-for (const [sku, count] of Object.entries(counter)) {
-  Object.values(products).forEach((entry) => {
-    Object.keys(entry).forEach((catsku) => {
-      if (catsku === sku) {
-        output += `<h4><span>${sku}</span> <span>${entry[catsku].label}</span> <span>${count}</span></h4>\n`;
-      }
-    });
-  });
+for (const [label, count] of Object.entries(counter)) {
+  output += `<h4><span>${label}</span> <span>${count}</span></h4>\n`;
 }
 
 const timeStamp = new Date().toLocaleDateString("en-US", {
@@ -115,10 +115,10 @@ font-family: sans-serif;
 h2,
 h4 {
 display: grid;
-grid-template-columns: 100px 1fr 30px;
+grid-template-columns: 1fr 30px;
 max-width: 350px;
 }
-span:nth-child(3) {
+span:nth-child(2) {
   text-align: right;
 }
 
@@ -127,15 +127,23 @@ background-color: #0A2141;
 color: #FFFFFF;
 padding: 10px;
 }
+
+.updated {
+  font-size: .85rem;
+  color: darkgrey;
+  padding: 10px;
+  font-style: italic;
+}
+
 </style>
 </head>
 <body>
+<div class="updated"> Updated: ${timeStamp}</div>
 
 <div class="chart">
 ${output}
 </div>
 <div>
-Updated: ${timeStamp}
 Note: Chart numbers  do not include refunds and test memberships. Square space
 analytics do.
 </div>
