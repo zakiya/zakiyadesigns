@@ -73,7 +73,7 @@ let otherText = "";
 // Loop through orders.json.
 rawData.forEach((order) => {
   if (order.FinancialStatus === "refunded") {
-    printRefunds(order);
+    // printRefunds(order);
   } else if (
     // Lineitemname is in our list of productLabels.json.
     skusOnly.includes(order.Lineitemsku)
@@ -131,22 +131,22 @@ padding: 10px;
 .updated {
   font-size: .85rem;
   color: darkgrey;
-  padding: 10px;
+  padding: 10px 0;
   font-style: italic;
 }
 
 </style>
 </head>
 <body>
-<div class="updated"> Updated: ${timeStamp}</div>
 
 <div class="chart">
 ${output}
 </div>
-<div>
-Note: Chart numbers  do not include refunds and test memberships. Square space
-analytics do.
-</div>
+
+<div class="updated"> Updated: ${timeStamp} <br>
+These numbers do not include refunds and test memberships. Squarespace
+analytics do.</div>
+
 
 </body>
 </html>`;
