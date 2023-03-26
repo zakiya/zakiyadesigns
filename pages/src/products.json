@@ -140,6 +140,13 @@
     }
   },
   {
+    "SQ7075379": {
+      "sku": "SQ7075379",
+      "label": "Sirens Logo T-Shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
     "SQ2100507": {
       "sku": "SQ2100507",
       "label": "Classic Sirens T-shirt",
