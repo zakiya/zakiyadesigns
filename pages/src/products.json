@@ -154,6 +154,13 @@
     }
   },
   {
+    "SQ6456964": {
+      "sku": "SQ6456964",
+      "label": "Sirens Logo T-Shirt",
+      "parent": "tshirt"
+    }
+  },
+  {
     "SQ2100507": {
       "sku": "SQ2100507",
       "label": "Classic Sirens T-shirt",
@@ -165,6 +172,56 @@
       "sku": "SQ3119908",
       "label": "Posters",
       "parent": "poster"
+    }
+  },
+  {
+    "33350961506782301110": {
+      "sku": "33350961506782301110",
+      "label": "Sirens Assemble - Jersey Short Sleeve Tee",
+      "parent": "print-to-order"
+    }
+  },
+  {
+    "11249618040976740286": {
+      "sku": "11249618040976740286",
+      "label": "Sirens Standard Issue - Jersey Short Sleeve Tee",
+      "parent": "print-to-order"
+    }
+  },
+  {
+    "32336774493358166309": {
+      "sku": "32336774493358166309",
+      "label": "Sirens Obeisance - Tapered Cut Tee",
+      "parent": "print-to-order"
+    }
+  },
+  {
+    "66294313237976017287": {
+      "sku": "66294313237976017287",
+      "label": "Sirens Standard Issue - Jersey Short Sleeve V-Neck Tee",
+      "parent": "print-to-order"
+    }
+  },
+
+  {
+    "24489788449121670716": {
+      "sku": "24489788449121670716",
+      "label": "Sirens Standard Issue - Jersey Short Sleeve V-Neck Tee",
+      "parent": "print-to-order"
+    }
+  },
+  {
+    "21616173451142149247": {
+      "sku": "21616173451142149247",
+      "label": "Endless Sirens Summer - Color Blast T-Shirt",
+      "parent": "print-to-order"
+    }
+  },
+  {
+    "15757228403570399179": {
+      "sku": "15757228403570399179",
+      "label": "One Voice - Premium Full Zip Hoodie",
+      "parent": "print-to-order"
     }
   }
 ]
