@@ -8,9 +8,9 @@ const productFile = readFileSync("src/products.json", "utf8");
 const products = JSON.parse(productFile);
 
 let skusOnly = [];
-Object.values(products).forEach((entry) => {
-  Object.keys(entry).forEach((sku) => {
-    skusOnly.push(sku);
+Object.values(products).forEach((product) => {
+  Object.values(product).forEach((productDetails) => {
+    productDetails.sku.forEach((sku) => skusOnly.push(sku));
   });
 });
 
