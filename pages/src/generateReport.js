@@ -59,14 +59,12 @@ const printUnlistedItems = (order) => {
   otherText += "\n " + order.FinancialStatus;
   otherText += "\n " + order.Lineitemname;
   otherText += "\n " + order.Lineitemsku;
-  // console.log(otherText);
 };
 
 const printRefunds = (order) => {
   otherText += "\n Refund: ";
   otherText += order.Lineitemquantity;
   otherText += " " + order.Lineitemname;
-  // console.log(otherText);
 };
 
 let output = "";
@@ -95,9 +93,11 @@ rawData.forEach((order) => {
   }
 });
 
-for (const [label, count] of Object.entries(counter)) {
-  output += `<h4><span>${label}</span> <span>${count}</span></h4>\n`;
-}
+// Sort the final data and print it.
+const sortedCounterArray = Object.keys(counter).sort();
+sortedCounterArray.forEach((line) => {
+  output += `<h4><span>${line}</span> <span>${counter[line]}</span></h4>\n`;
+});
 
 const timeStamp = new Date().toLocaleDateString("en-US", {
   dateStyle: "medium",

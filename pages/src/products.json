@@ -37,14 +37,14 @@
   {
     "SQ7108072": {
       "sku": ["SQ7108072"],
-      "label": "Bandanas",
+      "label": "Classic Sirens Bandana",
       "parent": "bandana"
     }
   },
   {
     "SQ2293502": {
       "sku": ["SQ2293502"],
-      "label": "Koozies",
+      "label": "Sirens Koozies",
       "parent": "koozies"
     }
   },
@@ -97,7 +97,7 @@
   {
     "SQ3119908": {
       "sku": ["SQ3119908"],
-      "label": "Posters",
+      "label": "Hand Printed 2022 Membership Poster",
       "parent": "poster"
     }
   },
@@ -126,8 +126,15 @@
   },
   {
     "32336774493358166309": {
-      "sku": ["32336774493358166309", "30991778363556857746"],
+      "sku": ["32336774493358166309"],
       "label": "Sirens Obeisance - Tapered Cut Tee",
+      "parent": "print-to-order"
+    }
+  },
+  {
+    "30991778363556857746": {
+      "sku": ["30991778363556857746"],
+      "label": "Sirens Obeisance - Jersey Tank",
       "parent": "print-to-order"
     }
   },
