@@ -33,12 +33,14 @@ const others = [
 /// SORT AND COUNT!!
 const counter = {};
 const sortAndCount = (order) => {
-  const thissku = order.Lineitemsku;
+  const ordersku = order.Lineitemsku;
 
-  Object.values(products).forEach((entry) => {
-    Object.keys(entry).forEach((catsku) => {
-      if (catsku === thissku) {
-        const thislabel = entry[catsku].label;
+  Object.values(products).forEach((product) => {
+    // IF THE order sku is is in the product's skulist
+
+    Object.values(product).forEach((productDetails) => {
+      if (productDetails.sku.includes(ordersku)) {
+        const thislabel = productDetails.label;
 
         if (isNaN(counter[thislabel])) {
           counter[thislabel] = parseInt(order.Lineitemquantity);
@@ -57,14 +59,14 @@ const printUnlistedItems = (order) => {
   otherText += "\n " + order.FinancialStatus;
   otherText += "\n " + order.Lineitemname;
   otherText += "\n " + order.Lineitemsku;
-  console.log(otherText);
+  // console.log(otherText);
 };
 
 const printRefunds = (order) => {
   otherText += "\n Refund: ";
   otherText += order.Lineitemquantity;
   otherText += " " + order.Lineitemname;
-  console.log(otherText);
+  // console.log(otherText);
 };
 
 let output = "";
@@ -75,7 +77,7 @@ rawData.forEach((order) => {
   if (order.FinancialStatus === "refunded") {
     // printRefunds(order);
   } else if (
-    // Lineitemname is in our list of productLabels.json.
+    // Lineitemname is in our list of products.json.
     skusOnly.includes(order.Lineitemsku)
     // @todo - why doesn't removing refunds change the numbers?
     // or removing my number

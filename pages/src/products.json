@@ -1,203 +1,129 @@
 [
   {
     "SQ4815585": {
-      "sku": "SQ4815585",
+      "sku": ["SQ4815585"],
       "label": "2023 Epic Membership",
       "parent": "membership_2023"
     }
   },
   {
     "SQ8530136": {
-      "sku": "SQ8530136",
+      "sku": ["SQ8530136"],
       "label": "2023 Mythic Membership",
       "parent": "membership_2023"
     }
   },
   {
     "SQ3503908": {
-      "sku": "SQ3503908",
+      "sku": ["SQ3503908"],
       "label": "2022 Epic Membership",
       "parent": "membership_2022"
     }
   },
   {
     "SQ3197664": {
-      "sku": "SQ3197664",
+      "sku": ["SQ3197664"],
       "label": "2022 Mythic Membership",
       "parent": "membership_2022"
     }
   },
   {
     "SQ5243989": {
-      "sku": "SQ5243989",
-      "label": "2022 Epic Membership",
-      "parent": "membership_2022"
-    }
-  },
-  {
-    "SQ2104802": {
-      "sku": "SQ2104802",
+      "sku": ["SQ5243989", "SQ2104802"],
       "label": "2022 Epic Membership",
       "parent": "membership_2022"
     }
   },
   {
     "SQ7108072": {
-      "sku": "SQ7108072",
+      "sku": ["SQ7108072"],
       "label": "Bandanas",
       "parent": "bandana"
     }
   },
   {
     "SQ2293502": {
-      "sku": "SQ2293502",
+      "sku": ["SQ2293502"],
       "label": "Koozies",
       "parent": "koozies"
     }
   },
   {
     "SQ5537140": {
-      "sku": "SQ5537140",
+      "sku": ["SQ5537140"],
       "label": "Stickers",
       "parent": "stickers"
     }
   },
   {
     "SQ0627205": {
-      "sku": "SQ0627205",
+      "sku": [
+        "SQ0627205",
+        "SQ8276168",
+        "SQ6468741",
+        "SQ5564346",
+        "SQ0627205",
+        "SQ6545642"
+      ],
       "label": "OH Wave T-Shirt",
       "parent": "tshirt"
     }
   },
-  {
-    "SQ2163164": {
-      "sku": "SQ0627205",
-      "label": "OH Wave T-Shirt",
-      "parent": "tshirt"
-    }
-  },
-  {
-    "SQ6545642": {
-      "sku": "SQ6545642",
-      "label": "OH Wave T-Shirt",
-      "parent": "tshirt"
-    }
-  },
-  {
-    "SQ5564346": {
-      "sku": "SQ5564346",
-      "label": "OH Wave T-Shirt",
-      "parent": "tshirt"
-    }
-  },
-  {
-    "SQ6468741": {
-      "sku": "SQ6468741",
-      "label": "OH Wave T-Shirt",
-      "parent": "tshirt"
-    }
-  },
-  {
-    "SQ8276168": {
-      "sku": "SQ8276168",
-      "label": "OH Wave T-Shirt",
-      "parent": "tshirt"
-    }
-  },
+
   {
     "SQ2715443": {
-      "sku": "SQ2715443",
+      "sku": ["SQ2715443", "SQ5037935", "SQ4845550", "SQ5158657", "SQ2801575"],
       "label": "Classic Sirens T-shirt",
       "parent": "tshirt"
     }
   },
-  {
-    "SQ2801575": {
-      "sku": "SQ2801575",
-      "label": "Classic Sirens T-shirt",
-      "parent": "tshirt"
-    }
-  },
-  {
-    "SQ5158657": {
-      "sku": "SQ5158657",
-      "label": "Classic Sirens T-shirt",
-      "parent": "tshirt"
-    }
-  },
-  {
-    "SQ4845550": {
-      "sku": "SQ4845550",
-      "label": "Classic Sirens T-shirt",
-      "parent": "tshirt"
-    }
-  },
-  {
-    "SQ5037935": {
-      "sku": "SQ5037935",
-      "label": "Classic Sirens T-shirt",
-      "parent": "tshirt"
-    }
-  },
+
   {
     "SQ7075379": {
-      "sku": "SQ7075379",
+      "sku": ["SQ7075379", "SQ6456964", "SQ1847305"],
       "label": "Sirens Logo T-Shirt",
       "parent": "tshirt"
     }
   },
-  {
-    "SQ1847305": {
-      "sku": "SQ1847305",
-      "label": "Sirens Logo T-Shirt",
-      "parent": "tshirt"
-    }
-  },
-  {
-    "SQ6456964": {
-      "sku": "SQ6456964",
-      "label": "Sirens Logo T-Shirt",
-      "parent": "tshirt"
-    }
-  },
+
   {
     "SQ2100507": {
-      "sku": "SQ2100507",
+      "sku": ["SQ2100507"],
       "label": "Classic Sirens T-shirt",
       "parent": "tshirt"
     }
   },
   {
     "SQ3119908": {
-      "sku": "SQ3119908",
+      "sku": ["SQ3119908"],
       "label": "Posters",
       "parent": "poster"
     }
   },
   {
     "33350961506782301110": {
-      "sku": "33350961506782301110",
+      "sku": ["33350961506782301110"],
       "label": "Sirens Assemble - Jersey Short Sleeve Tee",
       "parent": "print-to-order"
     }
   },
   {
     "11249618040976740286": {
-      "sku": "11249618040976740286",
+      "sku": ["11249618040976740286"],
       "label": "Sirens Standard Issue - Jersey Short Sleeve Tee",
       "parent": "print-to-order"
     }
   },
   {
     "32336774493358166309": {
-      "sku": "32336774493358166309",
+      "sku": ["32336774493358166309"],
       "label": "Sirens Obeisance - Tapered Cut Tee",
       "parent": "print-to-order"
     }
   },
   {
     "66294313237976017287": {
-      "sku": "66294313237976017287",
+      "sku": ["66294313237976017287"],
       "label": "Sirens Standard Issue - Jersey Short Sleeve V-Neck Tee",
       "parent": "print-to-order"
     }
@@ -205,21 +131,21 @@
 
   {
     "24489788449121670716": {
-      "sku": "24489788449121670716",
+      "sku": ["24489788449121670716"],
       "label": "Sirens Standard Issue - Jersey Short Sleeve V-Neck Tee",
       "parent": "print-to-order"
     }
   },
   {
     "21616173451142149247": {
-      "sku": "21616173451142149247",
+      "sku": ["21616173451142149247"],
       "label": "Endless Sirens Summer - Color Blast T-Shirt",
       "parent": "print-to-order"
     }
   },
   {
     "15757228403570399179": {
-      "sku": "15757228403570399179",
+      "sku": ["15757228403570399179"],
       "label": "One Voice - Premium Full Zip Hoodie",
       "parent": "print-to-order"
     }
