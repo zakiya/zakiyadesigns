@@ -8,20 +8,46 @@ import { template } from "./report/template.js";
 import { misc } from "./report/templateMisc.js";
 
 /// SORT AND COUNT!!
-const counter = {};
+// const counter = {};
+
+const buildCounter = () => {
+  let counttemplat = {};
+
+  Object.values(products).forEach((product) => {
+    Object.values(product).forEach((productDetails) => {});
+  });
+
+  let pretemplate = [];
+  Object.values(products).forEach((product) => {
+    Object.values(product).forEach((productDetails) => {
+      const thisLabel = productDetails.label;
+      const thisParent = productDetails.parent;
+
+      pretemplate.push([thisLabel, 0]);
+
+      counttemplat[thisParent] = {
+        count: 0,
+        products: pretemplate,
+      };
+    });
+  });
+
+  return counttemplat;
+};
+
+const counter = buildCounter();
+
 const sortAndCount = (order) => {
   const ordersku = order.Lineitemsku;
-
   Object.values(products).forEach((product) => {
     Object.values(product).forEach((productDetails) => {
       if (productDetails.sku.includes(ordersku)) {
+        const thisParent = productDetails.parent;
         const thislabel = productDetails.label;
+        const startParentcount = counter[thisParent].count;
 
-        if (isNaN(counter[thislabel])) {
-          counter[thislabel] = parseInt(order.Lineitemquantity);
-        } else {
-          counter[thislabel] += parseInt(order.Lineitemquantity);
-        }
+        counter[thisParent].count =
+          startParentcount + parseInt(order.Lineitemquantity);
       }
     });
   });
@@ -39,9 +65,52 @@ ordersToCount.forEach((order) => {
 
 // Sort the final data and print it.
 let output = "";
+
+// const counter = {
+//   category1: {
+//     count: 6,
+//     products: [
+//       ["product1", 1],
+//       ["product2", 3],
+//     ],
+//   },
+//   category2: {
+//     count: 6,
+//     products: [
+//       ["product21", 5],
+//       ["product22", 3],
+//     ],
+//   },
+// };
+// const counter = {
+//   category1: {
+//     count: 6,
+//     products: [
+//       { product1: 1 },
+//       { product3: 2 },
+//       { product4: 5 },
+//       { product5: 2 },
+//       { product6: 2 },
+//     ],
+//   },
+//   category2: {
+//     count: 6,
+//     products: [
+//       [product1, 1],
+//       { product3: 2 },
+//       { product4: 5 },
+//       { product5: 14 },
+//       { product6: 2 },
+//     ],
+//   },
+// };
 const sortedCounterArray = Object.keys(counter).sort();
-sortedCounterArray.forEach((line) => {
-  output += `<h4><span>${line}</span> <span>${counter[line]}</span></h4>\n`;
+sortedCounterArray.forEach((key) => {
+  let line1 = `<h2><span>${key}</span> <span>${counter[key].count}</span></h2>\n`;
+  counter[key].products.forEach((item) => {
+    line1 += `<p><span>${item[0]}</span> <span>${item[1]}</span></p>\n`;
+  });
+  output += line1;
 });
 
 output += misc;
