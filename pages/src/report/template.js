@@ -1,5 +1,10 @@
+const timeStamp = new Date().toLocaleDateString("en-US", {
+  dateStyle: "medium",
+  timeStyle: "medium",
+});
+
 // Start template.
-const template = (output, timeStamp) => `<html>
+const template = (output) => `<html>
 <head>
 <style>
 * {
