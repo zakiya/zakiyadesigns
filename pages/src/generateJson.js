@@ -4,7 +4,7 @@
 // npm run json
 
 import { createRequire } from "module";
-import { fileOutputName } from "./shared.js";
+import { ordersJSON } from "./report/shared.js";
 
 const require = createRequire(import.meta.url);
 
@@ -12,4 +12,4 @@ const csvToJson = require("convert-csv-to-json");
 const fileInputName = "orders.csv";
 csvToJson
   .fieldDelimiter(",")
-  .generateJsonFileFromCsv(fileInputName, fileOutputName);
+  .generateJsonFileFromCsv(fileInputName, ordersJSON);

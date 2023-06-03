@@ -1,12 +1,15 @@
 // To debug, open /pages in VS Code and turn on autoattach always.
 
+// Imports
 import { readFileSync, writeFile } from "node:fs";
-import { fileOutputName } from "./shared.js";
+import { productsJSON, ordersJSON } from "./report/shared.js";
+import { ordersToOmit } from "./report/ordersToOmit.js";
+import { template } from "./report/template.js";
 
-const rawDataFile = readFileSync(fileOutputName, "utf8");
-const rawData = JSON.parse(rawDataFile);
-
-const productFile = readFileSync("src/products.json", "utf8");
+// JSON to array.
+const ordersFile = readFileSync(ordersJSON, "utf8");
+const orders = JSON.parse(ordersFile);
+const productFile = readFileSync(productsJSON, "utf8");
 const products = JSON.parse(productFile);
 
 let skusOnly = [];
@@ -15,22 +18,6 @@ Object.values(products).forEach((product) => {
     productDetails.sku.forEach((sku) => skusOnly.push(sku));
   });
 });
-
-const others = [
-  'Free; Fulfilled @ Jeralyn"',
-  'Cash to Zakiya then venmo @ Home & Away"',
-  'venmo @ home & away June 4"',
-  'venmo @ Home & away 4 June"',
-  'venmo @ home & away 4 June"',
-  'venmo @ home & away 4 June"',
-  'venmo @ home & away 4 Jun"',
-  'venmo @ Jeralyn"',
-  'Zelle @ Jeralyn"',
-  "86", // zoochia+free
-  'owe stickers; Last name should be Sorhman"',
-  'I owe them a beer at the next watch party because I forgot to give them the free shipping code..."',
-  "Jeralyn - leadership; collected in person; pay back from Googie's list\"",
-];
 
 /// SORT AND COUNT!!
 const counter = {};
@@ -73,9 +60,9 @@ let output = "";
 let otherText = "";
 
 // Loop through orders.json.
-rawData.forEach((order) => {
+orders.forEach((order) => {
   if (order.FinancialStatus === "refunded") {
-    // printRefunds(order);
+    printRefunds(order);
   } else if (
     // Lineitemname is in our list of products.json.
     skusOnly.includes(order.Lineitemsku)
@@ -87,7 +74,7 @@ rawData.forEach((order) => {
   } else if (
     // OrderID is in our list of known Private Notes errors and other uncountables.
     // @todo The "Private Notes" column in order.csv gets pushed to a new OrderID.
-    others.includes(order.OrderID)
+    ordersToOmit.includes(order.OrderID)
   ) {
     /*do nothing*/
   } else {
@@ -108,51 +95,4 @@ const timeStamp = new Date().toLocaleDateString("en-US", {
 
 output += otherText;
 
-// Start template.
-const template = `<html>
-<head>
-<style>
-* {
-font-family: sans-serif;
-}
-
-h2,
-h4 {
-display: grid;
-grid-template-columns: 1fr 30px;
-max-width: 350px;
-}
-span:nth-child(2) {
-  text-align: right;
-}
-
-h2 {
-background-color: #0A2141;
-color: #FFFFFF;
-padding: 10px;
-}
-
-.updated {
-  font-size: .85rem;
-  color: darkgrey;
-  padding: 10px 0;
-  font-style: italic;
-}
-
-</style>
-</head>
-<body>
-
-<div class="chart">
-${output}
-</div>
-
-<div class="updated"> Updated: ${timeStamp} <br>
-These numbers do not include refunds and test memberships. Squarespace
-analytics do.</div>
-
-
-</body>
-</html>`;
-
-writeFile("sirens-merch.html", template, (error) => {});
+writeFile("sirens-merch.html", template(output, timeStamp), (error) => {});
