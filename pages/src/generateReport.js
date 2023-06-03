@@ -3,7 +3,7 @@
 // Imports
 import { readFileSync, writeFile } from "node:fs";
 import { productsJSON, ordersJSON } from "./report/shared.js";
-import { ordersToOmit } from "./report/ordersToOmit.js";
+import { idsToOmit } from "./report/idsToOmit.js";
 import { template } from "./report/template.js";
 
 // JSON to array.
@@ -50,36 +50,17 @@ const printUnlistedItems = (order) => {
   otherText += "\n " + order.Lineitemsku;
 };
 
-const printRefunds = (order) => {
-  otherText += "\n Refund: ";
-  otherText += order.Lineitemquantity;
-  otherText += " " + order.Lineitemname;
-};
-
 let output = "";
 let otherText = "";
 
-// Loop through orders.json.
-orders.forEach((order) => {
-  if (order.FinancialStatus === "refunded") {
-    printRefunds(order);
-  } else if (
-    // Lineitemname is in our list of products.json.
-    skusOnly.includes(order.Lineitemsku)
-    // @todo - why doesn't removing refunds change the numbers?
-    // or removing my number
-  ) {
-    // We've got a match so start counting.
-    sortAndCount(order);
-  } else if (
-    // OrderID is in our list of known Private Notes errors and other uncountables.
-    // @todo The "Private Notes" column in order.csv gets pushed to a new OrderID.
-    ordersToOmit.includes(order.OrderID)
-  ) {
-    /*do nothing*/
-  } else {
-    printUnlistedItems(order);
-  }
+// Filter to get the orders for the report
+const ordersToCount = orders
+  .filter((order) => order.FinancialStatus !== "refunded")
+  .filter((order) => !idsToOmit.includes(order.OrderID))
+  .filter((order) => skusOnly.includes(order.Lineitemsku));
+
+ordersToCount.forEach((order) => {
+  sortAndCount(order);
 });
 
 // Sort the final data and print it.

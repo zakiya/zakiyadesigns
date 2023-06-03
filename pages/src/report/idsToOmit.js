@@ -1,4 +1,4 @@
-const ordersToOmit = [
+const idsToOmit = [
   'Free; Fulfilled @ Jeralyn"',
   'Cash to Zakiya then venmo @ Home & Away"',
   'venmo @ home & away June 4"',
@@ -14,4 +14,4 @@ const ordersToOmit = [
   "Jeralyn - leadership; collected in person; pay back from Googie's list\"",
 ];
 
-export { ordersToOmit };
+export { idsToOmit };
