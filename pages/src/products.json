@@ -140,7 +140,11 @@
   },
   {
     "66294313237976017287": {
-      "sku": ["66294313237976017287", "27179094797933362022"],
+      "sku": [
+        "66294313237976017287",
+        "27179094797933362022",
+        "38382308222324251943"
+      ],
       "label": "Sirens Standard Issue - Jersey Short Sleeve V-Neck Tee",
       "parent": "print-to-order"
     }
@@ -172,6 +176,39 @@
         "31183838806413299499"
       ],
       "label": "One Voice - Premium Full Zip Hoodie",
+      "parent": "print-to-order"
+    }
+  },
+  {
+    "64299705650259785842": {
+      "sku": [
+        "64299705650259785842",
+        "31784690117181460416",
+        "31452260625916315476"
+      ],
+      "label": "Sirens Sing with Pride - Jersey Short Sleeve V-Neck Tee",
+      "parent": "print-to-order"
+    }
+  },
+  {
+    "11217507858646075214": {
+      "sku": [
+        "11217507858646075214",
+        "23371796551128885153",
+        "17755669412640260690"
+      ],
+      "label": "Sirens Sing with Pride - Jersey Short Sleeve Tee",
+      "parent": "print-to-order"
+    }
+  },
+  {
+    "24755908891188355150": {
+      "sku": [
+        "24755908891188355150",
+        "25702123578112034926",
+        "12366303438464048992"
+      ],
+      "label": "Sirens Sing with Pride - Jersey Tank",
       "parent": "print-to-order"
     }
   }

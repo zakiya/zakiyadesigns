@@ -1,3 +1,5 @@
+// To debug, open /pages in VS Code and turn on autoattach always.
+
 import { readFileSync, writeFile } from "node:fs";
 import { fileOutputName } from "./shared.js";
 
