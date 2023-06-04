@@ -14,8 +14,8 @@ font-family: sans-serif;
 h2,
 h4 {
 display: grid;
-grid-template-columns: 1fr 30px;
-max-width: 350px;
+grid-template-columns: 1fr 50px;
+
 }
 span:nth-child(2) {
   text-align: right;
@@ -25,6 +25,7 @@ h2 {
 background-color: #0A2141;
 color: #FFFFFF;
 padding: 10px;
+font-size: 16px;
 }
 
 .updated {
@@ -32,6 +33,13 @@ padding: 10px;
   color: darkgrey;
   padding: 10px 0;
   font-style: italic;
+  margin: 0 auto;
+max-width: 550px;
+}
+
+.chart {
+margin: 0 auto;
+max-width: 550px;
 }
 
 </style>
