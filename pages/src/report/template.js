@@ -38,8 +38,9 @@ max-width: 550px;
 }
 
 .chart {
+column-count: 2;
 margin: 0 auto;
-max-width: 550px;
+max-width: 850px;
 }
 
 </style>
