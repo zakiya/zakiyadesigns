@@ -16,20 +16,31 @@ const buildCounter = () => {
   let pretemplate = [];
   Object.values(products).forEach((product) => {
     Object.values(product).forEach((productDetails) => {
-      const thisLabel = productDetails.label;
+      // const thisLabel = productDetails.label;
       const thisParent = productDetails.parent;
 
       counttemplat[thisParent] = {
         count: 0,
         products: {},
       };
-
-      counttemplat[thisParent].products[thisLabel] = {
-        count: 0,
-      };
     });
   });
 
+  Object.values(products).forEach((product) => {
+    Object.values(product).forEach((productDetails) => {
+      const thisLabel = productDetails.label;
+      const thisParent = productDetails.parent;
+      const add = { [thisLabel]: { count: 0 } };
+
+      Object.entries(add).forEach(([key, value]) => {
+        counttemplat[thisParent].products[key] = value;
+      });
+
+      // counttemplat[thisParent].products[thisLabel] = {
+      //   count: 0,
+      // };
+    });
+  });
   return counttemplat;
 };
 
