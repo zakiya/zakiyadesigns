@@ -13,21 +13,19 @@ import { misc } from "./report/templateMisc.js";
 const buildCounter = () => {
   let counttemplat = {};
 
-  Object.values(products).forEach((product) => {
-    Object.values(product).forEach((productDetails) => {});
-  });
-
   let pretemplate = [];
   Object.values(products).forEach((product) => {
     Object.values(product).forEach((productDetails) => {
       const thisLabel = productDetails.label;
       const thisParent = productDetails.parent;
 
-      pretemplate.push([thisLabel, 0]);
-
       counttemplat[thisParent] = {
         count: 0,
-        products: pretemplate,
+        products: {},
+      };
+
+      counttemplat[thisParent].products[thisLabel] = {
+        count: 0,
       };
     });
   });
@@ -45,6 +43,10 @@ const sortAndCount = (order) => {
         const thisParent = productDetails.parent;
         const thislabel = productDetails.label;
         const startParentcount = counter[thisParent].count;
+        const startLabelcount = counter[thisParent].products[thislabel].count;
+
+        counter[thisParent].products[thislabel].count =
+          startLabelcount + parseInt(order.Lineitemquantity);
 
         counter[thisParent].count =
           startParentcount + parseInt(order.Lineitemquantity);
@@ -107,9 +109,11 @@ let output = "";
 const sortedCounterArray = Object.keys(counter).sort();
 sortedCounterArray.forEach((key) => {
   let line1 = `<h2><span>${key}</span> <span>${counter[key].count}</span></h2>\n`;
-  counter[key].products.forEach((item) => {
-    line1 += `<p><span>${item[0]}</span> <span>${item[1]}</span></p>\n`;
+
+  Object.entries(counter[key].products).forEach((key) => {
+    line1 += `<p><span>${key[0]}</span> <span>${key[1].count}</span></p>\n`;
   });
+
   output += line1;
 });
 
