@@ -38,9 +38,13 @@ max-width: 550px;
 }
 
 .chart {
-column-count: 2;
 margin: 0 auto;
 max-width: 850px;
+}
+
+@media (min-width: 680px) {
+  .chart {
+  column-count: 2;}
 }
 
 </style>
