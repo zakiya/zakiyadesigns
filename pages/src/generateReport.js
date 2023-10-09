@@ -14,7 +14,6 @@ const buildCounter = () => {
 
   Object.values(products).forEach((product) => {
     Object.values(product).forEach((productDetails) => {
-      // const thisLabel = productDetails.label;
       const thisParent = productDetails.parent;
 
       counttemplat[thisParent] = {
@@ -48,16 +47,25 @@ const groupByYear = () => {
 
 const counter = groupByYear();
 
-const sortAndCount = (order, orderYear) => {
+const sortAndCount = (order) => {
   const ordersku = order.Lineitemsku;
+
   Object.values(products).forEach((product) => {
     Object.values(product).forEach((productDetails) => {
       if (productDetails.sku.includes(ordersku)) {
-        const thisYear =
-          order.Createdat === "" ? "2024" : order.Createdat.substring(0, 4);
-
+        // Back to normal looping.
         const thisParent = productDetails.parent;
         const thislabel = productDetails.label;
+
+        const matchingOrder = orders.find(
+          (item) => item.OrderID === order.OrderID
+        );
+
+        const thisYear =
+          order.Createdat === ""
+            ? matchingOrder.Createdat.substring(0, 4)
+            : order.Createdat.substring(0, 4);
+
         const startParentcount = counter[thisYear][thisParent].count;
         const startLabelcount =
           counter[thisYear][thisParent].products[thislabel].count;
@@ -70,6 +78,7 @@ const sortAndCount = (order, orderYear) => {
       }
     });
   });
+  // });
 };
 
 // Filter to get the orders for the report
@@ -77,8 +86,6 @@ const ordersToCount = orders
   .filter((order) => order.FinancialStatus !== "refunded")
   .filter((order) => !idsToOmit.includes(order.OrderID))
   .filter((order) => skusOnly.includes(order.Lineitemsku));
-
-let groupedCounter = {};
 
 ordersToCount.forEach((order) => {
   sortAndCount(order);
@@ -92,9 +99,15 @@ const sortedCounterArray = Object.keys(counter).sort();
 const printTheRest = (yearsObject, year) => {
   const yearsArry = Object.keys(yearsObject).sort();
   yearsArry.forEach((key) => {
-    let line1 = `<h2><span>${key}</span> <span>${counter[year][key].count}</span></h2>\n`;
+    let line1 = "";
+    if (counter[year][key].count !== 0) {
+      line1 += `<h2><span>${key}</span> <span>${counter[year][key].count}</span></h2>\n`;
+    }
+
     Object.entries(counter[year][key].products).forEach((key) => {
-      line1 += `<p><span>${key[0]}</span> <span>${key[1].count}</span></p>\n`;
+      if (key[1].count !== 0) {
+        line1 += `<p><span>${key[0]}</span> <span>${key[1].count}</span></p>\n`;
+      }
     });
     output += line1;
   });
