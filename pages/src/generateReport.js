@@ -114,8 +114,10 @@ const printTheRest = (yearsObject, year) => {
 };
 
 sortedCounterArray.forEach((year) => {
-  output += `<h1><span>${year}</span></h1>\n`;
+  output += `<div class="year"><h1><span>${year}</span></h1>\n`;
   printTheRest(counter[year], year);
+
+  output += `</div>`;
 });
 
 output += misc;
