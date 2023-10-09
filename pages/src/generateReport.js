@@ -2,7 +2,7 @@
 
 // Imports
 import { writeFile } from "node:fs";
-import { products, orders, skusOnly } from "./report/shared.js";
+import { products, orders, skusOnly, years } from "./report/shared.js";
 import { idsToOmit } from "./report/idsToOmit.js";
 import { template } from "./report/template.js";
 import { misc } from "./report/templateMisc.js";
@@ -13,7 +13,7 @@ import { misc } from "./report/templateMisc.js";
 const buildCounter = () => {
   let counttemplat = {};
 
-  let pretemplate = [];
+
   Object.values(products).forEach((product) => {
     Object.values(product).forEach((productDetails) => {
       // const thisLabel = productDetails.label;
@@ -35,31 +35,39 @@ const buildCounter = () => {
       Object.entries(add).forEach(([key, value]) => {
         counttemplat[thisParent].products[key] = value;
       });
-
-      // counttemplat[thisParent].products[thisLabel] = {
-      //   count: 0,
-      // };
     });
   });
   return counttemplat;
 };
 
-const counter = buildCounter();
+const groupByYear = () => {
+  let groupCountTemplate = {}
+  years.forEach((year => {
+    groupCountTemplate[year] = buildCounter();
+  }))
+  return groupCountTemplate;
+}
 
-const sortAndCount = (order) => {
+
+
+const counter = groupByYear();
+
+const sortAndCount = (order, orderYear) => {
   const ordersku = order.Lineitemsku;
   Object.values(products).forEach((product) => {
     Object.values(product).forEach((productDetails) => {
       if (productDetails.sku.includes(ordersku)) {
+        const thisYear = order.Createdat === "" ? '2024' : order.Createdat.substring(0, 4) ;
+
         const thisParent = productDetails.parent;
         const thislabel = productDetails.label;
-        const startParentcount = counter[thisParent].count;
-        const startLabelcount = counter[thisParent].products[thislabel].count;
+        const startParentcount = counter[thisYear][thisParent].count;
+        const startLabelcount = counter[thisYear][thisParent].products[thislabel].count;
 
-        counter[thisParent].products[thislabel].count =
+        counter[thisYear][thisParent].products[thislabel].count =
           startLabelcount + parseInt(order.Lineitemquantity);
 
-        counter[thisParent].count =
+        counter[thisYear][thisParent].count =
           startParentcount + parseInt(order.Lineitemquantity);
       }
     });
@@ -72,8 +80,23 @@ const ordersToCount = orders
   .filter((order) => !idsToOmit.includes(order.OrderID))
   .filter((order) => skusOnly.includes(order.Lineitemsku));
 
+
+let groupedCounter = {};
+
+
 ordersToCount.forEach((order) => {
-  sortAndCount(order);
+  // const orderYear = order.Createdat.substring(0, 4);
+  // years.forEach(
+  //     (year) => {
+  //     if (orderYear === year) {
+        sortAndCount(order);
+      //   groupedCounter = {
+      //     year: orderYear,
+      //     list: counter,
+      //   };
+      // }
+  // });
+
 });
 
 // Sort the final data and print it.
@@ -117,15 +140,27 @@ let output = "";
 //     ],
 //   },
 // };
+
+
+
 const sortedCounterArray = Object.keys(counter).sort();
-sortedCounterArray.forEach((key) => {
-  let line1 = `<h2><span>${key}</span> <span>${counter[key].count}</span></h2>\n`;
 
-  Object.entries(counter[key].products).forEach((key) => {
-    line1 += `<p><span>${key[0]}</span> <span>${key[1].count}</span></p>\n`;
+
+const printTheRest = (yearsObject, year)  => {
+  const yearsArry = Object.keys(yearsObject).sort();
+  yearsArry.forEach((key) => {
+    let line1 = `<h2><span>${key}</span> <span>${counter[year][key].count}</span></h2>\n`;
+    Object.entries(counter[year][key].products).forEach((key) => {
+      line1 += `<p><span>${key[0]}</span> <span>${key[1].count}</span></p>\n`;
+    });
+    output += line1;
   });
+};
 
-  output += line1;
+
+sortedCounterArray.forEach((year) => {
+  output += `<h1><span>${year}</span></h1>\n`;
+  printTheRest(counter[year], year);
 });
 
 output += misc;

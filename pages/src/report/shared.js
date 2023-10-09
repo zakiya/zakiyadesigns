@@ -8,6 +8,8 @@ const orders = JSON.parse(ordersFile);
 const productFile = readFileSync(productsJSON, "utf8");
 const products = JSON.parse(productFile);
 
+const years = ["2022", "2023", "2024"];
+
 let skusOnly = [];
 Object.values(products).forEach((product) => {
   Object.values(product).forEach((productDetails) => {
@@ -15,4 +17,4 @@ Object.values(products).forEach((product) => {
   });
 });
 
-export { ordersJSON, products, orders, skusOnly };
+export { ordersJSON, products, orders, skusOnly, years };
