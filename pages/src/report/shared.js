@@ -8,7 +8,7 @@ const orders = JSON.parse(ordersFile);
 const productFile = readFileSync(productsJSON, "utf8");
 const products = JSON.parse(productFile);
 
-const years = ["2022", "2023", "2024"];
+const years = ["2022", "2023"];
 
 let skusOnly = [];
 Object.values(products).forEach((product) => {

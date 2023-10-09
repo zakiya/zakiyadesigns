@@ -10,11 +10,17 @@ const template = (output) => `<html>
 * {
 font-family: sans-serif;
 }
+.year:first-child {
+grid-area: year1;
+}
+.year:last-child {
+grid-area: year2;
+
+}
 
 h2,
 h4 {
-display: grid;
-grid-template-columns: 1fr 50px;
+;
 
 }
 span:nth-child(2) {
@@ -34,17 +40,22 @@ font-size: 16px;
   padding: 10px 0;
   font-style: italic;
   margin: 0 auto;
-max-width: 550px;
+  max-width: 550px;
 }
 
 .chart {
 margin: 0 auto;
 max-width: 850px;
+
 }
 
 @media (min-width: 680px) {
   .chart {
-  column-count: 2;}
+  display: grid;
+  grid-template-areas: "year1 year2";
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 50px;
+  }
 }
 
 </style>
