@@ -8,55 +8,71 @@ import { idsToOmit } from "./report/idsToOmit.js";
 import { template } from "./report/template.js";
 import { misc } from "./report/templateMisc.js";
 
-/// SORT AND COUNT!!
-const buildCounter = () => {
-  let counttemplat = {};
+//// 1. Build the template.
+// Get all the category names.
+const buildCategoryTemplate = () => {
+  let categoryTemplate = {};
 
   Object.values(products).forEach((product) => {
     Object.values(product).forEach((productDetails) => {
-      const thisParent = productDetails.parent;
+      const thisCategory = productDetails.parent;
 
-      counttemplat[thisParent] = {
+      categoryTemplate[thisCategory] = {
         count: 0,
         products: {},
       };
     });
   });
+  return categoryTemplate;
+};
 
+// Get all the product names.
+const addProductsToCategoryTemplate = () => {
+  let categoryTemplate = buildCategoryTemplate();
   Object.values(products).forEach((product) => {
     Object.values(product).forEach((productDetails) => {
       const thisLabel = productDetails.label;
-      const thisParent = productDetails.parent;
+      const thisCategory = productDetails.parent;
       const add = { [thisLabel]: { count: 0 } };
 
       Object.entries(add).forEach(([key, value]) => {
-        counttemplat[thisParent].products[key] = value;
+        categoryTemplate[thisCategory].products[key] = value;
       });
     });
   });
-  return counttemplat;
+  return categoryTemplate;
 };
 
-const groupByYear = () => {
-  let groupCountTemplate = {};
+// Get the years.
+const buildYearTemplate = () => {
+  let yearTemplate = {};
   years.forEach((year) => {
-    groupCountTemplate[year] = buildCounter();
+    yearTemplate[year] = addProductsToCategoryTemplate();
   });
-  return groupCountTemplate;
+  return yearTemplate;
 };
 
-const counter = groupByYear();
+// Now we have our counter object to fill in.
+const counter = buildYearTemplate();
+// Sort the counter.
+const sortedCounterArray = Object.keys(counter).sort();
 
-const sortAndCount = (order) => {
+// 2. Match the orders to the template.
+// But first, we filter out the orders we don't want.
+const ordersToCount = orders
+  .filter((order) => order.FinancialStatus !== "refunded")
+  .filter((order) => !idsToOmit.includes(order.OrderID))
+  .filter((order) => skusOnly.includes(order.Lineitemsku));
+
+// Now fill in the template with counts by iterating through the orders.
+const countOrders = (order) => {
   const ordersku = order.Lineitemsku;
 
   Object.values(products).forEach((product) => {
     Object.values(product).forEach((productDetails) => {
       if (productDetails.sku.includes(ordersku)) {
-        // Back to normal looping.
         const thisParent = productDetails.parent;
         const thislabel = productDetails.label;
-
         const matchingOrder = orders.find(
           (item) => item.OrderID === order.OrderID
         );
@@ -78,25 +94,18 @@ const sortAndCount = (order) => {
       }
     });
   });
-  // });
 };
 
-// Filter to get the orders for the report
-const ordersToCount = orders
-  .filter((order) => order.FinancialStatus !== "refunded")
-  .filter((order) => !idsToOmit.includes(order.OrderID))
-  .filter((order) => skusOnly.includes(order.Lineitemsku));
-
 ordersToCount.forEach((order) => {
-  sortAndCount(order);
+  countOrders(order);
 });
 
-// Sort the final data and print it.
+// 3. Print Report.
+// Start with an empty string.
 let output = "";
 
-const sortedCounterArray = Object.keys(counter).sort();
-
-const printTheRest = (yearsObject, year) => {
+// Add HTML markup with values.
+const printProductsAndCategories = (yearsObject, year) => {
   const yearsArry = Object.keys(yearsObject).sort();
   yearsArry.forEach((key) => {
     let line1 = "";
@@ -113,13 +122,16 @@ const printTheRest = (yearsObject, year) => {
   });
 };
 
+// Group by year.
 sortedCounterArray.forEach((year) => {
   output += `<div class="year"><h1><span>${year}</span></h1>\n`;
-  printTheRest(counter[year], year);
+  printProductsAndCategories(counter[year], year);
 
   output += `</div>`;
 });
 
+// Get the content from templateMisc.js
 output += misc;
 
+// Write the report.
 writeFile("sirens-merch.html", template(output), (error) => {});

@@ -1,5 +1,6 @@
-import { orders, skusOnly } from "./shared.js";
+import { skusOnly } from "./shared.js";
 import { idsToOmit } from "./idsToOmit.js";
+import { orders } from "../generateJson.js";
 
 // REFUNDS As of 6/3/2023 there have been 3 refunds.
 const ordersRefunded = orders.filter(

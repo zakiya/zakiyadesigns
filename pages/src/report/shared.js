@@ -1,15 +1,13 @@
 import { readFileSync } from "node:fs";
 
 // Get file names.
-const ordersJSONFileName = "./src/data/output.json";
+
 const productsJSONileName = "./src/data/products.json";
 
 // Read the files.
-const ordersFile = readFileSync(ordersJSONFileName, "utf8");
 const productFile = readFileSync(productsJSONileName, "utf8");
 
 // Convert to Json data.
-const orders = JSON.parse(ordersFile);
 const products = JSON.parse(productFile);
 
 // @todo move years to separate file.
@@ -23,4 +21,4 @@ Object.values(products).forEach((product) => {
   });
 });
 
-export { ordersJSONFileName, products, orders, skusOnly, years };
+export { products, skusOnly, years };
