@@ -2,13 +2,13 @@
 
 // Imports
 import { writeFile } from "node:fs";
-import { products, orders, skusOnly, years } from "./report/shared.js";
+import { products, skusOnly, years } from "./report/shared.js";
+import { orders } from "./generateJson.js";
 import { idsToOmit } from "./report/idsToOmit.js";
 import { template } from "./report/template.js";
 import { misc } from "./report/templateMisc.js";
 
 /// SORT AND COUNT!!
-
 const buildCounter = () => {
   let counttemplat = {};
 

@@ -9,8 +9,8 @@ const require = createRequire(import.meta.url);
 const csvToJson = require("convert-csv-to-json");
 
 // Define file names.
-const ordersCSVFileName = "./data/orders.csv";
-const ordersJSONFileName = "./data/orders.json";
+const ordersCSVFileName = "./src/data/orders.csv";
+const ordersJSONFileName = "./src/data/orders.json";
 
 // Convert CSV file to a JSON object.
 const orders = csvToJson.fieldDelimiter(",").getJsonFromCsv(ordersCSVFileName);
