@@ -106,19 +106,17 @@ let output = "";
 
 // Add HTML markup with values.
 const printProductsAndCategories = (yearsObject, year) => {
-  const yearsArry = Object.keys(yearsObject).sort();
-  yearsArry.forEach((key) => {
-    let line1 = "";
-    if (counter[year][key].count !== 0) {
-      line1 += `<h2><span>${key}</span> <span>${counter[year][key].count}</span></h2>\n`;
+  const yearsArray = Object.keys(yearsObject).sort();
+  yearsArray.forEach((category) => {
+    if (counter[year][category].count !== 0) {
+      output += `<h2><span>${category}</span> <span>${counter[year][category].count}</span></h2>\n`;
     }
 
-    Object.entries(counter[year][key].products).forEach((key) => {
-      if (key[1].count !== 0) {
-        line1 += `<p><span>${key[0]}</span> <span>${key[1].count}</span></p>\n`;
+    Object.entries(counter[year][category].products).forEach((product) => {
+      if (product[1].count !== 0) {
+        output += `<p><span>${product[0]}</span> <span>${product[1].count}</span></p>\n`;
       }
     });
-    output += line1;
   });
 };
 
