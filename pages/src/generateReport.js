@@ -60,7 +60,13 @@ const sortedCounterArray = Object.keys(counter).sort();
 // 2. Match the orders to the template.
 // But first, we filter out the orders we don't want.
 const ordersToCount = orders
-  .filter((order) => order.FinancialStatus !== "refunded")
+  .filter((order) => {
+    // Keep order 820 because it was only a shipping refund.
+    if (order.OrderID === "820") {
+      return true;
+      // But omit the other refunds (323, 216, 11).
+    } else return order.FinancialStatus !== "refunded";
+  })
   .filter((order) => !idsToOmit.includes(order.OrderID))
   .filter((order) => skusOnly.includes(order.Lineitemsku));
 
