@@ -1,7 +1,7 @@
-const timeStamp = new Date().toLocaleDateString("en-US", {
+const timeStamp = new Intl.DateTimeFormat("en", {
   dateStyle: "medium",
   timeStyle: "medium",
-});
+}).format(new Date());
 
 // Start template.
 const template = (output) => `<html>
@@ -44,9 +44,8 @@ font-size: 16px;
 }
 
 .chart {
-margin: 0 auto;
-max-width: 850px;
-
+  margin: 0 auto;
+  max-width: 850px;
 }
 
 @media (min-width: 680px) {
