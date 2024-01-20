@@ -2,7 +2,10 @@ import { skusOnly } from "./shared.js";
 import { idsToOmit } from "./idsToOmit.js";
 import { orders } from "../generateJson.js";
 
-// REFUNDS As of 6/3/2023 there have been 3 refunds.
+// REFUNDS
+// Refunded orders are stripped in generateReport.js > ordersToCount()
+// ordersRefunded() checks if there have been any new refunds the script isn't aware of.
+// As of 01/20/2024 there have been 4 refunds.
 const ordersRefunded = orders.filter(
   (order) => order.FinancialStatus === "refunded"
 );
@@ -11,7 +14,7 @@ ordersRefunded.forEach((order) => {
   refunds += "\n " + order.OrderID;
   refunds += "\n ";
 });
-const refundOutput = ordersRefunded.length > 3 ? refunds : "";
+const refundOutput = ordersRefunded.length > 4 ? refunds : "";
 
 // ADD TO NEEDS REVIEW
 const ordersNeedingReview = orders
