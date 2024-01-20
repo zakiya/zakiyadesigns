@@ -11,7 +11,7 @@ const productFile = readFileSync(productsJSONileName, "utf8");
 const products = JSON.parse(productFile);
 
 // @todo move years to separate file.
-const years = ["2022", "2023"];
+const years = ["2022", "2023", "2024"];
 
 // @todo move skus to separate file.
 let skusOnly = [];

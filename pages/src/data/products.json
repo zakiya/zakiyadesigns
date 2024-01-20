@@ -6,6 +6,20 @@
       "parent": "2023 Memberships"
     }
   },
+    {
+    "SQ2851280": {
+      "sku": ["SQ2851280"],
+      "label": "2024 Mythic Membership",
+      "parent": "2024 Memberships"
+    }
+  },    {
+    "SQ8833201": {
+      "sku": ["SQ8833201"],
+      "label": "2024 Epic Membership",
+      "parent": "2024 Memberships"
+    }
+  },
+
   {
     "SQ8530136": {
       "sku": ["SQ8530136"],
@@ -37,7 +51,7 @@
   {
     "SQ7108072": {
       "sku": ["SQ7108072"],
-      "label": "Classic Sirens Bandana",
+      "label": "Classic Sirens Bandanna",
       "parent": "Accessories"
     }
   },
@@ -67,7 +81,7 @@
         "SQ2163164"
       ],
       "label": "OH Wave T-Shirt",
-      "parent": "Tshirts"
+      "parent": "T-shirts"
     }
   },
 
@@ -75,7 +89,7 @@
     "SQ2715443": {
       "sku": ["SQ2715443", "SQ5037935", "SQ4845550", "SQ5158657", "SQ2801575"],
       "label": "Classic Sirens T-shirt",
-      "parent": "Tshirts"
+      "parent": "T-shirts"
     }
   },
 
@@ -83,7 +97,7 @@
     "SQ7075379": {
       "sku": ["SQ7075379", "SQ6456964", "SQ1847305", "SQ0039490", "SQ0039490"],
       "label": "Sirens Logo T-Shirt",
-      "parent": "Tshirts"
+      "parent": "T-shirts"
     }
   },
 
@@ -91,7 +105,7 @@
     "SQ2100507": {
       "sku": ["SQ2100507"],
       "label": "Classic Sirens T-shirt",
-      "parent": "Tshirts"
+      "parent": "T-shirts"
     }
   },
   {
@@ -111,7 +125,7 @@
         "33026850684266841397"
       ],
       "label": "Sirens Assemble - Jersey Short Sleeve Tee",
-      "parent": "Print to order"
+      "parent": "2023 Print to order"
     }
   },
   {
@@ -122,21 +136,21 @@
         "20641636384470187115"
       ],
       "label": "Sirens Standard Issue - Jersey Short Sleeve Tee",
-      "parent": "Print to order"
+      "parent": "2023 Print to order"
     }
   },
   {
     "32336774493358166309": {
       "sku": ["32336774493358166309"],
       "label": "Sirens Obeisance - Tapered Cut Tee",
-      "parent": "Print to order"
+      "parent": "2023 Print to order"
     }
   },
   {
     "30991778363556857746": {
       "sku": ["30991778363556857746"],
       "label": "Sirens Obeisance - Jersey Tank",
-      "parent": "Print to order"
+      "parent": "2023 Print to order"
     }
   },
   {
@@ -147,7 +161,7 @@
         "38382308222324251943"
       ],
       "label": "Sirens Standard Issue - Jersey Short Sleeve V-Neck Tee",
-      "parent": "Print to order"
+      "parent": "2023 Print to order"
     }
   },
 
@@ -155,7 +169,7 @@
     "24489788449121670716": {
       "sku": ["24489788449121670716"],
       "label": "Sirens Standard Issue - Jersey Short Sleeve V-Neck Tee",
-      "parent": "Print to order"
+      "parent": "2023 Print to order"
     }
   },
   {
@@ -167,7 +181,7 @@
         "27491762768960577710"
       ],
       "label": "Endless Sirens Summer - Color Blast T-Shirt",
-      "parent": "Print to order"
+      "parent": "2023 Print to order"
     }
   },
   {
@@ -178,7 +192,7 @@
         "31183838806413299499"
       ],
       "label": "One Voice - Premium Full Zip Hoodie",
-      "parent": "Print to order"
+      "parent": "2023 Print to order"
     }
   },
   {
@@ -190,7 +204,7 @@
         "10561329506902804986"
       ],
       "label": "Sirens Sing with Pride - Jersey Short Sleeve V-Neck Tee",
-      "parent": "Print to order (Pride)"
+      "parent": "2023 Print to order (Pride)"
     }
   },
   {
@@ -204,7 +218,7 @@
         "55752876982212712306"
       ],
       "label": "Sirens Sing with Pride - Jersey Short Sleeve Tee",
-      "parent": "Print to order (Pride)"
+      "parent": "2023 Print to order (Pride)"
     }
   },
   {
@@ -216,7 +230,25 @@
         "11968266633218069974"
       ],
       "label": "Sirens Sing with Pride - Jersey Tank",
-      "parent": "Print to order (Pride)"
+      "parent": "2023 Print to order (Pride)"
+    }
+  },
+  {
+    "26701590848185290200": {
+      "sku": [
+        "26701590848185290200"
+      ],
+      "label": "Jersey Short Sleeve Tee",
+      "parent": "2024 Print to order"
+    }
+  },
+  {
+    "19322679984951646410": {
+      "sku": [
+        "19322679984951646410"
+      ],
+      "label": "Jersey Short Sleeve V-Neck Tee",
+      "parent": "2024 Print to order"
     }
   }
 ]
