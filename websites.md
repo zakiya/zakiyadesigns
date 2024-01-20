@@ -2,6 +2,7 @@
 abortion.ca.gov
 cannabis.ca.gov
 covid19.ca.gov
+drought.ca.gov
 designsystem.webstandards.ca.gov
 
 ## At Chapter Three:
