@@ -11,11 +11,14 @@ const template = (output) => `<html>
 font-family: sans-serif;
 }
 .year:first-child {
-grid-area: year1;
+  grid-area: year1;
 }
-.year:last-child {
-grid-area: year2;
+.year:nth-child(2) {
+  grid-area: year2;
+}
 
+.year:nth-child(3) {
+  grid-area: year3;
 }
 
 h2,
@@ -45,14 +48,14 @@ font-size: 16px;
 
 .chart {
   margin: 0 auto;
-  max-width: 850px;
+  max-width: 1050px;
 }
 
 @media (min-width: 680px) {
   .chart {
   display: grid;
-  grid-template-areas: "year1 year2";
-  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "year1 year2 year3";
+  grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 50px;
   }
 }
