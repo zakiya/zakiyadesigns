@@ -228,11 +228,19 @@
       "sku": [
         "15757228403570399179",
         "22053368679260347909",
-        "31183838806413299499",
-        "19548833553502076770"
+        "31183838806413299499"
       ],
       "label": "One Voice - Premium Full Zip Hoodie",
       "parent": "2023 Print to order"
+    }
+  },
+  {
+    "19548833553502076770": {
+      "sku": [
+        "19548833553502076770"
+      ],
+      "label": "One Voice - Premium Full Zip Hoodie",
+      "parent": "2024 Print to order"
     }
   },
   {
