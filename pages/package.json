@@ -10,7 +10,8 @@
     "membership": "npx web-dev-server --root-dir=src/membership",
     "report": "node src/generateReport.js",
     "json": "node src/generateJson.js",
-    "blc": "blc https://sandiegosirens.com -ro  --exclude=\"squarespace\" --exclude=\"twitter\"\n"
+    "blc": "blc https://sandiegosirens.com -ro  --exclude=\"squarespace\" --exclude=\"twitter\"\n",
+    "cal": "node  src/calendar/generateCal.js"
   },
   "author": "",
   "license": "ISC",
@@ -31,5 +32,10 @@
   },
   "volta": {
     "node": "16.14.2"
+  },
+  "eslineConfig": {
+    "extends": [
+      "@open-wc/eslint-config"
+    ]
   }
 }
