@@ -4,8 +4,8 @@ import {template} from "./template.js";
 
 const vars = {
     "height": 600,
-    "srcOldSirens": "dnBzZWMuc2lyZW5zQGdtYWlsLmNvbQ",
-    "srcUSWNT": "M2FiOGxsZXRqNjB2MTF1OGNyYzIwNnJhbXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ",
+    "srcOldSirens": "Y2FsZW5kYXJAc2FuZGllZ29zaXJlbnMuY29t",
+    "srcUSWNT": "Y2FsZW5kYXJAc2FuZGllZ29zaXJlbnMuY29t",
     "srcNewSirens": "Y2FsZW5kYXJAc2FuZGllZ29zaXJlbnMuY29t",
     "color1": "3F51B5",
     "color2": "039BE5",
