@@ -16,6 +16,24 @@
     height: 100%;
 }
 
+.phone-visible {
+    display: none;
+}
+
+.phone-hidden {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .phone-visible {
+        display: block;
+    }
+
+    .phone-hidden {
+        display: none
+    }
+}
+
 * {
     background: yellow;
 }

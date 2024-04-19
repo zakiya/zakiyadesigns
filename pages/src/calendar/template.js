@@ -1,15 +1,12 @@
 // Start template.
-const template = (output) => `<html>
+const template = (outputDesktop, outputPhone) => `<html>
 <head>
-  <link rel="stylesheet" href="./src/calendar/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div>
-${output}
-</div>
-
-
+    ${outputDesktop}
+    ${outputPhone}
 
 </body>
 </html>`;
