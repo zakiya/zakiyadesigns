@@ -1,41 +1,43 @@
 {
-  "name": "sirens",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/generateReport.js",
-  "type": "module",
-  "scripts": {
-    "sass": "sass",
-    "serve": "npx web-dev-server",
-    "membership": "npx web-dev-server --root-dir=src/membership",
-    "report": "node src/generateReport.js",
-    "json": "node src/generateJson.js",
-    "blc": "blc https://sandiegosirens.com -ro  --exclude=\"squarespace\" --exclude=\"twitter\"\n",
-    "cal": "node  src/calendar/generateCal.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@cagov/ds-base-css": "^1.0.19"
-  },
-  "devDependencies": {
-    "@open-wc/eslint-config": "^4.3.0",
-    "@web/dev-server": "^0.1.28",
-    "convert-csv-to-json": "^2.0.0",
-    "dev-server": "^0.2.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.4.1",
-    "sass": "^1.45.1",
-    "watch": "^0.13.0"
-  },
-  "volta": {
-    "node": "16.14.2"
-  },
-  "eslineConfig": {
-    "extends": [
-      "@open-wc/eslint-config"
-    ]
-  }
+    "name": "sirens",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/generateReport.js",
+    "type": "module",
+    "scripts": {
+        "sass": "sass",
+        "serve": "npx web-dev-server",
+        "membership": "npx web-dev-server --root-dir=src/membership",
+        "report": "node src/generateReport.js",
+        "json": "node src/generateJson.js",
+        "blc": "blc https://sandiegosirens.com -ro  --exclude=\"squarespace\" --exclude=\"twitter\"\n",
+        "cal": "node  src/calendar/generateCal.js",
+        "getsong": "node src/songs/src/classes/songList.js",
+        "writesongs": "node src/songs/src/functions/writeFile.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@cagov/ds-base-css": "^1.0.19"
+    },
+    "devDependencies": {
+        "@open-wc/eslint-config": "^4.3.0",
+        "@web/dev-server": "^0.1.28",
+        "convert-csv-to-json": "^2.0.0",
+        "dev-server": "^0.2.0",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.4.1",
+        "sass": "^1.45.1",
+        "watch": "^0.13.0"
+    },
+    "volta": {
+        "node": "20.12.2"
+    },
+    "eslineConfig": {
+        "extends": [
+            "@open-wc/eslint-config"
+        ]
+    }
 }
