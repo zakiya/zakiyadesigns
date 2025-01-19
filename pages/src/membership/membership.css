@@ -39,6 +39,7 @@
 body .sirens-quantity-wrapper-hide .sqs-add-to-cart-button {
     display: block;
     white-space: nowrap;
+    width: 100%;
 }
 
 .sirens-helptext {
