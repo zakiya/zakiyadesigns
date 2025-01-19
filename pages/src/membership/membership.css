@@ -1,43 +1,50 @@
 /* // <link rel="stylesheet" href="membership.css"> */
 /* For local use only.*/
 .sqs-system-error {
-  display: none;
+    display: none;
 }
+
 .YScuigfOyfexHJxrqCYk {
-  display: none !important;
+    display: none !important;
 }
 
 /* Hide the quantity input on memberships.*/
+/* Hide the quantity input on memberships.*/
 .sirens-quantity-wrapper-hide .product-block .quantity-label {
-  display: none;
+    display: none;
 }
+
 .sirens-quantity-wrapper-hide .cart-row-qty {
-  display: none !important;
+    display: none !important;
 }
+
 .sirens-quantity-wrapper-hide [aria-label="Quantity"] {
-  display: none;
+    display: none !important;
 }
 
 .sirens-quantity-wrapper-hide.cart-row-qty {
-  display: none;
+    display: none;
 }
 
 .sirens-add-membership {
-  margin-bottom: 1em;
-  text-align: center;
+    margin-bottom: 1em;
+    text-align: center;
 }
 
 .sirens-quantity-wrapper-hide .sqs-add-to-cart-button-wrapper {
-  display: flex !important;
-  align-items: center;
+    display: block !important;
+    align-items: center;
 }
 
-.sirens-quantity-wrapper-hide .sqs-add-to-cart-button {
-  white-space: nowrap;
+body .sirens-quantity-wrapper-hide .sqs-add-to-cart-button {
+    display: block;
+    white-space: nowrap;
 }
 
 .sirens-helptext {
-  font-style: italic;
-  font-size: smaller;
-  padding-left: 14px;
+    font-style: italic;
+    font-size: smaller;
+    text-align: center;
+    line-height: 1;
+    padding-top: 14px;
 }

@@ -1,7 +1,10 @@
 const sirensQuantityHideClass = "sirens-quantity-wrapper-hide";
 // In a new year, change the string, not the variable
 const sirensEpicLabel = '[aria-label="Quantity, 2025 Epic Membership"]';
+const sirensMythicLabel = '[aria-label="Quantity, 2025 Mythic Membership"]';
 const sirensEpicShortLabel = '[aria-label="2025 Epic Membership"]';
+const sirensMythicShortLabel = '[aria-label="2025 Mythic Membership"]';
+
 const subTotalClass = "cart-subtotal";
 
 // Utility function;
@@ -60,19 +63,19 @@ const hideBlockQuantityInput = () => {
 };
 
 // Hide quantity input at /cart.
-const hideCartQuantityInput = (sirensEpicLabel) => {
-  if (document.querySelectorAll(sirensEpicLabel).length > 0) {
-    const cartQuantityInputs = document.querySelectorAll(sirensEpicLabel);
+const hideCartQuantityInput = (label) => {
+  if (document.querySelectorAll(label).length > 0) {
+    const cartQuantityInputs = document.querySelectorAll(label);
     cartQuantityInputs.forEach((input) => {
       input.parentElement.parentElement.classList.add(sirensQuantityHideClass);
     });
   }
 };
 
-// Change link on scarf images at /store.
-const changeStoreLink = (sirensEpicShortLabel) => {
+// Change link on membership images at /store.
+const changeStoreLink = (label) => {
   if (document.querySelectorAll(sirensEpicShortLabel).length > 0) {
-    const storeLink = document.querySelectorAll(sirensEpicShortLabel);
+    const storeLink = document.querySelectorAll(label);
     storeLink[0].setAttribute("href", "/membership");
   }
 };
@@ -105,9 +108,11 @@ hideBlockQuantityInput();
 
 waitForElm(sirensEpicLabel).then(() => {
   hideCartQuantityInput(sirensEpicLabel);
+  hideCartQuantityInput(sirensMythicLabel);
   addAnotherMembership();
 });
 
 waitForElm(sirensEpicShortLabel).then(() => {
   changeStoreLink(sirensEpicShortLabel);
+  changeStoreLink(sirensMythicShortLabel);
 });
