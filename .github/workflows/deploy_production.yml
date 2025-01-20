@@ -14,5 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - run: npm install
+      - run: npm run build
       - id: deploy
         run: echo "url=https://test-pr-${{ github.event.pull_request.number }}.example.com" >> $GITHUB_OUTPUT

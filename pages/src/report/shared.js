@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 
 // Get file names.
 
-const productsJSONileName = "./src/data/products.json";
+const productsJSONileName = "./pages/src/data/products.json";
 
 // Read the files.
 const productFile = readFileSync(productsJSONileName, "utf8");
