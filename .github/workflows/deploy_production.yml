@@ -10,11 +10,17 @@ jobs:
       url: ${{ steps.deploy.outputs.url }}
     steps:
       - name: Checkout repo
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+        uses: actions/checkout@v4
+
+      - name: Set up node 20
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm install
-      - run: npm run build
+
+      - name: Install
+        run: | 
+          npm install
+          npm run build
+
       - id: deploy
         run: echo "url=https://test-pr-${{ github.event.pull_request.number }}.example.com" >> $GITHUB_OUTPUT
