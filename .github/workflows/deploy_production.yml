@@ -1,19 +1,18 @@
 name: Deploy Production
 on:
-  push:
-    branches:
-      - test
-  workflow_dispatch:
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  pull_request:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: test
+    environment:
+      name: test
+      url: ${{ steps.deploy.outputs.url }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - id: deploy
+        run: echo "url=https://test-pr-${{ github.event.pull_request.number }}.example.com" >> $GITHUB_OUTPUT
