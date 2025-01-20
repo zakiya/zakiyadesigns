@@ -1,0 +1,35 @@
+name: Deploy Production
+on:
+  push:
+    branches:
+      - test
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: test
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build site
+        run: |
+          mkdir _dist
+          npm install
+          npm run build
+
+      # Modify when site goes live.
+      - name: Write robots.txt
+        run: |
+          echo 'User-agent: *' > _dist/robots.txt
+          echo 'Disallow: /' >> _dist/robots.txt
