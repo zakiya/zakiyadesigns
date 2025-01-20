@@ -1,0 +1,26 @@
+name: Deploy Production
+on:
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: test
+      url: ${{ steps.deploy.outputs.url }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install
+        run: | 
+          npm install
+          npm run build
+
+      - id: deploy
+        run: echo "url=https://test-pr-${{ github.event.pull_request.number }}.example.com" >> $GITHUB_OUTPUT
