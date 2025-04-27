@@ -33,5 +33,5 @@ const buildiFrames = (device) => {
 const outputDesktop = buildiFrames();
 const outputPhone = buildiFrames("phone")
 
-writeFile("./src/calendar/calendar.html", template(outputDesktop, outputPhone), (error) => {
+writeFile("./pages/calendar.html", template(outputDesktop, outputPhone), (error) => {
 });
