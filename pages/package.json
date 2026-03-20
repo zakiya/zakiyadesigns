@@ -22,7 +22,7 @@
     },
     "devDependencies": {
         "@open-wc/eslint-config": "^4.3.0",
-        "@web/dev-server": "^0.1.28",
+        "@web/dev-server": "^0.4.6",
         "convert-csv-to-json": "^2.0.0",
         "dev-server": "^0.2.0",
         "eslint": "^7.32.0",
@@ -33,7 +33,7 @@
         "watch": "^0.13.0"
     },
     "volta": {
-        "node": "20.12.2"
+        "node": "22.20.0"
     },
     "eslineConfig": {
         "extends": [
