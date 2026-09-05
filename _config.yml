@@ -1,1 +1,83 @@
-theme: jekyll-theme-midnight
+# zakiyadesigns.com — a Jekyll site built on GitHub Pages.
+# Styled with the Zakiya design system (claude.ai/design).
+
+title: Zakiya Khabir
+tagline: Engineering manager, front-end developer, and teacher
+description: >-
+  Portfolio and writing of Zakiya Khabir — engineering manager at the
+  California Office of Data and Innovation. Projects, talks, trainings,
+  and essays on plain language, accessibility, and building for the public.
+url: https://zakiyadesigns.com
+baseurl: ""
+lang: en
+
+author:
+  name: Zakiya Khabir
+  role: Engineering Manager
+  org: California Office of Data and Innovation
+  org_url: https://innovation.ca.gov
+
+social:
+  linkedin: https://www.linkedin.com/in/zakiyakhabir/
+  github: https://github.com/zakiya
+  drupal: https://www.drupal.org/u/zakiya
+
+# ---- Content collections --------------------------------------------------
+# Adding a project or a piece of writing means adding ONE .md file here.
+# Nothing else needs to change: the landing page and section indexes read
+# from these collections directly.
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  writing:
+    output: true
+    permalink: /writing/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: writing
+    values:
+      layout: writing
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+# ---- Build ----------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+sass:
+  style: compressed
+
+# `pages/` is unrelated San Diego Sirens tooling that shares this repo.
+# Its two HTML reports are already served at their current URLs, so the
+# directory stays in the build — but none of its source or dependencies do.
+exclude:
+  - node_modules/
+  - pages/node_modules/
+  - pages/src/
+  - pages/.vscode/
+  - pages/package.json
+  - pages/package-lock.json
+  - pages/LINKCHECKER.md
+  - pages/blc-emails.md
+  - pages/blc-sorted.md
+  - pages/blc-full.md
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .claude/
+  - .idea/
+  - .vscode/
+  - vendor/

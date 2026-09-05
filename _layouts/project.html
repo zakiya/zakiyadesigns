@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="container">
+  <article>
+    <h1 class="page-title">{{ page.title }}</h1>
+    {%- if page.summary %}<p class="lead page-intro">{{ page.summary }}</p>{% endif -%}
+
+    <dl class="project-facts">
+      {%- if page.year -%}<div><dt>Year</dt><dd>{{ page.year }}</dd></div>{%- endif -%}
+      {%- if page.role -%}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{%- endif -%}
+      {%- if page.venue -%}<div><dt>Venue</dt><dd>{{ page.venue }}</dd></div>{%- endif -%}
+      {%- if page.tags -%}<div><dt>Topics</dt><dd>{{ page.tags | join: ", " }}</dd></div>{%- endif -%}
+    </dl>
+
+    <div class="prose">
+      {{ content }}
+    </div>
+
+    {%- if page.deck -%}
+      <p class="deck-cta">
+        <a class="button" href="{{ page.deck | relative_url }}">View the slides</a>
+      </p>
+      <p class="deck-note">Opens the original presentation in a slide viewer.</p>
+    {%- endif -%}
+  </article>
+</div>

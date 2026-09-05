@@ -1,0 +1,23 @@
+{%- comment -%}
+  The single source of truth for site navigation. Every page pulls this in;
+  nothing is hand-copied into markdown any more.
+{%- endcomment -%}
+<header class="site-header">
+  <div class="container">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        {%- assign nav_items = "Projects,/projects/|Writing,/writing/|Speaking,/speaking/|Work,/work/|About,/about/" | split: "|" -%}
+        {%- for item in nav_items -%}
+          {%- assign parts = item | split: "," -%}
+          {%- assign label = parts[0] -%}
+          {%- assign href = parts[1] -%}
+          <li>
+            <a href="{{ href | relative_url }}"
+               {% if page.url contains href %}aria-current="page"{% endif %}>{{ label }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </div>
+</header>

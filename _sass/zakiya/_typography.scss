@@ -1,0 +1,42 @@
+/* ============================================================
+   TYPOGRAPHY — Zakiya Style
+   One family: Nunito Sans. Hierarchy leans on weight contrast.
+   ALL copy is sentence case — never title case, never uppercase.
+   Root font is 17px, so 1rem = 17px.
+   ============================================================ */
+
+:root {
+  --font-sans: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-body: var(--font-sans);
+  --font-heading: var(--font-sans);
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --fs-root: 17px;
+
+  --fs-display: 5rem;
+  --fs-h1: 2rem;
+  --fs-h2: 1.65rem;
+  --fs-h3: 1.45rem;
+  --fs-h4: 1.25rem;
+  --fs-h5: 1.1rem;
+  --fs-h6: 0.75rem;
+  --fs-lead: 1.25rem;
+  --fs-body: 1rem;
+  --fs-sm: 0.875rem;
+  --fs-xs: 0.75rem;
+
+  --lh-tight: 1.2;
+  --lh-body: 1.5;
+
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.02em;
+  --tracking-button: 0.01em;
+  --tracking-label: 0.02em;
+}

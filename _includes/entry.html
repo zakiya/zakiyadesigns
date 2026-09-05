@@ -1,0 +1,21 @@
+{%- comment -%}
+  One row in a list of projects or writing. Expects `include.item`.
+  Optional:
+    include.kind_badge  — show the personal/professional tag
+    include.heading     — heading level, "h2" or "h3" (default h3).
+                          Index pages have no h2 section head, so they pass
+                          h2 to keep the document outline unbroken.
+{%- endcomment -%}
+{%- assign h = include.heading | default: "h3" -%}
+<li class="entry">
+  <{{ h }} class="entry-title"><a href="{{ include.item.url | relative_url }}">{{ include.item.title }}</a></{{ h }}>
+  <p class="entry-meta">
+    {%- if include.item.date %}<span>{{ include.item.date | date: "%B %-d, %Y" }}</span>{% endif -%}
+    {%- if include.item.year %}<span>{{ include.item.year }}</span>{% endif -%}
+    {%- if include.item.role %}<span>{{ include.item.role }}</span>{% endif -%}
+    {%- if include.kind_badge and include.item.kind -%}
+      <span class="badge badge--{{ include.item.kind }}">{{ include.item.kind }}</span>
+    {%- endif -%}
+  </p>
+  {%- if include.item.summary %}<p class="entry-summary">{{ include.item.summary }}</p>{% endif -%}
+</li>

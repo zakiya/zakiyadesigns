@@ -3,3 +3,9 @@ node_modules
 pages/src/data/orders.*
 orders*
 .claude
+
+# Jekyll build + local Ruby toolchain
+_site
+.bundle
+vendor
+Gemfile.lock

@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<div class="container">
+
+  <div class="hero">
+    <h1>{{ page.heading }}</h1>
+    <p class="lead">{{ page.intro }}</p>
+  </div>
+
+  {{ content }}
+
+  {%- comment -%}
+    Both lists read straight from the collections. Adding a file to
+    _projects/ or _writing/ makes it appear here — no edits needed.
+  {%- endcomment -%}
+
+  <section class="section" aria-labelledby="projects-heading">
+    <div class="section-head">
+      <h2 id="projects-heading">Projects</h2>
+      <a class="section-more" href="{{ '/projects/' | relative_url }}">All projects</a>
+    </div>
+    {%- assign projects = site.projects | sort: "year" | reverse -%}
+    {%- if projects.size > 0 -%}
+      <ul class="entry-list">
+        {%- for item in projects limit: 4 -%}
+          {%- include entry.html item=item -%}
+        {%- endfor -%}
+      </ul>
+    {%- else -%}
+      <p>Nothing here yet.</p>
+    {%- endif -%}
+  </section>
+
+  <section class="section" aria-labelledby="writing-heading">
+    <div class="section-head">
+      <h2 id="writing-heading">Writing</h2>
+      <a class="section-more" href="{{ '/writing/' | relative_url }}">All writing</a>
+    </div>
+    {%- assign essays = site.writing | sort: "date" | reverse -%}
+    {%- if essays.size > 0 -%}
+      <ul class="entry-list">
+        {%- for item in essays limit: 4 -%}
+          {%- include entry.html item=item kind_badge=true -%}
+        {%- endfor -%}
+      </ul>
+    {%- else -%}
+      <p>Nothing here yet.</p>
+    {%- endif -%}
+  </section>
+
+</div>

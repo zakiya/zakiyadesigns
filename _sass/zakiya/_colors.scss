@@ -1,0 +1,88 @@
+/* ============================================================
+   COLORS — Zakiya Style
+   Vendored from the Zakiya design system (claude.ai/design).
+   Do not hand-edit: re-pull with DesignSync get_file.
+   ============================================================ */
+
+:root {
+  /* ---- Brand --------------------------------------------- */
+  --brand: #091f40;           /* deep navy — the primary brand color */
+  --brand-hover: #14335f;
+  --brand-tint: #e7eaf0;
+
+  /* ---- Accents ------------------------------------------- */
+  --accent-magenta: #e82176;
+  --accent-magenta-hover: #c4145f;
+  --accent-magenta-tint: #fde4ee;
+
+  --accent-teal: #0d8876;
+  --accent-teal-hover: #0a6d5e;
+  --accent-teal-tint: #e2f1ee;
+
+  /* Primary accent — writing, links, emphasis. */
+  --accent: var(--accent-magenta);
+  --accent-hover: var(--accent-magenta-hover);
+  --accent-tint: var(--accent-magenta-tint);
+
+  /* Secondary accent — projects/work. Both accents are in play
+     on this site; the design system's "pick one" rule is being
+     revised upstream. */
+  --accent-2: var(--accent-teal);
+  --accent-2-hover: var(--accent-teal-hover);
+  --accent-2-tint: var(--accent-teal-tint);
+
+  /* ---- Ink & neutrals ------------------------------------ */
+  --black: #000000;
+  --ink: #1a1a1a;
+  --gray-900: #1a1a1a;
+  --gray-800: #343a40;
+  --gray-700: #55595c;
+  --gray-600: #6c757d;
+  --gray-500: #adb5bd;
+  --gray-400: #ced4da;
+  --gray-300: #dee2e6;
+  --gray-200: #f7f7f9;
+  --gray-100: #f8f9fa;
+  --white: #ffffff;
+
+  /* ---- Status accents ------------------------------------ */
+  --success: #4bbf73;
+  --info: #1f9bcf;
+  --warning: #f0ad4e;
+  --danger: #d9534f;
+
+  /* ---- Categorical tones --------------------------------- */
+  --tone-primary: #1a1a1a;
+  --tone-primary-on: #ffffff;
+  --tone-alert: #d9534f;
+  --tone-alert-on: #ffffff;
+  --tone-info: #1f9bcf;
+  --tone-info-on: #ffffff;
+  --tone-neutral: #6c757d;
+  --tone-neutral-on: #ffffff;
+
+  /* ---- Semantic aliases ---------------------------------- */
+  --text-heading: var(--ink);
+  --text-body: var(--gray-700);
+  --text-muted: var(--gray-600);
+  --text-disabled: var(--gray-500);
+  --text-on-dark: var(--white);
+  --text-link: var(--ink);
+  --text-link-hover: var(--gray-900);
+  --text-brand: var(--brand);
+  --text-accent: var(--accent);
+
+  --surface-page: var(--white);
+  --surface-card: var(--white);
+  --surface-subtle: var(--gray-200);
+  --surface-tertiary: var(--gray-100);
+  --surface-inverse: var(--ink);
+
+  --border: var(--gray-300);
+  --border-strong: var(--ink);
+  --border-row: #b1b0b0;
+
+  --action: var(--ink);
+  --action-hover: #000000;
+  --action-on: var(--white);
+}

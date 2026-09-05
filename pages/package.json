@@ -24,7 +24,6 @@
         "@open-wc/eslint-config": "^4.3.0",
         "@web/dev-server": "^0.4.6",
         "convert-csv-to-json": "^2.0.0",
-        "dev-server": "^0.2.0",
         "eslint": "^7.32.0",
         "eslint-config-prettier": "^8.3.0",
         "npm-run-all": "^4.1.5",

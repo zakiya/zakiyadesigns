@@ -1,0 +1,41 @@
+/* ============================================================
+   SPACING, RADII & LAYOUT — Zakiya Style
+   Bootstrap's rem spacing scale (1rem = 17px here). Controls
+   have NO radius; only larger containers round at 0.25rem.
+   ============================================================ */
+
+:root {
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 3rem;
+  --space-6: 4.5rem;
+
+  --gap-inline: 0.5rem;
+  --gap-stack: 1rem;
+  --section-gap: 3rem;
+  --cell-pad-y: 0.5rem;
+  --cell-pad-x: 0.5rem;
+  --control-pad-y: 0.75rem;
+  --control-pad-x: 1.5rem;
+
+  --radius-0: 0;
+  --radius-sm: 0.2rem;
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-pill: 50rem;
+
+  --radius-control: var(--radius-0);
+  --radius-card: var(--radius);
+  --radius-badge: var(--radius);
+
+  --border-width: 1px;
+  --border-width-strong: 2px;
+  --border-width-row: 2.25px;
+
+  --container-max: 1400px;
+  --container-narrow: 1140px;
+  --navbar-pad-y: 0.3rem;
+}

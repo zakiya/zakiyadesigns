@@ -1,0 +1,65 @@
+/* ============================================================
+   BASE — minimal element defaults wired to the tokens.
+   ============================================================ */
+
+:root { font-size: var(--fs-root); }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  color: var(--text-body);
+  background-color: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  color: var(--text-heading);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+h5 { font-size: var(--fs-h5); }
+h6 {
+  font-size: var(--fs-h6);
+  letter-spacing: var(--tracking-label);
+}
+
+p { margin: 0 0 var(--gap-stack); }
+
+a {
+  color: var(--text-link);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+a:hover { color: var(--text-link-hover); }
+
+.lead {
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-light);
+}
+
+small, .small { font-size: var(--fs-sm); }
+
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+hr {
+  border: 0;
+  border-top: var(--border-width) solid var(--border);
+  opacity: 1;
+  margin: var(--gap-stack) 0;
+}
+
+::selection { background: var(--brand-tint); }
