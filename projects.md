@@ -1,7 +1,6 @@
 ---
 title: Projects
 permalink: /projects/
-intro: Talks, trainings, and programs — with the original slides where they exist.
 ---
 
 {%- assign projects = site.projects | sort: "year" | reverse -%}

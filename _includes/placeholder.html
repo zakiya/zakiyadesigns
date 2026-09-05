@@ -1,0 +1,9 @@
+{%- comment -%}
+  Visible marker for text that was NOT written by the site author.
+  Anything carrying `draft: true` in its front matter renders this banner.
+  Delete the flag once the text has been rewritten.
+{%- endcomment -%}
+<div class="placeholder-notice" role="note">
+  <p><strong>Placeholder — not written by Zakiya.</strong>
+  {{ include.note | default: "This text was drafted by Claude so the page would render. Rewrite or delete it before publishing." }}</p>
+</div>

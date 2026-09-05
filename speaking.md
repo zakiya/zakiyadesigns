@@ -1,7 +1,6 @@
 ---
 title: Speaking
 permalink: /speaking/
-intro: Conference sessions and full-day trainings, 2012 to now.
 ---
 
 ## Sessions
@@ -71,8 +70,6 @@ intro: Conference sessions and full-day trainings, 2012 to now.
 ([session description](http://2012.drupalcampla.com/sessions/getting-most-out-omega))
 
 ## Trainings
-
-These were full-day, hands-on sessions.
 
 ### SANDCamp
 

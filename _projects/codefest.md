@@ -4,55 +4,38 @@ year: 2025
 role: Engineering manager
 venue: ODI Codefest
 published: false
-summary: >-
-  Standing up comment moderation for Engaged California's LA Fires topic over
-  a single weekend — what we did, what we learned, and what we'd explore next.
+draft: true
+summary: Placeholder summary — replace with your own.
 tags: [public engagement, moderation, trust and safety]
 deck: /slides/codefest/
 ---
 
 {%- comment -%}
-  HOLD: this deck contains a slide marked "Data not validated | Do not share."
-  Kept out of the build with `published: false` pending review. Remove that
-  line in the front matter to publish.
+  HOLD: the deck contains a slide marked "Data not validated | Do not share."
+  Kept out of the build with `published: false` pending your review. The
+  moderation counts from that slide are deliberately NOT reproduced below.
 {%- endcomment -%}
 
-A Codefest sprint at the California Office of Data and Innovation, presented
-with Jarrett Krumrei, lead product manager.
+The points below were extracted from your own slides so the page isn't empty.
+They are your facts, but the selection and arrangement are Claude's, and there
+is no narrative here yet. Write it in your own words, then remove `draft: true`
+and this paragraph.
 
-## The goal
-
-Get moderation up and running for Engaged California's LA Fires topic by Monday
-morning: refine the moderation policies, identify and train a moderation team,
-and develop the moderation operations to support it.
-
-## What made it hard
-
-- We had never done this before
-- We didn't know the volume, or how many bad actors to expect
-- We had to hold ODI and state standards for data security and privacy
-- We wanted an audit trail
-- Admin and moderator login had to be IP restricted
-
-## What we did
-
-- Worked with DGS for moderator access
-- Anonymous, machine-generated usernames
-- No email addresses in the export
-- Geofenced to the US
-- Tracked moderation actions in Coda
-
-## What we learned
-
-- The hardest problems aren't technical
-- Limit to 1,000 invites per day
-- Be prepared to switch to reactive mode
-- Decide on an import cadence up front
-- Wait to delete
-
-## What we'd explore next
-
-- See whether generative AI flags the same comments, for the same reasons —
-  and whether we can train it up
-- Automate the CSV updates and approval marking
-- Move some of what we built in Coda into the platform itself
+- Presented with Jarrett Krumrei, lead product manager.
+- Structure: "What we did / What we learned / Areas to explore."
+- Goal: get moderation running for Engaged California's LA Fires topic by
+  Monday morning — refine moderation policies, identify and train a moderation
+  team, develop "moderation ops."
+- Challenges: "We have never done this before!" Uncertainty about volume and
+  bad actors. Maintaining ODI and state standards around data security and
+  privacy. Wanted an audit trail. IP restricted login for admins and
+  moderators.
+- Solutions: worked with DGS for moderator access; anonymous, machine-generated
+  usernames; no email addresses in the export; geofencing to US only; used Coda
+  to track moderation actions.
+- Lessons: "Hardest problems aren't technical." "Limit to 1000 Ethelo invites
+  per day." "Prepare to switch to reactive mode." "Decide on an import
+  cadence." "Wait to delete."
+- Areas to explore: whether GenAI flags the same comments for the same reasons
+  and whether it can be trained up; automating CSV updates and approval
+  marking; moving Coda-built features into Ethelo.

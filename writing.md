@@ -1,9 +1,12 @@
 ---
 title: Writing
 permalink: /writing/
-intro: Essays and notes, personal and professional.
 ---
-
+{%- comment -%}
+  NOTE ON AUTHORSHIP: the visible UI strings in this file were written by
+  Claude, not by the site author. They are interface labels, not content.
+  See the "Authorship" section in README.md for the full list. Edit freely.
+{%- endcomment -%}
 {%- assign essays = site.writing | sort: "date" | reverse -%}
 {%- if essays.size > 0 %}
 <div class="filters" role="group" aria-label="Filter writing by kind">

@@ -160,6 +160,23 @@ button:focus-visible,
 .badge--professional { background: var(--accent-2); color: var(--white); }
 .badge--personal { background: var(--accent); color: var(--white); }
 
+/* ---- Placeholder notice ---------------------------------- */
+/* Deliberately loud. Text the site author did not write must never be
+   mistaken for text they did. */
+.placeholder-notice {
+  border: var(--border-width-strong) dashed var(--warning);
+  background: #fff8ec;
+  padding: var(--space-3);
+  margin: 0 0 var(--space-4);
+  max-width: 68ch;
+}
+.placeholder-notice p {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--gray-800);
+}
+.placeholder-notice strong { color: var(--ink); }
+
 /* ---- Article / prose ------------------------------------- */
 .prose { max-width: 68ch; }
 .prose h2 { margin-top: var(--space-5); }

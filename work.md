@@ -1,10 +1,7 @@
 ---
 title: Work
 permalink: /work/
-intro: Sites I've built, themed, or rescued, grouped by where I was working at the time.
 ---
-
-"(8)" marks a Drupal 8 build.
 
 ## California Office of Data and Innovation
 

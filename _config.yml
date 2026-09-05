@@ -2,11 +2,12 @@
 # Styled with the Zakiya design system (claude.ai/design).
 
 title: Zakiya Khabir
-tagline: Engineering manager, front-end developer, and teacher
+# PLACEHOLDER — drafted by Claude, not written by Zakiya. Rewrite.
+tagline: Placeholder tagline
+# PLACEHOLDER — drafted by Claude, not written by Zakiya. Rewrite.
+# This becomes the meta description search engines show.
 description: >-
-  Portfolio and writing of Zakiya Khabir — engineering manager at the
-  California Office of Data and Innovation. Projects, talks, trainings,
-  and essays on plain language, accessibility, and building for the public.
+  Placeholder site description.
 url: https://zakiyadesigns.com
 baseurl: ""
 lang: en

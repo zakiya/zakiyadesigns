@@ -3,59 +3,34 @@ title: Using plain language
 year: 2025
 role: Trainer
 venue: San Diego Sirens officers
-summary: >-
-  A training on writing that people understand the first time they read it,
-  built on California Office of Data and Innovation guidance and delivered to
-  a volunteer supporters group.
+draft: true
+summary: Placeholder summary — replace with your own.
 tags: [plain language, accessibility, writing]
 deck: /slides/plain-language-sirens/
 ---
 
-In February 2025 I gave the San Diego Sirens officers a training on plain
-language, adapting the guidance we use at the California Office of Data and
-Innovation for a volunteer organization writing to its own members.
+The points below were extracted from your own slides so the page isn't empty.
+They are your facts, but the selection and arrangement are Claude's, and there
+is no narrative here yet. Write the story in your own words, then remove
+`draft: true` and this paragraph.
 
-## Why it matters
-
-Plain language is a better experience for everyone: people with hearing,
-vision, or cognitive disabilities; people with limited English; people who only
-have a phone; people in a hurry; people who are stressed.
-
-The line I keep coming back to:
-
-> When people understand what you say, they're more likely to trust what you say.
-
-## What plain language is
-
-Text your audience can understand the first time they read it. That's the whole
-definition. Note that it's defined by the reader, not the writer.
-
-It is **not** dumbing down, and it is **not** less accurate. Usually the
-opposite — being forced to say exactly what you mean surfaces the places where
-you weren't sure.
-
-## How to write it
-
-- Swap inflated words for ordinary ones: utilize → use, provide → give,
-  additional → more, furthermore → also
-- Use "you" for the reader and "we" for your organization
-- Use active voice
-- Cut all the extra words
-- Split long sentences at the FANBOYS conjunctions
-- Run it through [HemingwayApp.com](https://hemingwayapp.com)
-
-A before-and-after from real CalVCB copy:
-
-> **Before:** All CalVCB applications and related documents, including medical
-> records and information, are highly confidential.
->
-> **After:** The information you share with CalVCB is strictly confidential.
-> This includes medical records.
-
-## Formatting counts too
-
-- Use sentence case for headers
-- All caps are hard to read
-- Left-aligned text is easiest to read
-- Capitalize words in hashtags and URLs (#GoSDWave, SanDiegoSirens.com)
-- Use lists and tables
+- Delivered to San Diego Sirens officers, February 10, 2025. "My heroes:
+  California Office of Data and Innovation (ODI)."
+- Outline: why plain language is important; what plain language is; how to
+  write in plain language; wrap up.
+- "It's a better experience for everyone": people with disabilities (hearing,
+  vision, cognitive), people with limited English, people who only have a
+  phone, people in a hurry, people who are stressed.
+- "When people understand what you say, they're more likely to trust what you
+  say."
+- "Plain language is text your audience can understand the first time they
+  read it."
+- "It's not 'dumbing down'." "It's not less accurate."
+- Word swaps: utilize → use, provide → give, additional → more,
+  furthermore → also.
+- "Use 'you' to refer to the reader." "Use 'we' to refer to your
+  organization." "Use active voice." "Cut ALL the extra words." FANBOYS
+  sentence splitting. "Try HemingwayApp.com."
+- Wrap up: "Use sentence case for headers." "ALL CAPS are hard to read."
+  "Left aligned text is easiest to read." "Capitalize words in hashtags and
+  URLs." "Use lists and tables."

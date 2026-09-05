@@ -55,6 +55,50 @@ date arrives. Use `--future` locally if you need to preview one.
 The design tokens are vendored, not authored here. Re-pull them from the Zakiya design system rather than editing
 `_sass/zakiya/` by hand.
 
+## Authorship
+
+**No prose on this site should read as Zakiya's unless Zakiya wrote it.**
+
+Everything Claude drafted is either replaced with an obvious placeholder or
+flagged. Two mechanisms:
+
+**1. `draft: true`** in a page's front matter renders a loud banner reading
+"Placeholder — not written by Zakiya." Currently set on:
+
+- `index.md` (headline and intro)
+- `about.md`
+- all four files in `_projects/`
+
+Their bodies contain only facts extracted from your own slides, clearly
+labelled as such, with no narrative. Rewrite each in your own voice, then
+delete the `draft: true` line to remove the banner.
+
+`_config.yml` `tagline:` and `description:` are also placeholders, marked with
+comments. The description becomes your search-engine snippet, so it's worth
+writing.
+
+**2. Interface labels.** These are UI chrome, not content, but Claude wrote
+them. The files carrying them have an authorship comment at the top. The full
+list:
+
+| String | File |
+|---|---|
+| "Skip to content" | `_layouts/default.html` |
+| "View the slides" / "Opens the original presentation in a slide viewer." | `_layouts/project.html` |
+| "Year" / "Role" / "Venue" / "Topics" | `_layouts/project.html` |
+| "Projects" / "Writing" / "All projects" / "All writing" / "Nothing here yet." | `_layouts/home.html` |
+| "Projects" / "Writing" / "Speaking" / "Work" / "About" (nav) | `_includes/nav.html` |
+| "LinkedIn" / "GitHub" / "Drupal" | `_includes/footer.html` |
+| "All" / "Professional" / "Personal" / "N pieces shown." | `writing.md` |
+
+**Written by you, migrated verbatim:** every session and training title in
+`speaking.md`, and every entry in `work.md`. Those came from your own
+`sessions.md`, `training.md`, and `websites.md`. Claude removed a stale bio and
+a dead analytics tag but did not touch the lists themselves.
+
+`_writing/` is empty. The one seed essay Claude wrote was deleted rather than
+left under your byline.
+
 ## Hosting and DNS
 
 The site is served by GitHub Pages from `main` at the repo root. The domain is registered at **GoDaddy** (nameservers
