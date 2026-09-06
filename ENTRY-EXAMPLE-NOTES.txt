@@ -1,0 +1,11 @@
+---
+title: The thing I did
+year: 2026 # required — sorts the list, and is what shows if there's no `posted`
+kind: professional # or: personal 
+posted: 2026-09-05 # optional — a full date, for something published on a day 
+role: Engineering manager # optional venue: Where it happened # optional summary: One or two sentences for the listing.
+tags: [ topic, topic ]      # optional 
+link: /files/my-project/ # optional — adds a button at the foot of the post
+link_text: View the slides # optional — the button's label 
+landing: false # optional — list it, but don't give it a page of its own
+---
