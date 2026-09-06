@@ -23,29 +23,26 @@ social:
   github: https://github.com/zakiya
   drupal: https://www.drupal.org/u/zakiya
 
-# ---- Content collections --------------------------------------------------
-# Adding a project or a piece of writing means adding ONE .md file here.
-# Nothing else needs to change: the landing page and section indexes read
-# from these collections directly.
+# ---- Content ---------------------------------------------------------------
+# One content type: Posts. Publishing means adding ONE .md file to _entries/.
+# Nothing else needs to change — the landing page and the Posts index read the
+# collection directly.
+#
+# The directory is `_entries/` rather than `_posts/` on purpose: Jekyll reserves
+# `posts` for its built-in collection, which silently drops any file whose name
+# is not prefixed YYYY-MM-DD. Posts here are dated by front matter (`date:`) or
+# by `year:` alone, so filenames stay clean.
 collections:
-  projects:
+  entries:
     output: true
-    permalink: /projects/:name/
-  writing:
-    output: true
-    permalink: /writing/:name/
+    permalink: /posts/:name/
 
 defaults:
   - scope:
       path: ""
-      type: projects
+      type: entries
     values:
-      layout: project
-  - scope:
-      path: ""
-      type: writing
-    values:
-      layout: writing
+      layout: post
   - scope:
       path: ""
       type: pages

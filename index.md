@@ -1,10 +1,7 @@
 ---
 layout: home
 title: null
-draft: true
-heading: Placeholder headline — replace this.
+heading: I need to say something
 intro: >-
-  Placeholder introduction. This paragraph was drafted by Claude, not written
-  by Zakiya. Replace it with your own words, then remove `draft: true` from
-  this file's front matter to hide the placeholder banner.
+  Octavia Butler wrote that the only lasting truth is change. So it goes for technology, social movements, and football standings. It's 2026. I can completely rebuild my portfolio website in less time and with less effort than it takes to watch the latest Paul Thomas Anderson film. Yet there is so much work to do. 
 ---

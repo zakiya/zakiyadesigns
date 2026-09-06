@@ -1,0 +1,19 @@
+{%- comment -%}
+  The one place posts get ordered. Assigns `posts`, newest first; every
+  template that lists posts includes this instead of sorting for itself.
+
+  Every post carries `year:`. A post that wants day precision — an essay,
+  say — adds `posted: 2024-03-01`, and that is what the templates show.
+
+  Neither field is Jekyll's `date:`, and that is deliberate. Jekyll invents a
+  `date` for any document that lacks one, silently filling it with the file's
+  modification time, so `post.date` is always truthy, always displayable, and
+  always wrong for undated work. `year` and `posted` are only ever set by
+  hand, so they can be tested and trusted.
+{%- endcomment -%}
+{%- assign years = site.entries | group_by: "year" | sort: "name" | reverse -%}
+{%- assign posts = "" | split: "" -%}
+{%- for year in years -%}
+  {%- assign within = year.items | sort: "posted", "last" | reverse -%}
+  {%- assign posts = posts | concat: within -%}
+{%- endfor -%}

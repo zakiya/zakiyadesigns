@@ -4,21 +4,39 @@
   See the "Authorship" section in README.md for the full list. Edit freely.
 {%- endcomment -%}
 {%- comment -%}
-  One row in a list of projects or writing. Expects `include.item`.
+  One row in a list of posts. Expects `include.item`.
   Optional:
-    include.kind_badge  — show the personal/professional tag
-    include.heading     — heading level, "h2" or "h3" (default h3).
-                          Index pages have no h2 section head, so they pass
-                          h2 to keep the document outline unbroken.
+    include.heading — heading level, "h2" or "h3" (default h3).
+                      Index pages have no h2 section head, so they pass
+                      h2 to keep the document outline unbroken.
+
+  Posts are dated by `year`, or by `posted` when they carry a full date.
+  Jekyll's own `date` is deliberately unused — see sorted-posts.html.
+
+  A post with `landing: false` has no page worth visiting, so the row points at
+  its `link` instead. With neither, the title is just text.
 {%- endcomment -%}
 {%- assign h = include.heading | default: "h3" -%}
 <li class="entry">
-  <{{ h }} class="entry-title"><a href="{{ include.item.url | relative_url }}">{{ include.item.title }}</a></{{ h }}>
+  {%- assign destination = include.item.url -%}
+  {%- if include.item.landing == false -%}
+    {%- assign destination = include.item.link -%}
+  {%- endif -%}
+  <{{ h }} class="entry-title">
+    {%- if destination -%}
+      <a href="{{ destination | relative_url }}">{{ include.item.title }}</a>
+    {%- else -%}
+      {{ include.item.title }}
+    {%- endif -%}
+  </{{ h }}>
   <p class="entry-meta">
-    {%- if include.item.date %}<span>{{ include.item.date | date: "%B %-d, %Y" }}</span>{% endif -%}
-    {%- if include.item.year %}<span>{{ include.item.year }}</span>{% endif -%}
+    {%- if include.item.posted -%}
+      <span>{{ include.item.posted | date: "%B %-d, %Y" }}</span>
+    {%- elsif include.item.year -%}
+      <span>{{ include.item.year }}</span>
+    {%- endif -%}
     {%- if include.item.role %}<span>{{ include.item.role }}</span>{% endif -%}
-    {%- if include.kind_badge and include.item.kind -%}
+    {%- if include.item.kind -%}
       <span class="badge badge--{{ include.item.kind }}">{{ include.item.kind }}</span>
     {%- endif -%}
   </p>

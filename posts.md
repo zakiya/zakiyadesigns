@@ -1,33 +1,33 @@
 ---
-title: Writing
-permalink: /writing/
+title: Posts
+permalink: /posts/
 ---
 {%- comment -%}
   NOTE ON AUTHORSHIP: the visible UI strings in this file were written by
   Claude, not by the site author. They are interface labels, not content.
   See the "Authorship" section in README.md for the full list. Edit freely.
 {%- endcomment -%}
-{%- assign essays = site.writing | sort: "date" | reverse -%}
-{%- if essays.size > 0 %}
-<div class="filters" role="group" aria-label="Filter writing by kind">
+{%- include sorted-posts.html -%}
+{%- if posts.size > 0 %}
+<div class="filters" role="group" aria-label="Filter posts by kind">
   <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
   <button class="filter" type="button" data-filter="professional" aria-pressed="false">Professional</button>
   <button class="filter" type="button" data-filter="personal" aria-pressed="false">Personal</button>
 </div>
 
-<ul class="entry-list" id="writing-list">
-  {%- for item in essays -%}
-    {%- include entry.html item=item kind_badge=true heading="h2" -%}
+<ul class="entry-list" id="post-list">
+  {%- for item in posts -%}
+    {%- include entry.html item=item heading="h2" -%}
   {%- endfor -%}
 </ul>
 
 <p class="entry-meta" id="filter-status" role="status"></p>
 
 <script>
-  // Progressive enhancement: with JS off, every piece is listed.
+  // Progressive enhancement: with JS off, every post is listed.
   (function () {
     var buttons = document.querySelectorAll('.filter');
-    var items = document.querySelectorAll('#writing-list .entry');
+    var items = document.querySelectorAll('#post-list .entry');
     var status = document.getElementById('filter-status');
 
     function apply(kind) {
@@ -39,7 +39,7 @@ permalink: /writing/
         li.hidden = !match;
         if (match) { shown++; }
       });
-      status.textContent = shown + (shown === 1 ? ' piece' : ' pieces') + ' shown.';
+      status.textContent = shown + (shown === 1 ? ' post' : ' posts') + ' shown.';
     }
 
     buttons.forEach(function (btn) {

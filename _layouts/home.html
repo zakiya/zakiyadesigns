@@ -18,37 +18,21 @@ layout: default
   {{ content }}
 
   {%- comment -%}
-    Both lists read straight from the collections. Adding a file to
-    _projects/ or _writing/ makes it appear here — no edits needed.
+    The list reads straight from the collection. Adding a file to _entries/
+    makes it appear here — no edits needed.
   {%- endcomment -%}
 
-  <section class="section" aria-labelledby="projects-heading">
-    <div class="section-head">
-      <h2 id="projects-heading">Projects</h2>
-      <a class="section-more" href="{{ '/projects/' | relative_url }}">All projects</a>
-    </div>
-    {%- assign projects = site.projects | sort: "year" | reverse -%}
-    {%- if projects.size > 0 -%}
-      <ul class="entry-list">
-        {%- for item in projects limit: 4 -%}
-          {%- include entry.html item=item -%}
-        {%- endfor -%}
-      </ul>
-    {%- else -%}
-      <p>Nothing here yet.</p>
-    {%- endif -%}
-  </section>
+  {%- include sorted-posts.html -%}
 
-  <section class="section" aria-labelledby="writing-heading">
+  <section class="section" aria-labelledby="posts-heading">
     <div class="section-head">
-      <h2 id="writing-heading">Writing</h2>
-      <a class="section-more" href="{{ '/writing/' | relative_url }}">All writing</a>
+      <h2 id="posts-heading">Posts</h2>
+      <a class="section-more" href="{{ '/posts/' | relative_url }}">All posts</a>
     </div>
-    {%- assign essays = site.writing | sort: "date" | reverse -%}
-    {%- if essays.size > 0 -%}
+    {%- if posts.size > 0 -%}
       <ul class="entry-list">
-        {%- for item in essays limit: 4 -%}
-          {%- include entry.html item=item kind_badge=true -%}
+        {%- for item in posts limit: 4 -%}
+          {%- include entry.html item=item -%}
         {%- endfor -%}
       </ul>
     {%- else -%}
