@@ -16,8 +16,12 @@
 {%- assign page_desc = page.summary | default: page.description | default: site.description -%}
 <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
 <meta name="description" content="{{ page_desc | strip_newlines | strip }}">
+{%- comment -%}
+  `canonical:` names the original when a post is republished here — it tells
+  search engines which copy is the source, so the two don't compete.
+{%- endcomment -%}
 {%- if has_landing -%}
-<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="canonical" href="{{ page.canonical | default: page.url | absolute_url }}">
 {%- else -%}
 <link rel="canonical" href="{{ elsewhere | absolute_url }}">
 <meta name="robots" content="noindex">
