@@ -1,6 +1,6 @@
 # zakiyadesigns.com
 
-Works by Zakiya Khabir. A Jekyll site built by GitHub Pages, served at [zakiyadesigns.com](https://zakiyadesigns.com).
+Works by Zakiya. A Jekyll site built by GitHub Pages, served at [zakiyadesigns.com](https://zakiyadesigns.com).
 
 ## Adding content
 

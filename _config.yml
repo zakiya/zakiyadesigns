@@ -1,6 +1,6 @@
 # zakiyadesigns.com — a Jekyll site built on GitHub Pages.
 
-title: Zakiya Khabir
+title: Zakiya
 tagline: Personal website
 description: >-
   My mind to your mind. My thoughts to your thoughts.
@@ -9,10 +9,10 @@ baseurl: ""
 lang: en
 
 author:
-  name: Zakiya Khabir
-  role: Engineering Manager
-  org: California Office of Data and Innovation
-  org_url: https://innovation.ca.gov
+  name: Zakiya
+  role: Builder and thinker
+  org:
+  org_url:
 
 social:
   linkedin: https://www.linkedin.com/in/zakiyakhabir/
