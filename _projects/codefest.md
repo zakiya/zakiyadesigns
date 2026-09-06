@@ -7,7 +7,7 @@ published: false
 draft: true
 summary: Placeholder summary — replace with your own.
 tags: [public engagement, moderation, trust and safety]
-deck: /slides/codefest/
+deck: /files/codefest/
 ---
 
 {%- comment -%}

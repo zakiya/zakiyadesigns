@@ -6,7 +6,7 @@ venue: Monterrey, Mexico
 draft: true
 summary: Placeholder summary — replace with your own.
 tags: [inclusion, soccer, community organizing]
-deck: /slides/play-proud/
+deck: /files/play-proud/
 ---
 
 The points below were extracted from your own slides so the page isn't empty.

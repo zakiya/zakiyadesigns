@@ -6,7 +6,7 @@ venue: Team introduction
 draft: true
 summary: Placeholder summary — replace with your own.
 tags: [personal]
-deck: /slides/this-is-me-2023/
+deck: /files/this-is-me-2023/
 ---
 
 The points below were extracted from your own slides so the page isn't empty.

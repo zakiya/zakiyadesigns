@@ -6,7 +6,7 @@ venue: San Diego Sirens officers
 draft: true
 summary: Placeholder summary — replace with your own.
 tags: [plain language, accessibility, writing]
-deck: /slides/plain-language-sirens/
+deck: /files/plain-language-sirens/
 ---
 
 The points below were extracted from your own slides so the page isn't empty.

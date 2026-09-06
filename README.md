@@ -18,7 +18,7 @@ role: Engineering manager
 venue: Where it happened
 summary: One or two sentences for the listing.
 tags: [ topic, topic ]
-deck: /slides/my-project/   # optional, if slides exist
+deck: /files/my-project/   # optional, if slides exist
 ---
 
 The story goes here.
@@ -47,7 +47,7 @@ date arrives. Use `--future` locally if you need to preview one.
 | Path                      | What it is                                                   |
 |---------------------------|--------------------------------------------------------------|
 | `_projects/`, `_writing/` | Content. One markdown file per item.                         |
-| `slides/`                 | The original Keynote HTML exports, linked from case studies. |
+| `files/`                  | The original Keynote HTML exports, linked from case studies. |
 | `_layouts/`, `_includes/` | Templates. `_includes/nav.html` is the only nav.             |
 | `_sass/zakiya/`           | Design system tokens, vendored from claude.ai/design.        |
 | `pages/`                  | Unrelated San Diego Sirens tooling that shares this repo.    |
