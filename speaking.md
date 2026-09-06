@@ -18,7 +18,7 @@ permalink: /speaking/
 ### BADCamp
 
 **2018** — Demystifying pattern libraries and Drupal 8
-([slides]({{ '/2018-06-13-Pattern-Libraries.pdf' | relative_url }}))
+([slides]({{ '/files/2018-06-13-Pattern-Libraries.pdf' | relative_url }}))
 
 **2017** — 15+ ways to debug Drupal 8
 

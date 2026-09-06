@@ -6,7 +6,7 @@ role: Supporters group representative
 venue: Monterrey, Mexico
 summary: Play Proud residency.
 tags: [ inclusion, soccer, community organizing ]
-link: /slides/play-proud/
+link: /files/play-proud/
 ---
 
 In 2022, I participated in the Play Proud residency in Monterrey, Mexico. Play Proud offers LGBTQ+ inclusion training to

@@ -18,11 +18,12 @@ maintainance and security.
 ## What I did
 
 - Built Squarespace website
-- Did some custom JavaScript and other hacks to make our store and calendar work as expected
+- Did some [custom JavaScript and other hacks](https://github.com/zakiya/sirens-website) to make our store and calendar
+  work as expected
 
 ## Where it stands
 
 My role is pretty hands-off at this point. The officers are empowered to update and build pages as needed. As the Tech
-Coordinator I help guide the team towards plain language, usability, and accessiblity standards from my day job. The
+Coordinator I help guide the team towards plain language, usability, and accessibility standards from my day job. The
 project owes a lot to the visual design talents of Troy Ford.  
 
