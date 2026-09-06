@@ -2,6 +2,7 @@
 title: Engaged California
 year: 2025
 kind: professional
+role: Engineering Manager
 summary: Deliberative democracy program and platform for Californians.
 tags: [ government ]
 link: https://engaged.ca.gov

@@ -2,8 +2,9 @@
 title: My defining moment
 year: 2026
 kind: personal
+role: Author
 summary: Short essay written for a team-building exercise at work. It'll probably make you cry.
-tags: [ storytelling, topic ]      # optional
+tags: [ storytelling, family ]      # optional
 ---
 
 I’m going to talk about one of the defining moments of my childhood.

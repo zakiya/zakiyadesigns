@@ -2,13 +2,8 @@
 title: Posts
 permalink: /posts/
 ---
-{%- comment -%}
-  NOTE ON AUTHORSHIP: the visible UI strings in this file were written by
-  Claude, not by the site author. They are interface labels, not content.
-  See the "Authorship" section in README.md for the full list. Edit freely.
-{%- endcomment -%}
-{%- include sorted-posts.html -%}
-{%- if posts.size > 0 %}
+
+{%- include sorted-posts.html -%} {%- if posts.size > 0 %}
 <div class="filters" role="group" aria-label="Filter posts by kind">
   <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
   <button class="filter" type="button" data-filter="professional" aria-pressed="false">Professional</button>
@@ -17,7 +12,7 @@ permalink: /posts/
 
 <ul class="entry-list" id="post-list">
   {%- for item in posts -%}
-    {%- include entry.html item=item heading="h2" -%}
+    {%- include entry.html item=item heading="h2" tags=true -%}
   {%- endfor -%}
 </ul>
 
@@ -50,6 +45,4 @@ permalink: /posts/
     });
   })();
 </script>
-{%- else %}
-Nothing here yet.
-{%- endif -%}
+{%- else %} Nothing here yet. {%- endif -%}

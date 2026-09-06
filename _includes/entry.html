@@ -1,14 +1,10 @@
 {%- comment -%}
-  NOTE ON AUTHORSHIP: the visible UI strings in this file were written by
-  Claude, not by the site author. They are interface labels, not content.
-  See the "Authorship" section in README.md for the full list. Edit freely.
-{%- endcomment -%}
-{%- comment -%}
   One row in a list of posts. Expects `include.item`.
   Optional:
     include.heading — heading level, "h2" or "h3" (default h3).
                       Index pages have no h2 section head, so they pass
                       h2 to keep the document outline unbroken.
+    include.tags    — add the post's topics to the meta line.
 
   Posts are dated by `year`, or by `posted` when they carry a full date.
   Jekyll's own `date` is deliberately unused — see sorted-posts.html.
@@ -18,6 +14,15 @@
 {%- endcomment -%}
 {%- assign h = include.heading | default: "h3" -%}
 <li class="entry">
+    <p class="entry-meta">
+        {%- if include.item.posted -%}
+            <span>{{ include.item.posted | date: "%B %-d, %Y" }}</span>
+        {%- elsif include.item.year -%}
+            <span>{{ include.item.year }}</span>
+        {%- endif -%}
+        {%- if include.item.role %}<span>{{ include.item.role }}</span>{% endif -%}
+
+    </p>
   {%- assign destination = include.item.url -%}
   {%- if include.item.landing == false -%}
     {%- assign destination = include.item.link -%}
@@ -29,16 +34,18 @@
       {{ include.item.title }}
     {%- endif -%}
   </{{ h }}>
-  <p class="entry-meta">
-    {%- if include.item.posted -%}
-      <span>{{ include.item.posted | date: "%B %-d, %Y" }}</span>
-    {%- elsif include.item.year -%}
-      <span>{{ include.item.year }}</span>
-    {%- endif -%}
-    {%- if include.item.role %}<span>{{ include.item.role }}</span>{% endif -%}
-    {%- if include.item.kind -%}
-      <span class="badge badge--{{ include.item.kind }}">{{ include.item.kind }}</span>
-    {%- endif -%}
-  </p>
+
   {%- if include.item.summary %}<p class="entry-summary">{{ include.item.summary }}</p>{% endif -%}
+
+    {%- comment -%}Jekyll hands every document an empty `tags` array, so size, not truthiness.{%- endcomment -%}
+    {%- if include.tags and include.item.tags.size > 0 -%}
+       <p class="entry-meta"> <span class="entry-tag">{{ include.item.tags | join: ", " }}</span>
+       </p>
+    {%- endif -%}
+
+    {%- if include.item.kind -%}
+    <p class="entry-badge">
+    <span class="badge badge--{{ include.item.kind }}">{{ include.item.kind }}</span>
+    </p>
+    {%- endif -%}
 </li>

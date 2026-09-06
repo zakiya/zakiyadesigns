@@ -2,8 +2,9 @@
 title: Kickoffs website
 year: 2026
 kind: personal
+role: Software engineer
 summary: Calendar for NWSL other select women's football fixtures.
-tags: [ football, gender trouble, python ]
+tags: [ football(soccer), gender trouble, python ]
 link: https://zakiya.github.io/nwsl-kickoffs/_site/?timezone=PT
 link_text: View site
 ---

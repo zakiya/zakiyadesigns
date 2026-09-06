@@ -1,58 +1,68 @@
 ---
 layout: default
 ---
-{%- comment -%}
-  NOTE ON AUTHORSHIP: the visible UI strings in this file were written by
-  Claude, not by the site author. They are interface labels, not content.
-  See the "Authorship" section in README.md for the full list. Edit freely.
-{%- endcomment -%}
 {%- if page.landing == false -%}
-  {%- comment -%}
-    `landing: false` — head.html has already issued a redirect to `page.link`.
-    This is what shows if that never fires: a link, not a landing page.
-  {%- endcomment -%}
-  <div class="container">
-    <p class="lead">
-      {%- if page.link -%}
-        <a href="{{ page.link | relative_url }}">{{ page.link_text | default: page.title }}</a>
-      {%- else -%}
-        <a href="{{ '/posts/' | relative_url }}">All posts</a>
-      {%- endif -%}
-    </p>
-  </div>
+{%- comment -%}
+`landing: false` — head.html has already issued a redirect to `page.link`.
+This is what shows if that never fires: a link, not a landing page.
+{%- endcomment -%}
+<div class="container">
+  <p class="lead">
+    {%- if page.link -%}
+    <a href="{{ page.link | relative_url }}">{{ page.link_text | default: page.title }}</a>
+    {%- else -%}
+    <a href="{{ '/posts/' | relative_url }}">All posts</a>
+    {%- endif -%}
+  </p>
+</div>
 {%- else -%}
-  <div class="container">
-    <article>
-      <h1 class="page-title">{{ page.title }}</h1>
-      <p class="entry-meta">
-        {%- if page.posted -%}
-          <span>{{ page.posted | date: "%B %-d, %Y" }}</span>
-        {%- elsif page.year -%}
-          <span>{{ page.year }}</span>
-        {%- endif -%}
-        {%- if page.kind %}<span class="badge badge--{{ page.kind }}">{{ page.kind }}</span>{% endif -%}
-      </p>
-      {%- if page.summary %}<p class="lead page-intro">{{ page.summary }}</p>{% endif -%}
-
-      {%- comment -%}Jekyll hands every document an empty `tags` array, so size, not truthiness.{%- endcomment -%}
-      {%- if page.role or page.venue or page.tags.size > 0 -%}
-        <dl class="post-facts">
-          {%- if page.role -%}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{%- endif -%}
-          {%- if page.venue -%}<div><dt>Venue</dt><dd>{{ page.venue }}</dd></div>{%- endif -%}
-          {%- if page.tags.size > 0 -%}<div><dt>Topics</dt><dd>{{ page.tags | join: ", " }}</dd></div>{%- endif -%}
-        </dl>
+<div class="container">
+  <article>
+    <h1 class="page-title">{{ page.title }}</h1>
+    <p class="entry-meta">
+      {%- if page.posted -%}
+      <span>{{ page.posted | date: "%B %-d, %Y" }}</span>
+      {%- elsif page.year -%}
+      <span>{{ page.year }}</span>
       {%- endif -%}
+      {%- if page.kind %}<span class="badge badge--{{ page.kind }}">{{ page.kind }}</span>{% endif -%}
+    </p>
+    {%- if page.summary %}<p class="lead page-intro">{{ page.summary }}</p>{% endif -%}
 
-      {%- if page.draft %}{% include placeholder.html %}{% endif -%}
-      <div class="prose">
-        {{ content }}
+    {%- comment -%}Jekyll hands every document an empty `tags` array, so size, not truthiness.{%- endcomment -%}
+    {%- if page.role or page.venue or page.tags.size > 0 -%}
+    <dl class="post-facts">
+      {%- if page.role -%}
+      <div>
+        <dt>Role</dt>
+        <dd>{{ page.role }}</dd>
       </div>
-
-      {%- if page.link -%}
-        <p class="link-cta">
-          <a class="button" href="{{ page.link | relative_url }}">{{ page.link_text | default: "View the slides" }}</a>
-        </p>
       {%- endif -%}
-    </article>
-  </div>
+      {%- if page.venue -%}
+      <div>
+        <dt>Venue</dt>
+        <dd>{{ page.venue }}</dd>
+      </div>
+      {%- endif -%}
+      {%- if page.tags.size > 0 -%}
+      <div>
+        <dt>Topics</dt>
+        <dd>{{ page.tags | join: ", " }}</dd>
+      </div>
+      {%- endif -%}
+    </dl>
+    {%- endif -%}
+
+    {%- if page.draft %}{% include placeholder.html %}{% endif -%}
+    <div class="prose">
+      {{ content }}
+    </div>
+
+    {%- if page.link -%}
+    <p class="link-cta">
+      <a class="button" href="{{ page.link | relative_url }}">{{ page.link_text | default: "View the slides" }}</a>
+    </p>
+    {%- endif -%}
+  </article>
+</div>
 {%- endif -%}

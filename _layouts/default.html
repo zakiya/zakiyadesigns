@@ -1,19 +1,14 @@
-{%- comment -%}
-  NOTE ON AUTHORSHIP: the visible UI strings in this file were written by
-  Claude, not by the site author. They are interface labels, not content.
-  See the "Authorship" section in README.md for the full list. Edit freely.
-{%- endcomment -%}
 <!doctype html>
 <html lang="{{ site.lang | default: 'en' }}">
 <head>
   {%- include head.html -%}
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  {%- include nav.html -%}
-  <main id="main" class="page-body">
-    {{ content }}
-  </main>
-  {%- include footer.html -%}
+<a class="skip-link" href="#main">Skip to content</a>
+{%- include nav.html -%}
+<main id="main" class="page-body">
+  {{ content }}
+</main>
+{%- include footer.html -%}
 </body>
 </html>

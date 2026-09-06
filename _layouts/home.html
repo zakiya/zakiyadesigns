@@ -1,11 +1,6 @@
 ---
 layout: default
 ---
-{%- comment -%}
-  NOTE ON AUTHORSHIP: the visible UI strings in this file were written by
-  Claude, not by the site author. They are interface labels, not content.
-  See the "Authorship" section in README.md for the full list. Edit freely.
-{%- endcomment -%}
 <div class="container">
 
   {%- if page.draft %}{% include placeholder.html %}{% endif -%}
@@ -18,8 +13,8 @@ layout: default
   {{ content }}
 
   {%- comment -%}
-    The list reads straight from the collection. Adding a file to _entries/
-    makes it appear here — no edits needed.
+  The list reads straight from the collection. Adding a file to _entries/
+  makes it appear here — no edits needed.
   {%- endcomment -%}
 
   {%- include sorted-posts.html -%}
@@ -30,13 +25,13 @@ layout: default
       <a class="section-more" href="{{ '/posts/' | relative_url }}">All posts</a>
     </div>
     {%- if posts.size > 0 -%}
-      <ul class="entry-list">
-        {%- for item in posts limit: 4 -%}
-          {%- include entry.html item=item -%}
-        {%- endfor -%}
-      </ul>
+    <ul class="entry-list">
+      {%- for item in posts limit: 4 -%}
+      {%- include entry.html item=item tags=true -%}
+      {%- endfor -%}
+    </ul>
     {%- else -%}
-      <p>Nothing here yet.</p>
+    <p>Nothing here yet.</p>
     {%- endif -%}
   </section>
 

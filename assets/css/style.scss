@@ -146,7 +146,9 @@ button:focus-visible,
   align-items: center;
   margin-bottom: var(--space-2);
 }
-.entry-summary { margin: 0; max-width: 70ch; }
+.entry-tag { font-style: italic;  }
+.entry-summary { margin: 0 0 var(--space-1) ; max-width: 70ch; }
+.entry-badge { margin: 0 0 var(--space-2)  }
 
 /* ---- Badge ----------------------------------------------- */
 .badge {
