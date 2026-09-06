@@ -6,6 +6,8 @@ orders*
 
 # Jekyll build + local Ruby toolchain
 _site
+.jekyll-metadata
+.jekyll-cache
 .bundle
 vendor
 Gemfile.lock
