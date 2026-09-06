@@ -66,11 +66,13 @@ button:focus-visible,
 .site-title {
   font-size: var(--fs-h4);
   font-weight: var(--fw-semibold);
-  color: var(--text-brand);
+  /* The deeper magenta at rest — 5.81:1 on white, so the wordmark clears AA
+     for body text, not just large text. Brightens to the lighter one on hover. */
+  color: var(--accent-magenta-hover);
   text-decoration: none;
   letter-spacing: var(--tracking-tight);
 }
-.site-title:hover { color: var(--brand-hover); }
+.site-title:hover { color: var(--accent-magenta); }
 
 .site-nav ul {
   display: flex;
