@@ -5,7 +5,7 @@ kind: personal
 role: Supporters group representative
 venue: Monterrey, Mexico
 summary: Play Proud residency.
-tags: [ leadership, football(soccer), community organizing ]
+tags: [ football(soccer), organizing ]
 link: /files/play-proud/
 ---
 

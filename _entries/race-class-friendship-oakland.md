@@ -5,7 +5,7 @@ kind: personal
 posted: 2018-08-16
 role: Author
 venue: Socialist Worker
-tags: [ film, race, class ]
+tags: [ film, race ]
 link: https://socialistworker.org/2018/08/16/race-class-and-friendship-in-oakland
 link_text: Read the original at the Socialist Worker archive
 canonical: https://socialistworker.org/2018/08/16/race-class-and-friendship-in-oakland

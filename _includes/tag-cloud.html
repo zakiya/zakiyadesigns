@@ -1,0 +1,34 @@
+{%- comment -%}
+  NOTE ON AUTHORSHIP: the visible UI strings in this file were written by
+  Claude, not by the site author. They are interface labels, not content.
+
+  Every topic used by any post, counted and sized by how often it appears.
+  Reads the collection directly, so a new tag in a post's front matter shows
+  up here with no edit. Each link lands on the Posts index with the topic in
+  the URL hash; posts.md filters on it there. Without JS the link still works
+  — it just lands on the full list.
+{%- endcomment -%}
+{%- assign all_tags = "" | split: "" -%}
+{%- for post in site.entries -%}
+  {%- assign all_tags = all_tags | concat: post.tags -%}
+{%- endfor -%}
+{%- assign topics = all_tags | group_by_exp: "t", "t" | sort: "name" -%}
+{%- if topics.size > 0 -%}
+<nav class="tag-cloud" aria-labelledby="tag-cloud-heading">
+  <h2 class="tag-cloud-heading" id="tag-cloud-heading">Browse by topic</h2>
+  <ul>
+    {%- for topic in topics -%}
+      {%- assign n = topic.items.size -%}
+      {%- if n >= 3 -%}{%- assign weight = "lg" -%}
+      {%- elsif n == 2 -%}{%- assign weight = "md" -%}
+      {%- else -%}{%- assign weight = "sm" -%}{%- endif -%}
+      <li>
+        <a class="tag tag--{{ weight }}" href="{{ '/posts/' | relative_url }}#tag={{ topic.name | slugify }}">
+          {{ topic.name }}<span class="tag-count" aria-hidden="true">{{ n }}</span>
+          <span class="visually-hidden">, {{ n }} post{% if n != 1 %}s{% endif %}</span>
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>
+{%- endif -%}

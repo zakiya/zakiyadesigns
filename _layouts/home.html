@@ -26,7 +26,7 @@ layout: default
     </div>
     {%- if posts.size > 0 -%}
     <ul class="entry-list">
-      {%- for item in posts limit: 4 -%}
+      {%- for item in posts limit: 8 -%}
       {%- include entry.html item=item tags=true -%}
       {%- endfor -%}
     </ul>
@@ -34,5 +34,7 @@ layout: default
     <p>Nothing here yet.</p>
     {%- endif -%}
   </section>
+
+  {%- include tag-cloud.html -%}
 
 </div>

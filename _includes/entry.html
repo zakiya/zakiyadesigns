@@ -13,7 +13,12 @@
   its `link` instead. With neither, the title is just text.
 {%- endcomment -%}
 {%- assign h = include.heading | default: "h3" -%}
-<li class="entry">
+{%- assign tag_slugs = "" -%}
+{%- for t in include.item.tags -%}
+  {%- assign one = t | slugify -%}
+  {%- assign tag_slugs = tag_slugs | append: one | append: "|" -%}
+{%- endfor -%}
+<li class="entry" data-tags="{{ tag_slugs }}">
     <p class="entry-meta">
         {%- if include.item.posted -%}
             <span>{{ include.item.posted | date: "%B %-d, %Y" }}</span>
