@@ -1,13 +1,9 @@
 # zakiyadesigns.com — a Jekyll site built on GitHub Pages.
-# Styled with the Zakiya design system (claude.ai/design).
 
 title: Zakiya Khabir
-# PLACEHOLDER — drafted by Claude, not written by Zakiya. Rewrite.
-tagline: Placeholder tagline
-# PLACEHOLDER — drafted by Claude, not written by Zakiya. Rewrite.
-# This becomes the meta description search engines show.
+tagline: Personal website
 description: >-
-  Placeholder site description.
+  My mind to your mind. My thoughts to your thoughts.
 url: https://zakiyadesigns.com
 baseurl: ""
 lang: en
