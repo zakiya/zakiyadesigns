@@ -2,7 +2,7 @@
 title: San Diego Sirens website
 year: 2022
 kind: personal
-role: Technical Coordinator
+role: Tech Coordinator
 summary: Squarespace website for the best supporters group in the NWSL
 tags: [ squarespace, football(soccer) ]
 link: https://sandiegosirens.com
