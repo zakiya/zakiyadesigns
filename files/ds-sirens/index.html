@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style data-omelette-injected="">html,body{background:transparent}</style>
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>San Diego Sirens — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="San%20Diego%20Sirens%20%E2%80%94%20Design%20System_files/css2.css" rel="stylesheet">
+<link rel="stylesheet" href="San%20Diego%20Sirens%20%E2%80%94%20Design%20System_files/tokens.css">
+<style>
+  /* ============ PRINT STYLES ============ */
+  @page {
+    size: A4 portrait;
+    margin: 0.5in;
+  }
+  @media print {
+    html, body {
+      background: #fff !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .topbar, .ticker { animation: none !important; }
+    .topbar {
+      /* keep the marquee readable in print */
+      overflow: visible;
+    }
+    .ticker {
+      white-space: normal;
+    }
+    /* keep sections together where possible */
+    .sec, .principle, .swatch, .lockup, .comp-card, .member-card, .matchday, .type-row {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    /* full-bleed dark surfaces print with their color */
+    .member-card, .matchday, .lockup, .swatch .chip {
+      -webkit-print-color-adjust: exact;
+    }
+    /* minor layout relaxations for print */
+    .page {
+      max-width: 100% !important;
+      padding: 0 !important;
+    }
+    img {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+    a {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+  }
+</style>
+<style>
+  .page { max-width: 1240px; margin: 0 auto; padding: var(--sp-7) var(--sp-6) var(--sp-9); }
+
+  /* Topbar */
+  .topbar {
+    background: var(--siren-deep);
+    color: var(--siren-sand);
+    font-family: var(--font-accent);
+    font-size: var(--fs-14);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 0;
+    overflow: hidden;
+    border-bottom: var(--bw-med) solid var(--siren-wave);
+  }
+  .ticker {
+    display: inline-flex;
+    gap: var(--sp-7);
+    white-space: nowrap;
+    animation: slide 48s linear infinite;
+    padding-left: 100%;
+  }
+  .ticker span { display: inline-flex; align-items: center; gap: var(--sp-3); }
+  .ticker .dot { width: 8px; height: 8px; background: var(--siren-wave); border-radius: 50%; }
+  @keyframes slide { to { transform: translateX(-100%); } }
+
+  /* Masthead */
+  .masthead {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: end;
+    gap: var(--sp-6);
+    padding-bottom: var(--sp-5);
+    border-bottom: var(--bw-chunky) solid var(--siren-deep);
+    margin-bottom: var(--sp-7);
+  }
+  .crest { width: 92px; height: 92px; flex-shrink: 0; }
+  .masthead h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(var(--fs-56), 9vw, 140px);
+    line-height: 0.85;
+    margin: 0;
+    color: var(--siren-deep);
+    letter-spacing: 0.02em;
+  }
+  .masthead .sub {
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: var(--fs-12);
+    color: var(--siren-sea);
+    margin-top: var(--sp-2);
+  }
+  .masthead .meta {
+    text-align: right;
+    font-family: var(--font-body);
+    font-size: var(--fs-12);
+    line-height: 1.5;
+    color: var(--ink-500);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .masthead .meta b { color: var(--siren-deep); display: block; font-weight: 700; }
+
+  /* TOC */
+  .toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-7);
+    padding-bottom: var(--sp-4);
+    border-bottom: var(--bw-thin) dashed var(--siren-deep);
+  }
+  .toc a {
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: var(--fs-12);
+    letter-spacing: 0.12em;
+    color: var(--siren-deep);
+    text-decoration: none;
+    padding: 5px 12px;
+    border: var(--bw-thin) solid var(--siren-deep);
+    border-radius: var(--r-pill);
+  }
+  .toc a:hover { background: var(--siren-wave); color: var(--siren-deep); border-color: var(--siren-deep); }
+
+  /* Section */
+  .sec { margin-bottom: var(--sp-9); scroll-margin-top: var(--sp-6); }
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-4);
+    margin-bottom: var(--sp-6);
+    padding-bottom: var(--sp-3);
+    border-bottom: var(--bw-thin) solid var(--siren-deep);
+  }
+  .sec-head .num {
+    font-family: var(--font-display);
+    font-size: var(--fs-40);
+    color: var(--siren-wave);
+    line-height: 1;
+  }
+  .sec-head h2 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: var(--fs-32);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--siren-deep);
+  }
+  .sec-head .kicker {
+    margin-left: auto;
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: var(--fs-12);
+    letter-spacing: 0.14em;
+    color: var(--ink-500);
+  }
+
+  /* Intro */
+  .intro {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 0;
+    border: var(--bw-med) solid var(--siren-deep);
+    box-shadow: var(--sh-sticker);
+    margin-bottom: var(--sp-9);
+    background: var(--siren-white);
+    overflow: hidden;
+  }
+  .intro .txt { padding: var(--sp-7); }
+  .intro .img {
+    background: #0b2746 url("San Diego Sirens — Design System_files/assets/identity-banner.png") center/cover;
+    min-height: 340px;
+    border-left: var(--bw-med) solid var(--siren-deep);
+    position: relative;
+  }
+  .intro .img::after {
+    content: "Identity banner — official tiled pattern";
+    position: absolute;
+    bottom: 10px; left: 10px; right: 10px;
+    font-family: var(--font-accent);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--siren-white);
+    background: rgba(6,31,63,.75);
+    padding: 5px 10px;
+    backdrop-filter: blur(4px);
+  }
+  .intro h3 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-24);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: 0 0 var(--sp-3);
+    line-height: 1.15;
+    color: var(--siren-deep);
+  }
+  .intro p { margin: 0 0 var(--sp-3); max-width: 52ch; font-size: var(--fs-16); }
+  .intro p.lede {
+    font-family: var(--font-serif);
+    font-size: var(--fs-20);
+    font-style: italic;
+    color: var(--siren-deep);
+    line-height: 1.45;
+  }
+
+  /* Principles */
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-4);
+    margin-top: var(--sp-5);
+  }
+  .principle {
+    border: var(--bw-thin) solid var(--siren-deep);
+    padding: var(--sp-5);
+    background: var(--siren-sand);
+  }
+  .principle .n {
+    font-family: var(--font-display);
+    font-size: var(--fs-32);
+    color: var(--siren-sea);
+    line-height: 1;
+  }
+  .principle h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--fs-18);
+    text-transform: uppercase;
+    margin: var(--sp-2) 0;
+    color: var(--siren-deep);
+  }
+  .principle p { font-size: var(--fs-14); margin: 0; color: var(--text-soft); }
+
+  /* Symbolism row */
+  .symbolism {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--sp-6);
+    align-items: start;
+    padding: var(--sp-6);
+    background: var(--siren-deep);
+    color: var(--siren-sand);
+    border: var(--bw-med) solid var(--siren-deep);
+  }
+  .symbolism h4 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-14);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--siren-wave);
+    margin: 0 0 var(--sp-3);
+  }
+  .symbolism .quote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: var(--fs-24);
+    line-height: 1.4;
+    margin: 0 0 var(--sp-4);
+  }
+  .symbolism p { font-size: var(--fs-14); line-height: 1.6; margin: 0 0 var(--sp-3); color: rgba(243,239,230,.85); }
+  .symbolism .mono {
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: var(--fs-12);
+    letter-spacing: 0.14em;
+    color: var(--siren-wave);
+    margin-top: var(--sp-5);
+  }
+
+  /* Swatches */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--sp-4);
+  }
+  .swatch {
+    border: var(--bw-thin) solid var(--siren-deep);
+    overflow: hidden;
+    background: var(--siren-white);
+  }
+  .swatch .chip {
+    aspect-ratio: 16 / 11;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--sp-3) var(--sp-4);
+    font-family: var(--font-accent);
+    font-size: var(--fs-12);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .swatch .chip .role {
+    font-family: var(--font-heading);
+    font-size: var(--fs-11, 10px);
+    letter-spacing: 0.18em;
+    opacity: 0.8;
+  }
+  .swatch .chip .role b { display: block; font-size: var(--fs-12); opacity: 1; letter-spacing: 0.12em; }
+  .swatch .chip .desc {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: var(--fs-14);
+    letter-spacing: 0;
+    text-transform: none;
+    max-width: 22ch;
+    line-height: 1.3;
+  }
+  .swatch .meta {
+    padding: var(--sp-3) var(--sp-4);
+    font-family: var(--font-body);
+    font-size: var(--fs-12);
+    border-top: var(--bw-thin) solid var(--siren-deep);
+    display: flex;
+    justify-content: space-between;
+    gap: var(--sp-3);
+  }
+  .swatch .meta b { font-family: var(--font-heading); font-size: var(--fs-14); color: var(--siren-deep); }
+  .swatch .meta code { font-family: ui-monospace, SFMono-Regular, monospace; color: var(--ink-500); }
+
+  .usage-rail {
+    margin-top: var(--sp-5);
+    padding: var(--sp-5);
+    background: var(--siren-sand);
+    border: var(--bw-thin) solid var(--siren-deep);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-5);
+    font-size: var(--fs-14);
+  }
+  .usage-rail h5 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-14);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 var(--sp-2);
+    color: var(--siren-deep);
+  }
+  .usage-rail ul { margin: 0; padding-left: 1.2em; color: var(--text-soft); }
+  .usage-rail li { margin-bottom: var(--sp-1); }
+
+  /* Type specimens */
+  .type-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: var(--sp-6);
+    padding: var(--sp-5) 0;
+    border-bottom: var(--bw-thin) solid var(--ink-200);
+    align-items: baseline;
+  }
+  .type-row:last-child { border-bottom: 0; }
+  .type-row .label {
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: var(--fs-12);
+    letter-spacing: 0.12em;
+    color: var(--ink-500);
+  }
+  .type-row .label b {
+    display: block;
+    color: var(--siren-deep);
+    font-family: var(--font-heading);
+    font-size: var(--fs-16);
+    letter-spacing: 0;
+    margin-bottom: 4px;
+    text-transform: none;
+  }
+  .spec-display {
+    font-family: var(--font-display);
+    font-size: clamp(var(--fs-56), 10vw, 160px);
+    color: var(--siren-deep);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+  }
+  .spec-h1 { font-family: var(--font-heading); font-weight: 900; font-size: var(--fs-56); text-transform: uppercase; line-height: 1; margin: 0; color: var(--siren-deep); }
+  .spec-h2 { font-family: var(--font-heading); font-weight: 700; font-size: var(--fs-32); text-transform: uppercase; line-height: 1.05; margin: 0; color: var(--siren-deep); }
+  .spec-h3 { font-family: var(--font-heading); font-weight: 500; font-size: var(--fs-24); line-height: 1.2; margin: 0; color: var(--siren-deep); }
+  .spec-body { font-family: var(--font-body); font-size: var(--fs-16); line-height: 1.65; margin: 0; max-width: 58ch; }
+  .spec-editorial { font-family: var(--font-serif); font-size: var(--fs-20); font-style: italic; line-height: 1.5; margin: 0; max-width: 52ch; color: var(--siren-deep); }
+  .spec-caps { font-family: var(--font-accent); font-size: var(--fs-14); text-transform: uppercase; letter-spacing: 0.16em; margin: 0; color: var(--siren-sea); }
+
+  /* Logos */
+  .lockup-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-4);
+  }
+  .lockup {
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--bw-thin) solid var(--siren-deep);
+    position: relative;
+    overflow: hidden;
+  }
+  .lockup .tag-br {
+    position: absolute;
+    bottom: 8px; right: 8px;
+    font-family: var(--font-accent);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background: var(--siren-white);
+    color: var(--siren-deep);
+    padding: 3px 8px;
+    border: 1px solid var(--siren-deep);
+  }
+  .word-S {
+    font-family: var(--font-display);
+    color: var(--siren-deep);
+    font-size: clamp(56px, 10vw, 120px);
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+
+  /* Components */
+  .comp-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-5);
+  }
+  .comp-card {
+    border: var(--bw-thin) solid var(--siren-deep);
+    background: var(--siren-white);
+    padding: var(--sp-5);
+  }
+  .comp-card h4 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-14);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 var(--sp-4);
+    padding-bottom: var(--sp-3);
+    border-bottom: var(--bw-thin) dashed var(--ink-300);
+    color: var(--ink-500);
+  }
+  .comp-card .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+    align-items: center;
+    margin-bottom: var(--sp-4);
+  }
+  .comp-card .row:last-child { margin-bottom: 0; }
+
+  /* Buttons — matches live sandiegosirens.com CTA */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: var(--fs-14);
+    letter-spacing: var(--btn-tracking);
+    padding: var(--btn-pad-y) var(--btn-pad-x);
+    border: 0;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .15s ease, opacity .15s ease;
+    border-radius: var(--btn-radius);
+    line-height: 1.2;
+  }
+  .btn:hover { background: var(--btn-bg-hover); }
+  .btn:active { opacity: 0.9; }
+  .btn--primary { background: var(--siren-deep); color: var(--siren-white); }
+  .btn--primary:hover { background: #0c2a55; }
+  .btn--sea { background: var(--siren-sea); color: var(--siren-white); }
+  .btn--sea:hover { background: #0a7464; }
+  .btn--wave { background: var(--siren-wave); color: var(--siren-deep); }
+  .btn--wave:hover { background: #00a3b8; }
+  .btn--ghost {
+    background: transparent;
+    color: var(--siren-deep);
+    border: 1.5px solid var(--siren-deep);
+    padding: calc(var(--btn-pad-y) - 1.5px) calc(var(--btn-pad-x) - 1.5px);
+  }
+  .btn--ghost:hover { background: var(--siren-deep); color: var(--siren-white); }
+  .btn--sm { font-size: var(--fs-12); padding: 10px 16px; }
+
+  /* Badges */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    border: var(--bw-thin) solid var(--siren-deep);
+    border-radius: var(--r-pill);
+    background: var(--siren-sand);
+    color: var(--siren-deep);
+  }
+  .badge--live { background: var(--siren-deep); color: var(--siren-wave); border-color: var(--siren-deep); }
+  .badge--live .pulse {
+    width: 6px; height: 6px; background: var(--siren-wave); border-radius: 50%;
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+  .badge--win { background: var(--siren-sea); color: var(--siren-sand); border-color: var(--siren-deep); }
+  .badge--away { background: var(--siren-wave); color: var(--siren-deep); }
+
+  /* Field */
+  .field {
+    display: block;
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: var(--fs-12);
+    letter-spacing: 0.1em;
+    color: var(--ink-500);
+    margin-bottom: var(--sp-3);
+  }
+  .field input, .field select, .field textarea {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px 12px;
+    font-family: var(--font-body);
+    font-size: var(--fs-14);
+    border: var(--bw-thin) solid var(--siren-deep);
+    border-radius: var(--r-sm);
+    background: var(--siren-white);
+    color: var(--siren-deep);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--siren-wave);
+    box-shadow: 0 0 0 3px rgba(0,187,211,0.25);
+  }
+
+  /* Tags */
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-family: var(--font-body);
+    font-size: var(--fs-12);
+    padding: 3px 10px;
+    border: var(--bw-thin) solid var(--siren-deep);
+    border-radius: var(--r-pill);
+    background: var(--siren-white);
+    color: var(--siren-deep);
+  }
+
+  /* Icons */
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--sp-3);
+  }
+  .icon-cell {
+    aspect-ratio: 1;
+    border: var(--bw-thin) solid var(--siren-deep);
+    background: var(--siren-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .icon-cell svg { width: 42px; height: 42px; stroke: var(--siren-deep); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .icon-cell .name {
+    position: absolute;
+    bottom: 6px; left: 0; right: 0;
+    font-family: var(--font-accent);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: var(--ink-500);
+  }
+
+  /* Surfaces: membership + matchday */
+  .surfaces {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-5);
+  }
+  .member-card {
+    background: var(--siren-deep);
+    color: var(--siren-sand);
+    border: var(--bw-med) solid var(--siren-deep);
+    padding: var(--sp-5);
+    position: relative;
+    aspect-ratio: 1.6 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    box-shadow: var(--sh-sticker);
+  }
+  .member-card .wave-band {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 50px;
+    color: var(--siren-wave);
+    opacity: 0.9;
+  }
+  .member-card .wave-band svg { width: 100%; height: 100%; display: block; }
+  .member-card h4 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 7vw, 72px);
+    line-height: 0.9;
+    margin: 40px 0 0;
+    color: var(--siren-wave);
+    letter-spacing: 0.02em;
+  }
+  .member-card .num {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: var(--fs-14);
+    letter-spacing: 0.12em;
+    opacity: 0.75;
+  }
+  .member-card .holder {
+    font-family: var(--font-heading);
+    font-size: var(--fs-18);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .member-card .season { font-family: var(--font-accent); font-size: var(--fs-12); text-transform: uppercase; letter-spacing: 0.14em; color: var(--siren-wave); }
+
+  .matchday {
+    background: var(--siren-sand);
+    color: var(--siren-deep);
+    border: var(--bw-med) solid var(--siren-deep);
+    box-shadow: var(--sh-sticker);
+    padding: var(--sp-5);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: var(--sp-4);
+  }
+  .matchday .tagline {
+    font-family: var(--font-accent);
+    font-size: var(--fs-12);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--siren-sea);
+  }
+  .matchday .fixture {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: var(--sp-4);
+    padding: var(--sp-3) 0;
+    border-top: var(--bw-thin) solid var(--ink-200);
+    border-bottom: var(--bw-thin) solid var(--ink-200);
+  }
+  .matchday .team {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: var(--fs-20);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .matchday .team .score { color: var(--siren-sea); font-family: var(--font-display); font-size: var(--fs-56); display: block; margin-top: 6px; line-height: 1; letter-spacing: 0.02em; }
+  .matchday .team .score--w { color: var(--siren-wave); }
+  .matchday .vs { font-family: var(--font-display); color: var(--siren-sea); font-size: var(--fs-32); letter-spacing: 0.02em; }
+  .matchday .when {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-accent);
+    font-size: var(--fs-12);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--siren-fog);
+  }
+  .matchday .when b { color: var(--siren-deep); font-weight: 700; display: block; }
+
+  /* Pattern gallery */
+  .patterns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-4);
+  }
+  .patt {
+    aspect-ratio: 3 / 2;
+    border: var(--bw-thin) solid var(--siren-deep);
+    position: relative;
+  }
+  .patt .label {
+    position: absolute; bottom: 8px; left: 8px;
+    background: var(--siren-white); color: var(--siren-deep);
+    font-family: var(--font-accent); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 3px 8px;
+    border: 1px solid var(--siren-deep);
+  }
+  .patt-checker {
+    background-image:
+      linear-gradient(45deg, var(--siren-deep) 25%, transparent 25%),
+      linear-gradient(-45deg, var(--siren-deep) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--siren-deep) 75%),
+      linear-gradient(-45deg, transparent 75%, var(--siren-deep) 75%);
+    background-size: 30px 30px;
+    background-position: 0 0, 0 15px, 15px -15px, -15px 0;
+    background-color: var(--siren-wave);
+  }
+  .patt-waves {
+    background: var(--siren-sand);
+    position: relative;
+    overflow: hidden;
+  }
+  .patt-waves svg { width: 100%; height: 100%; display: block; }
+  .patt-stripes {
+    background: repeating-linear-gradient(90deg, var(--siren-deep) 0 24px, var(--siren-wave) 24px 48px);
+  }
+
+  /* Footer */
+  .foot {
+    border-top: var(--bw-chunky) solid var(--siren-deep);
+    padding-top: var(--sp-5);
+    margin-top: var(--sp-9);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--sp-5);
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: var(--fs-12);
+    color: var(--ink-500);
+  }
+
+  @media (max-width: 900px) {
+    .intro, .surfaces, .comp-grid-2, .symbolism { grid-template-columns: 1fr; }
+    .swatch-grid { grid-template-columns: repeat(2,1fr); }
+    .icon-grid { grid-template-columns: repeat(4,1fr); }
+    .usage-rail, .principles, .lockup-grid, .patterns { grid-template-columns: 1fr; }
+    .masthead { grid-template-columns: auto 1fr; }
+    .masthead .meta { grid-column: 1 / -1; text-align: left; }
+  }
+</style>
+</head>
+<body style="cursor: crosshair; background-color: rgb(247, 247, 247);" data-cc-id="cc-1">
+
+<div class="topbar">
+  <div class="ticker">
+    <span><span class="dot"></span> SAN DIEGO SIRENS — SUPPORTERS GROUP FOR SD WAVE FC</span>
+    <span>EST. 2022</span>
+    <span>INTERNAL DESIGN GUIDELINES v1.0 · APRIL 2026</span>
+    <span>BYLAWS · SONGS · STORE · DISCORD</span>
+    <span><span class="dot"></span> WE RISE. WE SING. WE SIREN.</span>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <!-- Official primary crest -->
+    <img class="crest" src="San%20Diego%20Sirens%20%E2%80%94%20Design%20System_files/sirens-logo-primary.webp" alt="San Diego Sirens official crest" style="object-fit: contain;">
+
+    <div>
+      <h1>SIRENS</h1>
+      <div class="sub">SD Wave FC · San Diego Supporters Group · Brand System v1.0</div>
+    </div>
+
+    <div class="meta">
+      <b>Volume 01</b>
+      Edition 04.18.26<br>
+      Internal use only
+    </div>
+  </header>
+
+  <!-- TOC -->
+  <nav class="toc">
+    <a href="#about">00 About</a>
+    <a href="#symbolism">01 Symbolism</a>
+    <a href="#colors">02 Colors</a>
+    <a href="#type">03 Type</a>
+    <a href="#logos">04 Logos</a>
+    <a href="#patterns">05 Patterns</a>
+    <a href="#icons">06 Icons</a>
+    <a href="#components">07 Components</a>
+    <a href="#surfaces">08 Surfaces</a>
+    <a href="#voice">09 Voice</a>
+  </nav>
+
+  <!-- 00 ABOUT -->
+  <section class="sec" id="about">
+    <div class="intro">
+      <div class="txt">
+        <div class="spec-caps">— We rise. We sing. We siren.</div>
+        <h3 style="margin-top: 12px;">A supporters group for SD Wave FC — for everybody in the section.</h3>
+        <p class="lede">Founded in 2022, the San Diego Sirens are a 
+supporters group built on the legacy of the mythological siren — 
+storyteller, shapeshifter, song. Our visuals carry that weight.</p>
+        <p>This guide is the source of truth for members, creatives, and
+ partners. It codifies what stays fixed (the wordmark, the palette, the 
+voice) and what can breathe (the “S,” the mood, the season).</p>
+        <div class="principles">
+          <div class="principle">
+            <div class="n">01</div>
+            <h4>Fixed &amp; unwavering</h4>
+            <p>The wordmark, crest, palette, and typefaces do not change. They are our chant — recognizable from anywhere.</p>
+          </div>
+          <div class="principle">
+            <div class="n">02</div>
+            <h4>Nebulous &amp; ever–moving</h4>
+            <p>The shape <em>around</em> the “S” belongs to the community. It shifts by season, by tifo, by mood.</p>
+          </div>
+          <div class="principle">
+            <div class="n">03</div>
+            <h4>Built for the stands</h4>
+            <p>Everything should read from the 90th row: high contrast, shape–led, minimum decoration.</p>
+          </div>
+        </div>
+      </div>
+      <div class="img" role="img" aria-label="Sirens press-kit graphic"></div>
+    </div>
+  </section>
+
+  <!-- 01 SYMBOLISM -->
+  <section class="sec" id="symbolism">
+    <div class="sec-head">
+      <span class="num">01</span>
+      <h2>The Symbolism of the Siren</h2>
+      <span class="kicker">Why we look the way we look</span>
+    </div>
+
+    <div class="symbolism">
+      <div>
+        <h4>— From our artist</h4>
+        <p class="quote">“Beneath the crashing waves, you’ll find 
+extraordinary creatures of all shapes, colors and sizes. The siren’s 
+song beckons from the wave tops to all the denizens of the deep to sing 
+with us in unison. Ascending, we lift, we rise, and we sing as one.”</p>
+        <p>Our siren draws from many portrayals through history — part 
+bird, part fish, all creature. Ancient pottery showed sirens with human 
+heads and bird bodies; Homer’s siren is a voice that enchants sailors; 
+later traditions gave us merfolk. What stayed constant across every 
+version is the siren as <em>storyteller</em>.</p>
+        <div class="mono">— Sea &amp; sky · Voice &amp; weather · One force</div>
+      </div>
+      <div>
+        <h4>— Fixed elements</h4>
+        <p><b style="color: var(--siren-wave);">The typography.</b> Tall. Slightly curved. Sharp. Letters nested together, clawed at the tips. Legible from a distance, set with intention.</p>
+        <p><b style="color: var(--siren-wave);">The eye of the “I.”</b> Prominent, half–lidded, following you. Never remove or redraw it.</p>
+        <p><b style="color: var(--siren-wave);">The subheader.</b> “SD Wave FC San Diego Supporters Group” sits weighted with the wordmark whenever external audiences see it.</p>
+
+        <h4 style="margin-top: var(--sp-5);">— Variable elements</h4>
+        <p>The shape behind and around the “S” is <em>nebulous, ever–moving, always shifting forms.</em>
+ The community owns this slot — tifos, posters, and seasonal campaigns 
+can fill it with waves, scales, feathers, flame, whatever the story 
+wants. The only rule: the shape bends <em>around</em> the S; the S itself does not bend.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 COLORS -->
+  <section class="sec" id="colors">
+    <div class="sec-head">
+      <span class="num">02</span>
+      <h2>Color</h2>
+      <span class="kicker">Of the sea · of the sky · warm to hold them</span>
+    </div>
+
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="chip" style="background: var(--siren-deep); color: var(--siren-sand);">
+          <span class="role"><b>Ocean — Primary</b>60% surface</span>
+          <span class="desc">“Deep and brooding — the vastness of the ocean.”</span>
+        </div>
+        <div class="meta"><b>Ocean Deep</b> <code>#091F40</code> · PMS 282 C</div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip" style="background: var(--siren-wave); color: var(--siren-deep);">
+          <span class="role"><b>Sky — Primary</b>Accent 25%</span>
+          <span class="desc">“Bright and contrasting — the wave tops and sky above.”</span>
+        </div>
+        <div class="meta"><b>Wave Top</b> <code>#00BAD2</code> · PMS 3115 C</div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip" style="background: var(--siren-sea); color: var(--siren-sand);">
+          <span class="role"><b>Sea — Mid-tone</b>Bridge</span>
+          <span class="desc">“A green at home in the sea — our mid–tone.”</span>
+        </div>
+        <div class="meta"><b>Sea Green</b> <code>#0D8876</code> · PMS 327 C</div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip" style="background: var(--siren-warm-black); color: var(--siren-sand);">
+          <span class="role"><b>Ink — Body</b>Text</span>
+          <span class="desc">“Warm black — warmer than cool grays, to draw attention and maximize legibility.”</span>
+        </div>
+        <div class="meta"><b>Custom Warm Black</b> <code>#1F1F1F</code></div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip" style="background: var(--siren-warm-gray); color: var(--siren-sand);">
+          <span class="role"><b>Fog — Meta</b>Secondary text</span>
+          <span class="desc">Custom warm gray for captions &amp; timestamps.</span>
+        </div>
+        <div class="meta"><b>Custom Warm Gray</b> <code>#636363</code></div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip" style="background: var(--siren-sand); color: var(--siren-deep); border-bottom: 1px solid var(--ink-200);">
+          <span class="role"><b>Sand — Ground</b>Paper / card bg</span>
+          <span class="desc">Warm off–white — our primary canvas.</span>
+        </div>
+        <div class="meta"><b>Sand</b> <code>#F3EFE6</code></div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip" style="background: var(--siren-white); color: var(--siren-deep); border-bottom: 1px solid var(--ink-200);">
+          <span class="role"><b>Sail — Ground</b>Cards / forms</span>
+          <span class="desc">True white for crisp component surfaces.</span>
+        </div>
+        <div class="meta"><b>Sail White</b> <code>#FFFFFF</code></div>
+      </div>
+
+      <div class="swatch" style="outline: 2px dashed var(--accent-pink); outline-offset: -4px;">
+        <div class="chip" style="background: var(--accent-pink); color: var(--siren-sand);">
+          <span class="role"><b>Seasonal — Editorial</b>Press kit only</span>
+          <span class="desc">Saved for seasonal graphics, tifos, merch — never primary UI.</span>
+        </div>
+        <div class="meta"><b>Siren Pink*</b> <code>#E82176</code></div>
+      </div>
+    </div>
+
+    <div class="usage-rail">
+      <div>
+        <h5>— The 60 / 30 / 10 rule</h5>
+        <ul>
+          <li>60% Ocean or Sand (grounds everything)</li>
+          <li>30% Wave Top or Sea Green (the voice)</li>
+          <li>10% Warm Black + seasonal accent</li>
+        </ul>
+      </div>
+      <div>
+        <h5>— Good pairings</h5>
+        <ul>
+          <li>Ocean ground + Wave Top calls–to–action</li>
+          <li>Sand ground + Ocean ink + Sea Green links</li>
+          <li>Sea Green on Sand — our most bookish pairing</li>
+        </ul>
+      </div>
+      <div>
+        <h5>— Never</h5>
+        <ul>
+          <li>Gradient between palette colors</li>
+          <li>Pure black or cool gray (kills the warmth)</li>
+          <li>Pink / orange in navigation, body, or buttons</li>
+          <li>Wave Top on Sand for body copy (fails contrast)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 TYPE -->
+  <section class="sec" id="type">
+    <div class="sec-head">
+      <span class="num">03</span>
+      <h2>Typography</h2>
+      <span class="kicker">Tall · Slightly curved · Sharp · Nested tight · Clawed tips</span>
+    </div>
+
+    <div class="type-row">
+      <div class="label">
+        <b>Wordmark (artwork)</b>
+        The SIRENS wordmark is supplied as artwork only.<br>
+        We don't re-typeset it in live type — always use the official file.
+      </div>
+      <div style="padding: var(--sp-5); background: var(--siren-deep); display: flex; align-items: center; justify-content: center;">
+        <img src="San%20Diego%20Sirens%20%E2%80%94%20Design%20System_files/sirens-logo-tag-white.webp" alt="SIRENS wordmark with tagline" style="width: 280px; height: auto; display: block;">
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="label">
+        <b>Headline / small caps</b>
+        Vista Slab SC-Med<br>
+        Small caps slab — tagline &amp; section headers<br>
+        Web fallback: Roboto Slab (variable, loaded locally)
+      </div>
+      <div>
+        <p class="spec-h1" style="margin-bottom: 12px;">MATCH DAY</p>
+        <p class="spec-h2">SAN DIEGO SUPPORTERS GROUP</p>
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="label">
+        <b>Subhead / body</b>
+        Vista Slab Alt Light<br>
+        Regular + italic — subheads &amp; body copy<br>
+        Web fallback: Lora
+      </div>
+      <p class="spec-h3">Every chant has a reason — and every member has a voice.</p>
+    </div>
+
+    <div class="type-row">
+      <div class="label">
+        <b>Editorial</b>
+        Lora · Italic<br>
+        Pull quotes, song lyrics, long–form lore
+      </div>
+      <p class="spec-editorial">“Ascending, we lift, we rise, and we sing as one. The siren’s song beckons from the wave tops to all the denizens of the deep.”</p>
+    </div>
+
+    <div class="type-row">
+      <div class="label">
+        <b>Caption / UI</b>
+        Acme · UPPERCASE<br>
+        Small, tracked — for meta, labels, time
+      </div>
+      <p class="spec-caps">Matchday · Saturday 7:00 PM PT · Gate 03 · Section 137</p>
+    </div>
+  </section>
+
+  <!-- 04 LOGOS -->
+  <section class="sec" id="logos">
+    <div class="sec-head">
+      <span class="num">04</span>
+      <h2>Logo &amp; The Variable S</h2>
+      <span class="kicker">Wordmark is fixed · “S” moods change</span>
+    </div>
+
+    <div class="lockup-grid">
+      <!-- Primary: official crest with wordmark -->
+      <div class="lockup" style="background: var(--siren-sand); padding: var(--sp-4);">
+        <img src="San%20Diego%20Sirens%20%E2%80%94%20Design%20System_files/sirens-logo-primary.webp" alt="SIRENS official crest" style="max-width: 65%; max-height: 92%; height: auto; display: block;">
+        <span class="tag-br">01 — Primary crest</span>
+      </div>
+      <!-- Inverse — official white wordmark with tagline -->
+      <div class="lockup" style="background: var(--siren-deep); padding: var(--sp-5);">
+        <img src="San%20Diego%20Sirens%20%E2%80%94%20Design%20System_files/sirens-logo-tag-white.webp" alt="SIRENS official white wordmark with tagline" style="max-width: 82%; max-height: 70%; height: auto; display: block;">
+        <span class="tag-br">02 — Official (white, with tagline)</span>
+      </div>
+      <!-- With subheader -->
+      <div class="lockup" style="background: var(--siren-sand); flex-direction: column; gap: 8px;">
+        <div class="word-S" style="font-size: clamp(44px, 7vw, 84px);">SIRENS</div>
+        <span style="font-family: var(--font-accent); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--siren-sea); text-align: center;">SD Wave FC · San Diego<br>Supporters Group</span>
+        <span class="tag-br">03 — With subheader</span>
+      </div>
+      <!-- Variable S: waves mood -->
+      <div class="lockup" style="background: var(--siren-wave); position: relative;">
+        <svg viewBox="0 0 200 150" width="80%" style="max-width: 240px;" aria-label="S with waves">
+          <path d="M10 40 Q 30 20, 50 40 T 90 40 T 130 40 T 170 40 T 190 40" fill="none" stroke="#061F3F" stroke-width="3" stroke-linecap="round"></path>
+          <path d="M10 55 Q 30 35, 50 55 T 90 55 T 130 55 T 170 55 T 190 55" fill="none" stroke="#061F3F" stroke-width="3" stroke-linecap="round" opacity=".6"></path>
+          <text x="100" y="115" font-family="Metamorphous, serif" font-size="78" fill="#061F3F" text-anchor="middle" letter-spacing="2">S</text>
+          <path d="M10 130 Q 40 110, 70 130 T 130 130 T 190 130" fill="none" stroke="#061F3F" stroke-width="3" stroke-linecap="round"></path>
+        </svg>
+        <span class="tag-br">04 — S mood: Tide</span>
+      </div>
+      <!-- Variable S: feathers mood -->
+      <div class="lockup" style="background: var(--siren-sea);">
+        <svg viewBox="0 0 200 150" width="80%" style="max-width: 240px;" aria-label="S with feathers">
+          <!-- Feather strokes radiating -->
+          <g stroke="#F3EFE6" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".85">
+            <path d="M60 40 Q 50 20, 30 20"></path>
+            <path d="M100 30 Q 100 10, 90 5"></path>
+            <path d="M140 40 Q 150 20, 170 20"></path>
+            <path d="M60 110 Q 50 130, 30 130"></path>
+            <path d="M140 110 Q 150 130, 170 130"></path>
+            <path d="M100 120 Q 100 140, 90 145"></path>
+          </g>
+          <text x="100" y="105" font-family="Metamorphous, serif" font-size="86" fill="#F3EFE6" text-anchor="middle" letter-spacing="2">S</text>
+        </svg>
+        <span class="tag-br">05 — S mood: Plumage</span>
+      </div>
+      <!-- Variable S: fire mood (season opener) -->
+      <div class="lockup" style="background: var(--siren-deep);">
+        <svg viewBox="0 0 200 150" width="80%" style="max-width: 240px;" aria-label="S with flame">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M55 110 Q 40 90, 50 65 Q 35 55, 50 35 Q 65 50, 60 70 Q 75 60, 75 40 Q 90 55, 85 80 Q 100 70, 100 50 Q 115 70, 110 95" stroke="#00BBD3"></path>
+            <path d="M145 110 Q 160 90, 150 65 Q 165 55, 150 35 Q 135 50, 140 70 Q 125 60, 125 40 Q 110 55, 115 80" stroke="#00BBD3" opacity=".7"></path>
+          </g>
+          <text x="100" y="115" font-family="Metamorphous, serif" font-size="92" fill="#F3EFE6" text-anchor="middle" letter-spacing="2">S</text>
+        </svg>
+        <span class="tag-br">06 — S mood: Flare</span>
+      </div>
+    </div>
+
+    <div class="usage-rail" style="margin-top: var(--sp-5);">
+      <div>
+        <h5>— Fixed (never alter)</h5>
+        <ul>
+          <li>The letterforms &amp; nesting of SIRENS</li>
+          <li>The prominent eye of the “I”</li>
+          <li>Color of type within the wordmark</li>
+          <li>The clawed terminals at letter tips</li>
+        </ul>
+      </div>
+      <div>
+        <h5>— Variable (community owns)</h5>
+        <ul>
+          <li>Shape behind / around the S — change per season, tifo, or campaign</li>
+          <li>Color of the backdrop (within palette)</li>
+          <li>Auxiliary illustrations next to the lockup</li>
+        </ul>
+      </div>
+      <div>
+        <h5>— Clear space &amp; min size</h5>
+        <ul>
+          <li>Min padding = cap height of the “S”</li>
+          <li>Wordmark min 60px on screen / 0.5in print</li>
+          <li>Drop subheader below 44px</li>
+          <li>Use with written permission (contact@sandiegosirens.com)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 PATTERNS -->
+  <section class="sec" id="patterns">
+    <div class="sec-head">
+      <span class="num">05</span>
+      <h2>Patterns &amp; Imagery</h2>
+      <span class="kicker">Sea, sky &amp; stands</span>
+    </div>
+
+    <div class="patterns">
+      <div class="patt patt-checker"><span class="label">Checker — Matchday</span></div>
+      <div class="patt patt-waves">
+        <svg viewBox="0 0 300 200" preserveAspectRatio="none">
+          <g fill="none" stroke="#061F3F" stroke-width="2" stroke-linecap="round">
+            <path d="M-10 50 Q 20 30, 50 50 T 110 50 T 170 50 T 230 50 T 310 50"></path>
+            <path d="M-10 85 Q 20 65, 50 85 T 110 85 T 170 85 T 230 85 T 310 85"></path>
+            <path d="M-10 120 Q 20 100, 50 120 T 110 120 T 170 120 T 230 120 T 310 120"></path>
+            <path d="M-10 155 Q 20 135, 50 155 T 110 155 T 170 155 T 230 155 T 310 155"></path>
+          </g>
+        </svg>
+        <span class="label">Waves — Hand-drawn</span>
+      </div>
+      <div class="patt patt-stripes"><span class="label">Deep stripes — Terrace</span></div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-5); margin-top: var(--sp-5);">
+      <div style="border: var(--bw-thin) solid var(--siren-deep); overflow: hidden; background: var(--siren-sand);">
+        <img src="San%20Diego%20Sirens%20%E2%80%94%20Design%20System_files/color-palette-ref.webp" alt="Official brand color palette reference card with Pantone values" style="display: block; width: 100%; height: auto; border-bottom: var(--bw-thin) solid var(--siren-deep); padding: var(--sp-5); background: var(--siren-white);">
+        <div style="padding: var(--sp-4); font-family: var(--font-accent); font-size: var(--fs-12); text-transform: uppercase; letter-spacing: 0.12em; color: var(--siren-deep);">
+          Official color palette card — Pantone 282 C, 327 C, 3115 C + custom warm neutrals.
+        </div>
+      </div>
+      <div style="border: var(--bw-thin) solid var(--siren-deep); overflow: hidden; background: var(--siren-sand);">
+        <img src="San%20Diego%20Sirens%20%E2%80%94%20Design%20System_files/typography-inset.webp" alt="Official typography reference card showing SIRENS wordmark and Vista Slab specimens" style="display: block; width: 100%; height: auto; border-bottom: var(--bw-thin) solid var(--siren-deep); padding: var(--sp-5); background: var(--siren-white);">
+        <div style="padding: var(--sp-4); font-family: var(--font-accent); font-size: var(--fs-12); text-transform: uppercase; letter-spacing: 0.12em; color: var(--siren-deep);">
+          Official typography card — Nautical Base (wordmark) + Vista Slab SC-Med &amp; Alt Light (system type).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 ICONS -->
+  <section class="sec" id="icons">
+    <div class="sec-head">
+      <span class="num">06</span>
+      <h2>Iconography</h2>
+      <span class="kicker">24px grid · 2.2px stroke · hand, not Helvetica</span>
+    </div>
+
+    <div class="icon-grid">
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M3 10v4h4l8 5V5L7 10H3z"></path><path d="M16 8a4 4 0 0 1 0 8"></path></svg>
+        <span class="name">Megaphone</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M5 4v17"></path><path d="M5 5l10-1 4 3-4 3-10 1"></path></svg>
+        <span class="name">Flag</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"></path><path d="M14 6v12" stroke-dasharray="2 2"></path></svg>
+        <span class="name">Ticket</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="8" rx="8" ry="3"></ellipse><path d="M4 8v8c0 1.7 3.6 3 8 3s8-1.3 8-3V8"></path><path d="M9 11v4M15 11v4"></path></svg>
+        <span class="name">Drum</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M3 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"></path><path d="M3 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0"></path></svg>
+        <span class="name">Wave</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"></circle><path d="M12 7v14"></path><path d="M5 15a7 7 0 0 0 14 0"></path><path d="M8 11h8"></path></svg>
+        <span class="name">Anchor</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M6 7h10v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z"></path><path d="M16 10h2a2 2 0 0 1 0 4h-2"></path><path d="M9 10v8M12 10v8"></path></svg>
+        <span class="name">Pint</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M4 6l16 2v3L4 9z"></path><path d="M6 11l2 9M16 13l2 8"></path></svg>
+        <span class="name">Scarf</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.5-7 10-7 10z"></path></svg>
+        <span class="name">Love</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"></rect><path d="M3 9h18M8 3v4M16 3v4"></path></svg>
+        <span class="name">Date</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M12 22s7-8 7-13a7 7 0 0 0-14 0c0 5 7 13 7 13z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+        <span class="name">Stadium</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M12 3c-3 4-3 7 0 10c3-3 3-6 0-10z"></path><path d="M7 9c-2 3-1 6 2 8M17 9c2 3 1 6-2 8"></path></svg>
+        <span class="name">Siren</span>
+      </div>
+    </div>
+
+    <div class="usage-rail" style="margin-top: var(--sp-5); grid-template-columns: 1fr 1fr;">
+      <div>
+        <h5>— How to draw</h5>
+        <ul>
+          <li>24px grid, 2.2px stroke, round caps + joins</li>
+          <li>Ocean Deep on Sand at rest; Wave Top for active state</li>
+          <li>Avoid solid fills — keep icons linear</li>
+          <li>If an icon needs &gt;3 strokes, simplify it</li>
+        </ul>
+      </div>
+      <div>
+        <h5>— Hand-drawn editorial (reserved)</h5>
+        <ul>
+          <li>Hand–drawn mascots + creatures live in press kits, zines, stickers — never in UI chrome</li>
+          <li>Always outlined in Ocean Deep, 2–3px stroke</li>
+          <li>Loose, DIY linework — not technical illustration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 COMPONENTS -->
+  <section class="sec" id="components">
+    <div class="sec-head">
+      <span class="num">07</span>
+      <h2>Components</h2>
+      <span class="kicker">Building blocks — web + print</span>
+    </div>
+
+    <div class="comp-grid-2">
+      <div class="comp-card">
+        <h4>Buttons</h4>
+        <div class="row">
+          <a class="btn">Become a member</a>
+          <a class="btn btn--primary">Buy tickets</a>
+          <a class="btn btn--wave">Sing with us</a>
+          <a class="btn btn--ghost">Learn more</a>
+        </div>
+        <div class="row">
+          <a class="btn btn--sm">Join</a>
+          <a class="btn btn--sm btn--primary">Sign up</a>
+          <a class="btn btn--sm btn--ghost">← Back</a>
+        </div>
+        <p style="font-size: var(--fs-12); color: var(--ink-500); margin: 0;">Default button is Sea Green <code>#058293</code>
+ on white (mirrors the live sandiegosirens.com CTA). Ocean Deep is 
+reserved for primary navigation CTAs. Flat, no drop-shadow, 6px radius.</p>
+      </div>
+
+      <div class="comp-card">
+        <h4>Badges &amp; Status</h4>
+        <div class="row">
+          <span class="badge badge--live"><span class="pulse"></span> LIVE</span>
+          <span class="badge badge--win">WIN 2–1</span>
+          <span class="badge">HOME</span>
+          <span class="badge badge--away">AWAY</span>
+        </div>
+        <div class="row">
+          <span class="badge">Matchday</span>
+          <span class="badge">Away travel</span>
+          <span class="badge">Tifo</span>
+          <span class="badge">Dues</span>
+          <span class="badge">Youth</span>
+        </div>
+        <p style="font-size: var(--fs-12); color: var(--ink-500); margin: 0;">Pill shape, 1px Ocean Deep outline. Live uses Ocean + pulsing wave dot, never elsewhere.</p>
+      </div>
+
+      <div class="comp-card">
+        <h4>Form fields</h4>
+        <label class="field">Member name
+          <input placeholder="Claudia Rojas">
+        </label>
+        <label class="field">Favorite chant
+          <select><option selected="selected">Siren’s Song</option><option>Rise with the Tide</option><option>Section 137</option></select>
+        </label>
+        <div class="row" style="margin-top: var(--sp-3);">
+          <a class="btn btn--sm btn--primary">Submit</a>
+          <span class="badge">Step 02 / 04</span>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <h4>Tags &amp; meta</h4>
+        <div class="tags">
+          <span class="tag">#matchday</span>
+          <span class="tag">#tifo</span>
+          <span class="tag">#away-travel</span>
+          <span class="tag">#discord</span>
+          <span class="tag">#merch-drop</span>
+          <span class="tag">#newmember</span>
+          <span class="tag">#community</span>
+          <span class="tag">#youth-kits</span>
+        </div>
+        <p style="font-size: var(--fs-12); color: var(--ink-500); margin-top: var(--sp-4);">For filters, Discord channel references, article chips. Two rows max.</p>
+      </div>
+
+      <div class="comp-card" style="grid-column: 1 / -1; padding: 0; border: 0; background: transparent;">
+        <div style="border: 1px solid var(--siren-deep); background: var(--siren-wave); padding: var(--sp-4) var(--sp-5); display: grid; grid-template-columns: auto 1fr auto; gap: var(--sp-4); align-items: center; color: var(--siren-deep); border-radius: var(--r-md);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#091F40" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 10v4h4l8 5V5L7 10H3z"></path><path d="M16 8a4 4 0 0 1 0 8"></path>
+          </svg>
+          <div>
+            <div class="spec-caps" style="color: var(--siren-deep); margin-bottom: 2px;">Announcement · 2 hours ago</div>
+            <div style="font-family: var(--font-heading); font-weight: 700; font-size: var(--fs-18);">Away travel to Austin — bus list closes Friday.</div>
+          </div>
+          <a class="btn btn--sm btn--primary">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 SURFACES -->
+  <section class="sec" id="surfaces">
+    <div class="sec-head">
+      <span class="num">08</span>
+      <h2>Sample Surfaces</h2>
+      <span class="kicker">System in the wild</span>
+    </div>
+
+    <div class="surfaces">
+      <div class="member-card">
+        <div class="wave-band">
+          <svg viewBox="0 0 400 50" preserveAspectRatio="none">
+            <path d="M0 25 Q 50 5, 100 25 T 200 25 T 300 25 T 400 25 L 400 0 L 0 0 Z" fill="#00BBD3"></path>
+            <path d="M0 35 Q 50 15, 100 35 T 200 35 T 300 35 T 400 35" fill="none" stroke="#061F3F" stroke-width="1.5" opacity=".5"></path>
+          </svg>
+        </div>
+        <div style="margin-top: 36px;">
+          <div class="season">2026 Season · Member No. 00412</div>
+          <h4>SIRENS</h4>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <div class="season" style="opacity: .75; margin-bottom: 4px;">Member since 2023</div>
+            <div class="holder">Claudia Rojas</div>
+          </div>
+          <div class="num">SDS•0412</div>
+        </div>
+      </div>
+
+      <div class="matchday">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span class="tagline">Matchday 04 · NWSL Regular season</span>
+          <span class="badge badge--live"><span class="pulse"></span> LIVE 67'</span>
+        </div>
+        <div class="fixture">
+          <div class="team">San Diego<br>Wave FC<span class="score score--w">2</span></div>
+          <div class="vs">—</div>
+          <div class="team">Angel City<br>FC<span class="score">1</span></div>
+        </div>
+        <div class="when">
+          <span><b>Snapdragon</b>7:02 PM · 64°F</span>
+          <span style="text-align: right;"><b>Section 137</b>Drum + flags</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Poster: hero surface -->
+    <div style="margin-top: var(--sp-5); border: var(--bw-med) solid var(--siren-deep); box-shadow: var(--sh-sticker); background: var(--siren-deep); padding: var(--sp-7); display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--sp-6); color: var(--siren-sand); position: relative; overflow: hidden;">
+      <!-- Subtle wave overlay -->
+      <svg style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.18; pointer-events: none;" viewBox="0 0 600 400" preserveAspectRatio="none">
+        <g fill="none" stroke="#00BBD3" stroke-width="1.5">
+          <path d="M-20 80 Q 40 50, 100 80 T 220 80 T 340 80 T 460 80 T 620 80"></path>
+          <path d="M-20 150 Q 40 120, 100 150 T 220 150 T 340 150 T 460 150 T 620 150"></path>
+          <path d="M-20 220 Q 40 190, 100 220 T 220 220 T 340 220 T 460 220 T 620 220"></path>
+          <path d="M-20 290 Q 40 260, 100 290 T 220 290 T 340 290 T 460 290 T 620 290"></path>
+          <path d="M-20 360 Q 40 330, 100 360 T 220 360 T 340 360 T 460 360 T 620 360"></path>
+        </g>
+      </svg>
+      <div style="position: relative;">
+        <div class="spec-caps" style="color: var(--siren-wave);">— Matchday poster</div>
+        <div style="font-family: var(--font-display); font-size: clamp(72px, 12vw, 180px); line-height: 0.85; color: var(--siren-wave); margin-top: 16px; letter-spacing: 0.02em;">RISE<br>WITH&nbsp;US.</div>
+        <div style="font-family: var(--font-heading); font-weight: 900; font-size: var(--fs-24); text-transform: uppercase; letter-spacing: 0.02em; margin-top: 20px; color: var(--siren-sand);">Saturday 05/02 · 7:00 PM<br>Wave FC vs. Angel City</div>
+      </div>
+      <div style="position: relative; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; text-align: right;">
+        <div style="border: 2px solid var(--siren-wave); padding: 8px 14px; font-family: var(--font-accent); text-transform: uppercase; font-size: var(--fs-12); letter-spacing: 0.2em; color: var(--siren-wave);">
+          V.137 · Siren Sector
+        </div>
+        <div style="font-family: var(--font-serif); font-style: italic; font-size: var(--fs-20); line-height: 1.4; color: var(--siren-sand);">
+          “You’ll hear us<br>before you see us.”
+        </div>
+        <div>
+          <a class="btn" style="background: var(--siren-wave); color: var(--siren-deep);">Get your scarf →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 VOICE -->
+  <section class="sec" id="voice">
+    <div class="sec-head">
+      <span class="num">09</span>
+      <h2>Voice &amp; Writing</h2>
+      <span class="kicker">Storytellers — like the siren</span>
+    </div>
+
+    <div class="comp-grid-2">
+      <div class="comp-card" style="background: var(--siren-sand);">
+        <h4 style="color: var(--siren-sea);">— We sound like</h4>
+        <ul style="padding-left: 1.2em; margin: 0; line-height: 1.8; color: var(--siren-deep);">
+          <li><b>Welcoming.</b> Everyone in the section is family.</li>
+          <li><b>Creative.</b> Lyrical — borrow from songs, sea stories, lore.</li>
+          <li><b>Formidable.</b> Short sentences. Verbs first.</li>
+          <li><b>Plural.</b> Always “we,” rarely “I.”</li>
+          <li><b>Nebulous.</b> Room for members to finish the thought.</li>
+        </ul>
+      </div>
+      <div class="comp-card" style="background: var(--siren-sand);">
+        <h4 style="color: var(--siren-deep);">— We don’t sound like</h4>
+        <ul style="padding-left: 1.2em; margin: 0; line-height: 1.8; color: var(--siren-deep);">
+          <li>Brand tweet. No “unleash your passion.”</li>
+          <li>Corporate club. We’re the fans, not the front office.</li>
+          <li>Gatekeeping. Never “real fans only.”</li>
+          <li>Slang–chasing. If it’s a meme, skip it.</li>
+          <li>Emoji confetti. One, if any, per post.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: var(--sp-5); padding: var(--sp-6); background: var(--siren-deep); color: var(--siren-sand); border: var(--bw-med) solid var(--siren-deep); display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6);">
+      <div>
+        <div class="spec-caps" style="color: var(--siren-wave);">— A matchday post</div>
+        <p style="font-family: var(--font-serif); font-size: var(--fs-20); line-height: 1.5; margin: 12px 0 0; font-style: italic;">“Drum’s warmed up. Flags are ironed. Kickoff at 7. Section 137 — same seats, same songs, new season. See you on the rail.”</p>
+      </div>
+      <div>
+        <div class="spec-caps" style="color: var(--accent-pink);">— Not how we’d say it</div>
+        <p style="font-family: var(--font-serif); font-size: var(--fs-20); line-height: 1.5; margin: 12px 0 0; font-style: italic; opacity: .55; text-decoration: line-through; text-decoration-color: var(--accent-pink);">“Are YOU ready for an unforgettable matchday experience? Join the Sirens community today and unlock exclusive member benefits!”</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div>
+      San Diego Sirens · Supporters Group for SD Wave FC · Est. 2022<br>
+      Internal design guidelines v1.0 — 04.18.2026 — hold the rail.
+    </div>
+    <div style="text-align: right;">
+      sandiegosirens.com<br>
+      contact@sandiegosirens.com<br>
+      discord · instagram · newsletter
+    </div>
+  </footer>
+
+</div>
+
+
+
+</body></html>
