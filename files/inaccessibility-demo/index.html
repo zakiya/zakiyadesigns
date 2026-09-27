@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstration for Accessibility Community of Practice</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Our Website</h1>
+            <p>This is an example of a site that will pass machine accessibility tests but is terrible for users.</p>
+            <div tabindex="0" data-type="itsatrap-button">Find out more</div>
+        </div>
+
+    </section>
+    <section class="content">
+        <p>
+            Digital services play a critical role in how people access information, complete transactions, and
+            engage with government, healthcare, education, and commerce. When designed intentionally, they can
+            reduce barriers, expand reach, and improve efficiency at scale. However, without thoughtful planning,
+            digital platforms can unintentionally exclude people with disabilities, limited digital literacy,
+            language barriers, or limited access to broadband and assistive technologies. Inclusive digital services
+            prioritize usability, clarity, and equitable access from the start—recognizing that accessibility is not
+            a feature to be added later, but a core component of effective service delivery.
+        </p>
+        <p> Accessibility in digital services means ensuring that websites, applications, and online tools are
+            usable by people of all abilities. This includes adhering to standards such as WCAG, designing for
+            screen readers and keyboard navigation, providing captions and transcripts for multimedia, using plain
+            language, and testing with diverse users. Beyond compliance, accessible design improves the experience
+            for everyone by making content clearer, navigation more intuitive, and interactions more flexible. By
+            embedding accessibility into procurement, design, development, and ongoing maintenance processes,
+            organizations can create digital services that are equitable, resilient, and responsive to the needs of
+            the communities they serve.
+        </p>
+
+    </section>
+</main>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close" tabindex="0">&times;</span>
+        <div id="modal-body">
+            <div data-type="trap-door" tabindex="0">Government services are for everyone. Accessibility ensures people
+                with disabilities can access information, complete tasks, and receive services without barriers.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
