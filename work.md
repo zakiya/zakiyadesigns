@@ -8,7 +8,7 @@ permalink: /work/
 - [abortion.ca.gov](https://abortion.ca.gov)
 - [cannabis.ca.gov](https://cannabis.ca.gov)
 - [covid19.ca.gov](https://covid19.ca.gov)
-- [drought.ca.gov](https://web.archive.org/web/20230924201616/https://drought.ca.gov/)
+- [drought.ca.gov](/posts/work-drought-ca-gov/)
 - [designsystem.webstandards.ca.gov](https://designsystem.webstandards.ca.gov)
 
 ## Chapter Three
