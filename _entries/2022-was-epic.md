@@ -46,7 +46,7 @@ sad or reflective or forgetful.
 
 - Got a raise and a promotion (somehow I’m an executive???)
 - Restored a website < 24 hours after a ransomware attack
-- Helmed [abortion.ca.gov](https://abortion.ca.gov)
+- Helmed [abortion.ca.gov](/posts/work-abortion-ca-gov/)
 - Argued with a lot of people and mostly won
 
 ## Places I went

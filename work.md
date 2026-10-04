@@ -5,7 +5,7 @@ permalink: /work/
 
 ## California Office of Data and Innovation
 
-- [abortion.ca.gov](https://abortion.ca.gov)
+- [abortion.ca.gov](/posts/work-abortion-ca-gov/)
 - [cannabis.ca.gov](https://cannabis.ca.gov)
 - [covid19.ca.gov](https://covid19.ca.gov)
 - [drought.ca.gov](https://web.archive.org/web/20230924201616/https://drought.ca.gov/)
