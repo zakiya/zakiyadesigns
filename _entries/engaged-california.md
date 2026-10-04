@@ -18,3 +18,11 @@ link_text: Learn more about Engaged California
 - Set up our systems wth Mailchimp API
 - Wrote up procedures for secure data handling post-engagement
 
+## Screenshots
+
+Screenshot of the live site, captured 2026-10-03 from https://engaged.ca.gov.
+
+![Engaged California homepage at desktop width (1440px)]({{ '/files/engaged-california/homepage-desktop-2026-10-03.png' | relative_url }})
+
+![Engaged California homepage at mobile width (390px)]({{ '/files/engaged-california/homepage-mobile-2026-10-03.png' | relative_url }})
+
