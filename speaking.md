@@ -8,7 +8,6 @@ permalink: /speaking/
 ### DrupalCon
 
 **2017** — 15+ ways to debug Drupal 8 for front end devs
-([video](https://web.archive.org/web/20210731094922/https://2017.badcamp.net/session/coding-development/intermediate/15-ways-debug-drupal-8-front-end-devs))
 
 ### Drupal 8 Day
 
@@ -21,6 +20,7 @@ permalink: /speaking/
 ([slides]({{ '/files/2018-06-13-Pattern-Libraries.pdf' | relative_url }}))
 
 **2017** — 15+ ways to debug Drupal 8
+([video](https://web.archive.org/web/20210731094922/https://2017.badcamp.net/session/coding-development/intermediate/15-ways-debug-drupal-8-front-end-devs))
 
 **2016** — The slice template: design principles, dev options and content curation
 (video)
