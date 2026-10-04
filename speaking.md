@@ -8,7 +8,7 @@ permalink: /speaking/
 ### DrupalCon
 
 **2017** — 15+ ways to debug Drupal 8 for front end devs
-([video](https://2017.badcamp.net/session/coding-development/intermediate/15-ways-debug-drupal-8-front-end-devs))
+([video](https://web.archive.org/web/20210731094922/https://2017.badcamp.net/session/coding-development/intermediate/15-ways-debug-drupal-8-front-end-devs))
 
 ### Drupal 8 Day
 
@@ -23,7 +23,7 @@ permalink: /speaking/
 **2017** — 15+ ways to debug Drupal 8
 
 **2016** — The slice template: design principles, dev options and content curation
-([video](https://2016.badcamp.net/session/slice-template-design-principles-dev-options-content-curation))
+(video)
 
 **2016** — Desktop to mobile: why your themer cries
 ([video](https://www.youtube.com/watch?v=piXjE0vmDA4))
@@ -64,10 +64,10 @@ permalink: /speaking/
 **2017** — 15+ ways to debug Drupal 8
 
 **2013** — Responsive theming from scratch
-([video](<http://replay.uci.edu/clients/drupal/Drupal_Theming_From_Scratch_-_MP4_with_Smart_Player_(Large)_-_20130713_08.03.46PM.html>))
+(video)
 
 **2012** — Getting the most out of Omega
-([session description](http://2012.drupalcampla.com/sessions/getting-most-out-omega))
+([session description](https://web.archive.org/web/20210729124150/http://2012.drupalcampla.com/sessions/getting-most-out-omega))
 
 ## Trainings
 
