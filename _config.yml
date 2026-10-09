@@ -39,6 +39,9 @@ defaults:
       type: entries
     values:
       layout: post
+      # No template shows excerpts. Generating them anyway makes Jekyll warn
+      # about any post whose body is wrapped in {% raw %} (the Twig posts).
+      excerpt_separator: ""
   - scope:
       path: ""
       type: pages
