@@ -9,6 +9,8 @@ summary: One or two sentences for the listing.
 tags: [ topic, topic ]
 link: /files/my-project/
 link_text: View the slides
+archive_link: /files/my-project/copy.pdf
+archive_link_text: Download the PDF
 landing: false         
 ---
 
