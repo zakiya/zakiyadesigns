@@ -1,0 +1,15 @@
+# Local tooling. `mise run serve` previews the site; see README.md.
+[tools]
+ruby = "3.3"
+
+[tasks.setup]
+description = "Install gems into vendor/bundle (run once)"
+run = ["bundle config set --local path vendor/bundle", "bundle install"]
+
+[tasks.serve]
+description = "Preview at http://localhost:4000"
+run = "bundle exec jekyll serve"
+
+[tasks.build]
+description = "Build into _site/"
+run = "bundle exec jekyll build"
