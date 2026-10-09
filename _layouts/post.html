@@ -58,9 +58,18 @@ This is what shows if that never fires: a link, not a landing page.
       {{ content }}
     </div>
 
-    {%- if page.link -%}
+    {%- comment -%}
+    `archive_link` is a self-hosted copy of whatever `link` points at — a PDF of
+    a deck, screenshots of a site — kept here in case the original disappears.
+    {%- endcomment -%}
+    {%- if page.link or page.archive_link -%}
     <p class="link-cta">
+      {%- if page.link -%}
       <a class="button" href="{{ page.link | relative_url }}">{{ page.link_text | default: "View the slides" }}</a>
+      {%- endif -%}
+      {%- if page.archive_link %}
+      <a class="button button--ghost" href="{{ page.archive_link | relative_url }}">{{ page.archive_link_text | default: "Archived copy" }}</a>
+      {%- endif -%}
     </p>
     {%- endif -%}
   </article>

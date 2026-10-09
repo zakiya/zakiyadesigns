@@ -11,6 +11,8 @@
 
   A post with `landing: false` has no page worth visiting, so the row points at
   its `link` instead. With neither, the title is just text.
+
+  `archive_link` (optional) adds a second, self-hosted link under the summary.
 {%- endcomment -%}
 {%- assign h = include.heading | default: "h3" -%}
 {%- assign tag_slugs = "" -%}
@@ -41,6 +43,11 @@
   </{{ h }}>
 
   {%- if include.item.summary %}<p class="entry-summary">{{ include.item.summary }}</p>{% endif -%}
+
+  {%- comment -%}Shown in the list too, since a `landing: false` post has no page to put it on.{%- endcomment -%}
+  {%- if include.item.archive_link -%}
+    <p class="link-note"><a href="{{ include.item.archive_link | relative_url }}">{{ include.item.archive_link_text | default: "Archived copy" }}</a></p>
+  {%- endif -%}
 
     {%- comment -%}Jekyll hands every document an empty `tags` array, so size, not truthiness.{%- endcomment -%}
     {%- if include.tags and include.item.tags.size > 0 -%}
