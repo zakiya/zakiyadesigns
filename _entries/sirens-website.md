@@ -28,3 +28,12 @@ My role is pretty hands-off at this point. The officers are empowered to update 
 Coordinator I help guide the team towards plain language, usability, and accessibility standards from my day job. The
 project owes a lot to the visual design talents of Troy Ford.  
 
+## Screenshots
+
+![San Diego Sirens homepage at desktop width: navigation bar, "Become a 2026 Siren" banner over a scarf image, a monthly calendar, and the footer]({{ '/files/sirens-website/sandiegosirens-home-desktop-2026-10-03.webp' | relative_url }}){: width="1440" height="2500" loading="lazy" decoding="async"}
+
+Screenshot of the live site (desktop), captured 2026-10-03 from https://sandiegosirens.com
+
+![San Diego Sirens homepage at mobile width: header with menu button, "Become a 2026 Siren" banner, an agenda-view calendar, and the footer links]({{ '/files/sirens-website/sandiegosirens-home-mobile-2026-10-03.webp' | relative_url }}){: width="390" height="2078" loading="lazy" decoding="async"}
+
+Screenshot of the live site (mobile), captured 2026-10-03 from https://sandiegosirens.com
