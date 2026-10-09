@@ -8,14 +8,14 @@ tags: [ government, design systems ]
 
 ## designsystem.webstandards.ca.gov (archived)
 
-Screenshot captured 2026-10-03 from the Wayback Machine snapshot of 2026-05-07 (the last capture of the original site).
+Screenshots captured 2026-10-09 from the archived copy of the site.
 
 ### Desktop (1440 px wide)
 
-![California Design System homepage at designsystem.webstandards.ca.gov, desktop width]({{ '/files/work-ca-design-system/archive-desktop.webp' | relative_url }}){: width="1440" height="3549" loading="lazy" decoding="async"}
+![California Design System homepage at designsystem.webstandards.ca.gov, desktop width]({{ '/files/work-ca-design-system/archive-desktop.webp' | relative_url }}){: width="1440" height="3653" loading="lazy" decoding="async"}
 
 ### Mobile (390 px wide)
 
-![California Design System homepage at designsystem.webstandards.ca.gov, mobile width]({{ '/files/work-ca-design-system/archive-mobile.webp' | relative_url }}){: width="390" height="6649" loading="lazy" decoding="async"}
+![California Design System homepage at designsystem.webstandards.ca.gov, mobile width]({{ '/files/work-ca-design-system/archive-mobile.webp' | relative_url }}){: width="390" height="6703" loading="lazy" decoding="async"}
 
-Source: [web.archive.org/web/20260507124648/https://designsystem.webstandards.ca.gov/](https://web.archive.org/web/20260507124648/https://designsystem.webstandards.ca.gov/)
+Source: [designsystem.webstandards.ca.gov archive](http://designsystem.webstandards.ca.gov.s3-website-us-west-1.amazonaws.com/)
