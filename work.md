@@ -7,7 +7,7 @@ permalink: /work/
 
 - [abortion.ca.gov](https://abortion.ca.gov)
 - [cannabis.ca.gov](/posts/work-cannabis-ca-gov/)
-- [covid19.ca.gov](https://covid19.ca.gov)
+- [covid19.ca.gov](/posts/work-covid19-ca-gov/)
 - [drought.ca.gov](/posts/work-drought-ca-gov/)
 - [designsystem.webstandards.ca.gov](/posts/work-ca-design-system/)
 
