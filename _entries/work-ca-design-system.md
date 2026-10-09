@@ -12,11 +12,11 @@ Screenshot captured 2026-10-03 from the Wayback Machine snapshot of 2026-05-07 (
 
 ### Desktop (1440 px wide)
 
-![California Design System homepage at designsystem.webstandards.ca.gov, desktop width]({{ '/files/work-ca-design-system/archive-desktop.png' | relative_url }})
+![California Design System homepage at designsystem.webstandards.ca.gov, desktop width]({{ '/files/work-ca-design-system/archive-desktop.webp' | relative_url }}){: width="1440" height="3549" loading="lazy" decoding="async"}
 
 ### Mobile (390 px wide)
 
-![California Design System homepage at designsystem.webstandards.ca.gov, mobile width]({{ '/files/work-ca-design-system/archive-mobile.png' | relative_url }})
+![California Design System homepage at designsystem.webstandards.ca.gov, mobile width]({{ '/files/work-ca-design-system/archive-mobile.webp' | relative_url }}){: width="390" height="6649" loading="lazy" decoding="async"}
 
 Source: [web.archive.org/web/20260507124648/https://designsystem.webstandards.ca.gov/](https://web.archive.org/web/20260507124648/https://designsystem.webstandards.ca.gov/)
 
@@ -26,10 +26,10 @@ Screenshot captured 2026-10-03 from designsystem.ca.gov.
 
 ### Desktop (1440 px wide)
 
-![California Design System homepage at designsystem.ca.gov, desktop width]({{ '/files/work-ca-design-system/live-desktop.png' | relative_url }})
+![California Design System homepage at designsystem.ca.gov, desktop width]({{ '/files/work-ca-design-system/live-desktop.webp' | relative_url }}){: width="1440" height="925" loading="lazy" decoding="async"}
 
 ### Mobile (390 px wide)
 
-![California Design System homepage at designsystem.ca.gov, mobile width]({{ '/files/work-ca-design-system/live-mobile.png' | relative_url }})
+![California Design System homepage at designsystem.ca.gov, mobile width]({{ '/files/work-ca-design-system/live-mobile.webp' | relative_url }}){: width="390" height="1086" loading="lazy" decoding="async"}
 
 Live site: [designsystem.ca.gov](https://designsystem.ca.gov/)
