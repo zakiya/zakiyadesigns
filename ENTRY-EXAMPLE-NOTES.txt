@@ -7,5 +7,7 @@ role: Engineering manager # optional venue: Where it happened # optional summary
 tags: [ topic, topic ]      # optional 
 link: /files/my-project/ # optional — adds a button at the foot of the post
 link_text: View the slides # optional — the button's label 
+archive_link: /files/my-project/copy.pdf # optional — a self-hosted copy of `link`, shown as a second button
+archive_link_text: Download the PDF # optional — its label (default: Archived copy)
 landing: false # optional — list it, but don't give it a page of its own
 ---
